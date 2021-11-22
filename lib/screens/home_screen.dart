@@ -7,8 +7,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: const Text("Website"),
         actions: <Widget>[
           TextButton(
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Marquee(
-        text: 'Some sample text that takes some space.',
+        text: 'Sample text that takes some space.',
         style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
         scrollAxis: Axis.horizontal,
         crossAxisAlignment: CrossAxisAlignment.start,
