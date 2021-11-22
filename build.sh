@@ -20,3 +20,5 @@ fi
 
 # Build flutter for web
 $FLUTTER build web --release
+
+echo "OK"
