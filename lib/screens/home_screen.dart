@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Marquee(
-        text: 'Some sample text that takes some space. ',
+        text: 'Some sample text that takes some space.',
         style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
         scrollAxis: Axis.horizontal,
         crossAxisAlignment: CrossAxisAlignment.start,
