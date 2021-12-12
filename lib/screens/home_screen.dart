@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:marquee/marquee.dart';
+import 'package:web_app/screens/image_screen.dart';
+import 'package:web_app/values/data.dart';
+import 'package:web_app/values/values.dart';
+import 'package:web_app/widgets/drop_down_button.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen();
@@ -7,32 +10,34 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text("Website"),
-        actions: <Widget>[
-          TextButton(
-              onPressed: () {},
-              child: const Text(
-                "Text",
-                style: TextStyle(color: Colors.white),
-              ))
-        ],
-      ),
-      body: Marquee(
-        text: 'Sample text that takes some space.',
-        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
-        scrollAxis: Axis.horizontal,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        blankSpace: 20.0,
-        velocity: 100.0,
-        pauseAfterRound: Duration(seconds: 1),
-        startPadding: 10.0,
-        accelerationDuration: Duration(seconds: 1),
-        accelerationCurve: Curves.linear,
-        decelerationDuration: Duration(milliseconds: 500),
-        decelerationCurve: Curves.easeOut,
+      backgroundColor: Color.fromARGB(255, 222, 199, 181),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Image.asset("assets/images/Title_Image.jpeg"),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 5,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Center(
+                  child: RichText(
+                      //softWrap: true,
+                      text: TextSpan(children: <TextSpan>[
+                    TextSpan(
+                        text: Data.textMission,
+                        style: Styles.titleTextStyleWithSecondaryTextColor),
+                  ])),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
