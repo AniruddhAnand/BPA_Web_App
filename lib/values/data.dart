@@ -11,7 +11,7 @@ class Data {
       "Textile manufacturing releases around 1.2 billion tons of carbon dioxide in 2015, which is more than the combined emissions of all international flights, maritime, and shipping.(https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development )";
   static String mushInfo =
       "Almost 70% of clothing is made from polyester and other synthetic fibers that are created from the burning and melting of fossil fuels like crude oil.(https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/ )";
-  static String citation = "Citations";
+  static String citation = "Citations ";
   static String citationWords =
       "(https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car.)\n(https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development )\n(https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/ )";
 }
