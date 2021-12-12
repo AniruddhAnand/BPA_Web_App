@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             Image.asset("assets/images/Title_Image.jpeg"),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(40.0),
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(
