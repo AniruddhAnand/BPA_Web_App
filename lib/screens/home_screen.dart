@@ -13,14 +13,17 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset("assets/images/Title_Image.jpeg"),
+            Text(Data.mission,
+                style: Styles.titleTextStyleWithSecondaryTextColor),
             Padding(
-              padding: const EdgeInsets.all(40.0),
+              padding: const EdgeInsets.all(20.0),
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.black,
+                    color: Colors.white,
                     width: 5,
                   ),
                   borderRadius: BorderRadius.circular(10.0),
@@ -30,8 +33,137 @@ class HomeScreen extends StatelessWidget {
                       //softWrap: true,
                       text: TextSpan(children: <TextSpan>[
                     TextSpan(
-                        text: Data.textMission,
-                        style: Styles.titleTextStyleWithSecondaryTextColor),
+                        text: Data.textMission, style: Styles.mediumTextStyle),
+                  ])),
+                ),
+              ),
+            ),
+            Text(Data.sub1, style: Styles.titleTextStyleWithSecondaryTextColor),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 5,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Center(
+                  child: RichText(
+                      //softWrap: true,
+                      text: TextSpan(children: <TextSpan>[
+                    TextSpan(text: Data.info1, style: Styles.mediumTextStyle),
+                  ])),
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                children: <Widget>[
+                  Image.asset("assets/images/Pant.png"),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 5,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Center(
+                        child: RichText(
+                            //softWrap: true,
+                            text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: Data.pantInfo,
+                              style: Styles.mediumTextStyle),
+                        ])),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                children: <Widget>[
+                  Image.asset("assets/images/Shirt.png"),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 5,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Center(
+                        child: RichText(
+                            //softWrap: true,
+                            text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: Data.shirtInfo,
+                              style: Styles.mediumTextStyle),
+                        ])),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                children: <Widget>[
+                  Image.asset("assets/images/Mushroom.png"),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 5,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Center(
+                        child: RichText(
+                            //softWrap: true,
+                            text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: Data.mushInfo,
+                              style: Styles.mediumTextStyle),
+                        ])),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Text(Data.citation,
+                style: Styles.titleTextStyleWithSecondaryTextColor),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 5,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Center(
+                  child: RichText(
+                      //softWrap: true,
+                      text: TextSpan(children: <TextSpan>[
+                    TextSpan(
+                        text: Data.citationWords,
+                        style: Styles.mediumTextStyle),
                   ])),
                 ),
               ),
