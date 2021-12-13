@@ -7,6 +7,8 @@ class Data {
       const TextStyle(fontFamily: "BodoAmat", fontSize: 60);
   static TextStyle style2 =
       const TextStyle(fontFamily: "BodoAmat", fontSize: 25);
+  static TextStyle style3 =
+      const TextStyle(fontFamily: "BodoAmat", fontSize: 30);
   static String mission = "How Fasion Impacts Our Enviornemnt";
   static Text textMission = Text(
       "Our purpose is to help participants of the fashion industry navigate their way through the complicated decisions in their consumption of clothing. We seek to educate them on sustainability and provide them with ways to produce their own products, avoiding the industry’s mass production of clothes and harmful impacts on the environment, most especially carbon emissions.",
@@ -17,15 +19,15 @@ class Data {
   );
   static Text pantInfo = Text(
     "A pair of jeans is estimated to release about 33.4kg of carbon dioxide through its lifespan which is the equivalent of the emissions of a 69 mile road trip in the average car",
-    style: style2,
+    style: style3,
   );
   static Text shirtInfo = Text(
     "Textile manufacturing releases around 1.2 billion tons of carbon dioxide in 2015, which is more than the combined emissions of all international flights, maritime, and shipping.",
-    style: style2,
+    style: style3,
   );
   static Text mushInfo = Text(
     "Almost 70% of clothing is made from polyester and other synthetic fibers that are created from the burning and melting of fossil fuels like crude oil.",
-    style: style2,
+    style: style3,
   );
   static String citation = "Citations ";
   static Text citationWords = Text(

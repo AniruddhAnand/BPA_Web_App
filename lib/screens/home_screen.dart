@@ -24,12 +24,12 @@ class HomeScreen extends StatelessWidget {
               Image.asset("assets/images/Title_Image_Only2.png"),
               Text("Mission", style: Data.style),
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(80.0),
                 child: Data.textMission,
               ),
               Text(Data.mission, style: Data.style),
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(80.0),
                 child: Data.info1,
               ),
               Padding(
