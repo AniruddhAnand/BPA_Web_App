@@ -10,90 +10,100 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Color.fromARGB(255, 222, 199, 181),
-      body: Container(
-        constraints: const BoxConstraints.expand(),
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/Background.jpeg"),
-                fit: BoxFit.cover)),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Image.asset("assets/images/Title_Image_Only2.png"),
-              Text("Mission", style: Data.style),
-              Padding(
-                padding: const EdgeInsets.all(80.0),
-                child: Data.textMission,
-              ),
-              Text(Data.mission, style: Data.style),
-              Padding(
-                padding: const EdgeInsets.all(80.0),
-                child: Data.info1,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: <Widget>[
-                    Column(
+      backgroundColor: Color.fromARGB(255, 222, 199, 181),
+      body: //Container(
+          //constraints: const BoxConstraints.expand(),
+          //decoration: const BoxDecoration(
+          //  image: DecorationImage(
+          //    image: AssetImage("assets/images/Background.jpeg"),
+          //  fit: BoxFit.cover)),
+          /* child:*/ SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset("assets/images/Title_Image.jpeg"),
+            Text("Mission", style: Data.style),
+            Padding(
+              padding: const EdgeInsets.all(100.0),
+              child: Data.textMission,
+            ),
+            Text(Data.mission, style: Data.style),
+            Padding(
+              padding: const EdgeInsets.all(75.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              "assets/images/Pant.PNG",
+                              scale: 3,
+                            ),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 6,
+                                child: Data.pantInfo),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              "assets/images/Mushroom.png",
+                              scale: 3,
+                            ),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 6,
+                                child: Data.mushInfo),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 10,
+                      ),
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Data.info1,
+                    ),
+                    width: MediaQuery.of(context).size.width / 3,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         Image.asset(
-                          "assets/images/Pant.PNG",
-                          scale: 1,
+                          "assets/images/Shirt.png",
+                          scale: 3,
                         ),
-                        Text("Jeans", style: Data.style),
+                        Container(
+                            width: MediaQuery.of(context).size.width / 6,
+                            child: Data.shirtInfo),
                       ],
                     ),
-                    Container(
-                        width: MediaQuery.of(context).size.width / 4,
-                        child: Data.pantInfo),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Container(
-                        width: MediaQuery.of(context).size.width / 4,
-                        child: Data.shirtInfo),
-                    Column(
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/images/Shirt_Less.png",
-                          scale: 1,
-                        ),
-                        Text("Shirt", style: Data.style),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/images/Mushroom_Less.png",
-                          scale: 1,
-                        ),
-                        Text("Factories", style: Data.style),
-                      ],
-                    ),
-                    Container(
-                        width: MediaQuery.of(context).size.width / 4,
-                        child: Data.mushInfo),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+      //  ),
     );
   }
 }

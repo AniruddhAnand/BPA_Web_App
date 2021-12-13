@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 class Data {
   static TextStyle style =
-      const TextStyle(fontFamily: "BodoAmat", fontSize: 60);
+      const TextStyle(fontFamily: "CrimsonText", fontSize: 60);
   static TextStyle style2 =
-      const TextStyle(fontFamily: "BodoAmat", fontSize: 25);
+      const TextStyle(fontFamily: "CrimsonText", fontSize: 20);
   static TextStyle style3 =
-      const TextStyle(fontFamily: "BodoAmat", fontSize: 30);
-  static String mission = "How Fasion Impacts Our Enviornemnt";
+      const TextStyle(fontFamily: "CrimsonText", fontSize: 17);
+  static String mission = "How Fashion Impacts Our Environment";
   static Text textMission = Text(
       "Our purpose is to help participants of the fashion industry navigate their way through the complicated decisions in their consumption of clothing. We seek to educate them on sustainability and provide them with ways to produce their own products, avoiding the industry’s mass production of clothes and harmful impacts on the environment, most especially carbon emissions.",
       style: style2);
