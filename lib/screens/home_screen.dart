@@ -22,14 +22,32 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset("assets/images/Title_Image.jpeg"),
-            Text("Mission", style: Data.style),
             Padding(
-              padding: const EdgeInsets.all(100.0),
-              child: Data.textMission,
+              padding: const EdgeInsets.all(90.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 10,
+                  ),
+                  borderRadius: BorderRadius.circular(0.0),
+                ),
+                child: Column(
+                  children: [
+                    Text("Mission", style: Data.style),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 25.0, right: 25.0, bottom: 25.0, top: 7.0),
+                      child: Data.textMission,
+                    ),
+                  ],
+                ),
+              ),
             ),
             Text(Data.mission, style: Data.style),
             Padding(
-              padding: const EdgeInsets.all(75.0),
+              padding: const EdgeInsets.only(
+                  left: 75.0, right: 75.0, bottom: 75.0, top: 50.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
