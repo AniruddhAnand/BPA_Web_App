@@ -9,6 +9,12 @@ class Data {
       const TextStyle(fontFamily: "CrimsonText", fontSize: 25);
   static TextStyle style3 =
       const TextStyle(fontFamily: "CrimsonText", fontSize: 17);
+  static String styling = "Styling";
+  static String embroidery = "Embroidery";
+  static String embInfo =
+      "Embroidery is a form of stitching used to decorate textiles and fabrics. Learning how to embroider can help in personalizing more basic clothing items to make them more wearable resulting in reduced clothing waste. Essentially by only learning the basic stitches, creative liberties can be taken to embroider any image or phrase through practice. All you need to start is a needle, thread, the article of clothing that is being embroidered on, and preferably an embroidery hoop.";
+  static String stylingInfo =
+      "The most important practice towards sustainability is simply using the clothes you already own to avoid participating in the fast fashion industry. Here are some ways to keep your wardrobe unique and creative without the help of purchasing new clothes";
   static String mission = "How Fashion Impacts Our Environment";
   static Text mission2 = Text(
       "Things you can do as an individual in the fashion industry to create and maintain a sustainable closet to reduce carbon emissions.",
@@ -25,7 +31,7 @@ class Data {
     style: style3,
   );
   static Text shirtInfo = Text(
-    "Textile manufacturing releases around 1.2 billion tons of carbon dioxide in 2015, which is more than the combined emissions of all international flights, maritime, and shipping.",
+    "Textile manufacturing released around 1.2 billion tons of carbon dioxide in 2015, which is more than the combined emissions of all international flights, maritime, and shipping.",
     style: style3,
   );
   static Text mushInfo = Text(

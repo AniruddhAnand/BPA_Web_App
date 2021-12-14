@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
@@ -46,6 +47,43 @@ class AtHomeScreen extends StatelessWidget {
                       Data.mission2,
                     ],
                   ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(60.0),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      Data.styling,
+                      style: Data.style2,
+                    ),
+                    Container(
+                        width: MediaQuery.of(context).size.width / 4,
+                        child: Text(Data.stylingInfo, style: Data.style3)),
+                    Padding(
+                        padding: EdgeInsets.all(40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("• ${Data.embroidery}", style: Data.style2),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 4,
+                                child: Text(Data.embInfo, style: Data.style3)),
+                            TextButton(
+                              child: Text(
+                                "• DIY Stiching",
+                                style: Data.style3,
+                              ),
+                              onPressed: () => launch(
+                                  "https://www.youtube.com/channel/UCq4Hs_x6X-rgYtMjBh2ghpg"),
+                            ),
+                          ],
+                        ))
+                  ],
                 ),
               ),
             ),
