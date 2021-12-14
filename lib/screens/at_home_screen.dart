@@ -4,8 +4,8 @@ import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen();
+class AtHomeScreen extends StatelessWidget {
+  AtHomeScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -42,93 +42,13 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text("Mission", style: Data.style),
-                      Data.textMission,
+                      Text("At Home", style: Data.style),
+                      Data.mission2,
                     ],
                   ),
                 ),
               ),
             ),
-            Text(Data.mission, style: Data.style),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 75.0, right: 75.0, bottom: 75.0, top: 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(0.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset(
-                              "assets/images/Pant.PNG",
-                              scale: 3,
-                            ),
-                            Container(
-                                width: MediaQuery.of(context).size.width / 6,
-                                child: Data.pantInfo),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset(
-                              "assets/images/Mushroom.png",
-                              scale: 3,
-                            ),
-                            Container(
-                                width: MediaQuery.of(context).size.width / 6,
-                                child: Data.mushInfo),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 10,
-                      ),
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 25.0, right: 25.0, top: 35.0, bottom: 25.0),
-                      child: Data.info1,
-                    ),
-                    width: MediaQuery.of(context).size.width / 3,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/images/Shirt.png",
-                          scale: 3,
-                        ),
-                        Container(
-                            width: MediaQuery.of(context).size.width / 6,
-                            child: Data.shirtInfo),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, "AtHome");
-                },
-                child: Text("At Home Page"))
           ],
         ),
       ),
