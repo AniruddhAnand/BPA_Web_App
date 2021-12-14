@@ -81,8 +81,211 @@ class AtHomeScreen extends StatelessWidget {
                               onPressed: () => launch(
                                   "https://www.youtube.com/channel/UCq4Hs_x6X-rgYtMjBh2ghpg"),
                             ),
+                            TextButton(
+                              child: Text(
+                                "• Crewel Ghoul Embroidery",
+                                style: Data.style3,
+                              ),
+                              onPressed: () => launch(
+                                  "https://www.youtube.com/channel/UCWYZdV3Mn3KGkhJ0puzAt8A"),
+                            ),
+                            TextButton(
+                              child: Text(
+                                "• HandiWorks",
+                                style: Data.style3,
+                              ),
+                              onPressed: () => launch(
+                                  "https://www.youtube.com/channel/UCGjZJ0TN1PlJIEwJXKNlm6w"),
+                            ),
+                            TextButton(
+                              child: Text(
+                                "• Needle'n Threat",
+                                style: Data.style3,
+                              ),
+                              onPressed: () =>
+                                  launch("https://www.needlenthread.com/"),
+                            ),
+                            TextButton(
+                              child: Text(
+                                "• Pintangle ",
+                                style: Data.style3,
+                              ),
+                              onPressed: () => launch("https://pintangle.com/"),
+                            ),
                           ],
-                        ))
+                        )),
+                    Padding(
+                        padding: EdgeInsets.all(40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("• ${Data.alt}", style: Data.style2),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 4,
+                                child: Text(Data.altInfo, style: Data.style3)),
+                          ],
+                        )),
+                    Padding(
+                        padding: EdgeInsets.all(40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("• ${Data.styling}", style: Data.style2),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 4,
+                                child: Text(Data.styInfo, style: Data.style3)),
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 10,
+                                ),
+                                borderRadius: BorderRadius.circular(0.0),
+                              ),
+                              width: MediaQuery.of(context).size.width / 3,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 25.0,
+                                    right: 25.0,
+                                    top: 35.0,
+                                    bottom: 25.0),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "How to find your style",
+                                      style: Data.style2,
+                                    ),
+                                    TextButton(
+                                      child: Text(
+                                        "• Interacting with Pinterest and creating a fashion board",
+                                        style: Data.style3,
+                                      ),
+                                      onPressed: () =>
+                                          launch("https://www.pinterest.com/"),
+                                    ),
+                                    Text(
+                                      "• Styling around clothes that are already loved and owned",
+                                      style: Data.style3,
+                                    ),
+                                    Text(
+                                      "• Creating a capsule wardrobe of everyday basics to rely on",
+                                      style: Data.style3,
+                                    ),
+                                    Text(
+                                      "• Find style inspiration in sustainable fashion influencers",
+                                      style: Data.style3,
+                                    ),
+                                    TextButton(
+                                      child: Text(
+                                        "• BestDressed",
+                                        style: Data.style3,
+                                      ),
+                                      onPressed: () => launch(
+                                          "https://www.bestdressedstore.com/shopmycloset"),
+                                    ),
+                                    TextButton(
+                                      child: Text(
+                                        "• LainiOzark",
+                                        style: Data.style3,
+                                      ),
+                                      onPressed: () => launch(
+                                          "https://www.youtube.com/c/LainiOzark/playlists"),
+                                    ),
+                                    TextButton(
+                                      child: Text(
+                                        "• AlexaSunshine83",
+                                        style: Data.style3,
+                                      ),
+                                      onPressed: () => launch(
+                                          "https://www.youtube.com/channel/UCl5ZUlVYLmmnyiEcFRTFJtg"),
+                                    ),
+                                    TextButton(
+                                      child: Text(
+                                        "• Aditi Mayer",
+                                        style: Data.style3,
+                                      ),
+                                      onPressed: () => launch(
+                                          "https://www.adimay.com/about/"),
+                                    ),
+                                    TextButton(
+                                      child: Text(
+                                        "• EthicallyKate",
+                                        style: Data.style3,
+                                      ),
+                                      onPressed: () =>
+                                          launch("https://ethicallykate.com/"),
+                                    ),
+                                    TextButton(
+                                      child: Text(
+                                        "• SustainablyChic",
+                                        style: Data.style3,
+                                      ),
+                                      onPressed: () => launch(
+                                          "https://www.sustainably-chic.com/"),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(60.0),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Do It Yourself:",
+                      style: Data.style2,
+                    ),
+                    Container(
+                        width: MediaQuery.of(context).size.width / 4,
+                        child: Text(Data.doInfo, style: Data.style3)),
+                    Padding(
+                        padding: EdgeInsets.all(40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("• ${Data.croch}", style: Data.style2),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 4,
+                                child:
+                                    Text(Data.crochInfo, style: Data.style3)),
+                            TextButton(
+                              child: Text(
+                                "• Thinking Sustainability",
+                                style: Data.style3,
+                              ),
+                              onPressed: () => launch(
+                                  "https://www.thinkingsustainably.com/is-knitting-sustainable/"),
+                            ),
+                          ],
+                        )),
+                    Padding(
+                        padding: EdgeInsets.all(40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("• ${Data.mkCloth}", style: Data.style2),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 4,
+                                child: Text(Data.mkInfo, style: Data.style3)),
+                            TextButton(
+                              child: Text(
+                                "• Good On You",
+                                style: Data.style3,
+                              ),
+                              onPressed: () => launch(
+                                  "https://goodonyou.eco/most-sustainable-fabrics/"),
+                            ),
+                          ],
+                        )),
                   ],
                 ),
               ),
@@ -94,8 +297,6 @@ class AtHomeScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:web_app/screens/image_screen.dart';
@@ -273,4 +474,3 @@ class AtHomeScreen extends StatelessWidget {
 //     );
 //   }
 // }
-
