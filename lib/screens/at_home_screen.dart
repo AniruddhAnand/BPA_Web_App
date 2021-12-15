@@ -43,7 +43,7 @@ class AtHomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text("At Home", style: Data.style),
+                      SelectableText("At Home", style: Data.style),
                       Data.mission2,
                     ],
                   ),
@@ -51,30 +51,32 @@ class AtHomeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(60.0),
+              padding: const EdgeInsets.only(
+                  top: 60.0, bottom: 60.0, left: 20, right: 20),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    SelectableText(
                       Data.styling,
                       style: Data.style2,
                     ),
                     Container(
-                        width: MediaQuery.of(context).size.width / 4,
-                        child: Text(Data.stylingInfo, style: Data.style3)),
+                        child: SelectableText(Data.stylingInfo,
+                            style: Data.style3)),
                     Padding(
                         padding: EdgeInsets.all(40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("• ${Data.embroidery}", style: Data.style2),
+                            SelectableText("• ${Data.embroidery}",
+                                style: Data.style2),
                             Container(
-                                width: MediaQuery.of(context).size.width / 4,
-                                child: Text(Data.embInfo, style: Data.style3)),
+                                child: SelectableText(Data.embInfo,
+                                    style: Data.style3)),
                             TextButton(
-                              child: Text(
+                              child: SelectableText(
                                 "• DIY Stiching",
                                 style: Data.style3,
                               ),
@@ -82,7 +84,7 @@ class AtHomeScreen extends StatelessWidget {
                                   "https://www.youtube.com/channel/UCq4Hs_x6X-rgYtMjBh2ghpg"),
                             ),
                             TextButton(
-                              child: Text(
+                              child: SelectableText(
                                 "• Crewel Ghoul Embroidery",
                                 style: Data.style3,
                               ),
@@ -90,7 +92,7 @@ class AtHomeScreen extends StatelessWidget {
                                   "https://www.youtube.com/channel/UCWYZdV3Mn3KGkhJ0puzAt8A"),
                             ),
                             TextButton(
-                              child: Text(
+                              child: SelectableText(
                                 "• HandiWorks",
                                 style: Data.style3,
                               ),
@@ -98,7 +100,7 @@ class AtHomeScreen extends StatelessWidget {
                                   "https://www.youtube.com/channel/UCGjZJ0TN1PlJIEwJXKNlm6w"),
                             ),
                             TextButton(
-                              child: Text(
+                              child: SelectableText(
                                 "• Needle'n Threat",
                                 style: Data.style3,
                               ),
@@ -106,7 +108,7 @@ class AtHomeScreen extends StatelessWidget {
                                   launch("https://www.needlenthread.com/"),
                             ),
                             TextButton(
-                              child: Text(
+                              child: SelectableText(
                                 "• Pintangle ",
                                 style: Data.style3,
                               ),
@@ -119,10 +121,10 @@ class AtHomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("• ${Data.alt}", style: Data.style2),
+                            SelectableText("• ${Data.alt}", style: Data.style2),
                             Container(
-                                width: MediaQuery.of(context).size.width / 4,
-                                child: Text(Data.altInfo, style: Data.style3)),
+                                child: SelectableText(Data.altInfo,
+                                    style: Data.style3)),
                           ],
                         )),
                     Padding(
@@ -130,10 +132,14 @@ class AtHomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("• ${Data.styling}", style: Data.style2),
+                            SelectableText("• ${Data.styling}",
+                                style: Data.style2),
                             Container(
-                                width: MediaQuery.of(context).size.width / 4,
-                                child: Text(Data.styInfo, style: Data.style3)),
+                                child: SelectableText(Data.styInfo,
+                                    style: Data.style3)),
+                            SizedBox(
+                              height: 20,
+                            ),
                             Container(
                               decoration: BoxDecoration(
                                 border: Border.all(
@@ -142,7 +148,6 @@ class AtHomeScreen extends StatelessWidget {
                                 ),
                                 borderRadius: BorderRadius.circular(0.0),
                               ),
-                              width: MediaQuery.of(context).size.width / 3,
                               child: Padding(
                                 padding: const EdgeInsets.only(
                                     left: 25.0,
@@ -151,32 +156,32 @@ class AtHomeScreen extends StatelessWidget {
                                     bottom: 25.0),
                                 child: Column(
                                   children: [
-                                    Text(
+                                    SelectableText(
                                       "How to find your style",
                                       style: Data.style2,
                                     ),
                                     TextButton(
-                                      child: Text(
+                                      child: SelectableText(
                                         "• Interacting with Pinterest and creating a fashion board",
                                         style: Data.style3,
                                       ),
                                       onPressed: () =>
                                           launch("https://www.pinterest.com/"),
                                     ),
-                                    Text(
+                                    SelectableText(
                                       "• Styling around clothes that are already loved and owned",
                                       style: Data.style3,
                                     ),
-                                    Text(
+                                    SelectableText(
                                       "• Creating a capsule wardrobe of everyday basics to rely on",
                                       style: Data.style3,
                                     ),
-                                    Text(
+                                    SelectableText(
                                       "• Find style inspiration in sustainable fashion influencers",
                                       style: Data.style3,
                                     ),
                                     TextButton(
-                                      child: Text(
+                                      child: SelectableText(
                                         "• BestDressed",
                                         style: Data.style3,
                                       ),
@@ -184,7 +189,7 @@ class AtHomeScreen extends StatelessWidget {
                                           "https://www.bestdressedstore.com/shopmycloset"),
                                     ),
                                     TextButton(
-                                      child: Text(
+                                      child: SelectableText(
                                         "• LainiOzark",
                                         style: Data.style3,
                                       ),
@@ -192,7 +197,7 @@ class AtHomeScreen extends StatelessWidget {
                                           "https://www.youtube.com/c/LainiOzark/playlists"),
                                     ),
                                     TextButton(
-                                      child: Text(
+                                      child: SelectableText(
                                         "• AlexaSunshine83",
                                         style: Data.style3,
                                       ),
@@ -200,7 +205,7 @@ class AtHomeScreen extends StatelessWidget {
                                           "https://www.youtube.com/channel/UCl5ZUlVYLmmnyiEcFRTFJtg"),
                                     ),
                                     TextButton(
-                                      child: Text(
+                                      child: SelectableText(
                                         "• Aditi Mayer",
                                         style: Data.style3,
                                       ),
@@ -208,7 +213,7 @@ class AtHomeScreen extends StatelessWidget {
                                           "https://www.adimay.com/about/"),
                                     ),
                                     TextButton(
-                                      child: Text(
+                                      child: SelectableText(
                                         "• EthicallyKate",
                                         style: Data.style3,
                                       ),
@@ -216,7 +221,7 @@ class AtHomeScreen extends StatelessWidget {
                                           launch("https://ethicallykate.com/"),
                                     ),
                                     TextButton(
-                                      child: Text(
+                                      child: SelectableText(
                                         "• SustainablyChic",
                                         style: Data.style3,
                                       ),
@@ -234,37 +239,31 @@ class AtHomeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(60.0),
+              padding: const EdgeInsets.only(
+                  top: 60.0, bottom: 60.0, left: 20, right: 20),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    SelectableText(
                       "Do It Yourself:",
                       style: Data.style2,
                     ),
                     Container(
-                        width: MediaQuery.of(context).size.width / 4,
-                        child: Text(Data.doInfo, style: Data.style3)),
+                        // width: MediaQuery.of(context).size.width / 4,
+                        child: SelectableText(Data.doInfo, style: Data.style3)),
                     Padding(
                         padding: EdgeInsets.all(40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("• ${Data.croch}", style: Data.style2),
+                            SelectableText("• ${Data.croch}",
+                                style: Data.style2),
                             Container(
-                                width: MediaQuery.of(context).size.width / 4,
-                                child:
-                                    Text(Data.crochInfo, style: Data.style3)),
-                            TextButton(
-                              child: Text(
-                                "• Thinking Sustainability",
-                                style: Data.style3,
-                              ),
-                              onPressed: () => launch(
-                                  "https://www.thinkingsustainably.com/is-knitting-sustainable/"),
-                            ),
+                                //  width: MediaQuery.of(context).size.width / 4,
+                                child: SelectableText(Data.crochInfo,
+                                    style: Data.style3)),
                           ],
                         )),
                     Padding(
@@ -272,18 +271,12 @@ class AtHomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("• ${Data.mkCloth}", style: Data.style2),
+                            SelectableText("• ${Data.mkCloth}",
+                                style: Data.style2),
                             Container(
-                                width: MediaQuery.of(context).size.width / 4,
-                                child: Text(Data.mkInfo, style: Data.style3)),
-                            TextButton(
-                              child: Text(
-                                "• Good On You",
-                                style: Data.style3,
-                              ),
-                              onPressed: () => launch(
-                                  "https://goodonyou.eco/most-sustainable-fabrics/"),
-                            ),
+                                //  width: MediaQuery.of(context).size.width / 4,
+                                child: SelectableText(Data.mkInfo,
+                                    style: Data.style3)),
                           ],
                         )),
                   ],

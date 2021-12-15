@@ -42,19 +42,19 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text("Mission", style: Data.style),
+                      SelectableText("Mission", style: Data.style),
                       Data.textMission,
                     ],
                   ),
                 ),
               ),
             ),
-            Text(Data.mission, style: Data.style),
+            SelectableText(Data.mission, style: Data.style),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 75.0, right: 75.0, bottom: 75.0, top: 10.0),
+                  left: 50.0, right: 50.0, bottom: 75.0, top: 30.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
                     children: <Widget>[
@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                           children: <Widget>[
                             Image.asset(
                               "assets/images/Pant.PNG",
-                              scale: 3,
+                              scale: 2.5,
                             ),
                             Container(
                                 width: MediaQuery.of(context).size.width / 6,
@@ -80,9 +80,10 @@ class HomeScreen extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Image.asset(
-                              "assets/images/Mushroom.png",
-                              scale: 3,
+                              "assets/images/Mushroom_Less.png",
+                              scale: 2.5,
                             ),
+                            SizedBox(height: 10),
                             Container(
                                 width: MediaQuery.of(context).size.width / 6,
                                 child: Data.mushInfo),
@@ -104,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                           left: 25.0, right: 25.0, top: 35.0, bottom: 25.0),
                       child: Data.info1,
                     ),
-                    width: MediaQuery.of(context).size.width / 3,
+                    width: MediaQuery.of(context).size.width / 2.5,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -113,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                       children: <Widget>[
                         Image.asset(
                           "assets/images/Shirt.png",
-                          scale: 3,
+                          scale: 2.5,
                         ),
                         Container(
                             width: MediaQuery.of(context).size.width / 6,
@@ -128,7 +129,7 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, "AtHome");
                 },
-                child: Text("At Home Page"))
+                child: SelectableText("At Home Page"))
           ],
         ),
       ),
