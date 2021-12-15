@@ -4,8 +4,7 @@
 import 'package:flutter/material.dart';
 
 class Data {
-  static String mkCloth =
-      "Making clothes/sewing: - sewing machine scissors etc";
+  static String mkCloth = "Making clothes/sewing:";
   static String mkInfo =
       "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing item such as a simple top.\n\n          • Sustainable Fabrics:\n         • Recycled Cotton\n         • Organic Hemp\n         • Organic Linen\n         • Tencel (recycled wood)\n         • Econyl (recycled plastic)\n         • Qmonos (biodegradable synthetic spider silk)\n";
   static String croch = "Crocheting/Knitting:";

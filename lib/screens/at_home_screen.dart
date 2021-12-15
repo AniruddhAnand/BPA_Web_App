@@ -140,95 +140,103 @@ class AtHomeScreen extends StatelessWidget {
                             SizedBox(
                               height: 20,
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.white,
-                                  width: 10,
+                            Padding(
+                              padding: const EdgeInsets.only(left: 80),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width / 1.3,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 10,
+                                  ),
+                                  borderRadius: BorderRadius.circular(0.0),
                                 ),
-                                borderRadius: BorderRadius.circular(0.0),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 25.0,
-                                    right: 25.0,
-                                    top: 35.0,
-                                    bottom: 25.0),
-                                child: Column(
-                                  children: [
-                                    SelectableText(
-                                      "How to find your style",
-                                      style: Data.style2,
+                                child: Container(
+                                  // width: MediaQuery.of(context).size.width / 1.3,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 25.0,
+                                        right: 25.0,
+                                        top: 35.0,
+                                        bottom: 25.0),
+                                    child: Column(
+                                      children: [
+                                        SelectableText(
+                                          "How to find your style",
+                                          style: Data.style2,
+                                        ),
+                                        TextButton(
+                                          child: SelectableText(
+                                            "• Interacting with Pinterest and creating a fashion board",
+                                            style: Data.style3,
+                                          ),
+                                          onPressed: () => launch(
+                                              "https://www.pinterest.com/"),
+                                        ),
+                                        SelectableText(
+                                          "• Styling around clothes that are already loved and owned",
+                                          style: Data.style3,
+                                        ),
+                                        SelectableText(
+                                          "• Creating a capsule wardrobe of everyday basics to rely on",
+                                          style: Data.style3,
+                                        ),
+                                        SelectableText(
+                                          "• Find style inspiration in sustainable fashion influencers",
+                                          style: Data.style3,
+                                        ),
+                                        TextButton(
+                                          child: SelectableText(
+                                            "• BestDressed",
+                                            style: Data.style3,
+                                          ),
+                                          onPressed: () => launch(
+                                              "https://www.bestdressedstore.com/shopmycloset"),
+                                        ),
+                                        TextButton(
+                                          child: SelectableText(
+                                            "• LainiOzark",
+                                            style: Data.style3,
+                                          ),
+                                          onPressed: () => launch(
+                                              "https://www.youtube.com/c/LainiOzark/playlists"),
+                                        ),
+                                        TextButton(
+                                          child: SelectableText(
+                                            "• AlexaSunshine83",
+                                            style: Data.style3,
+                                          ),
+                                          onPressed: () => launch(
+                                              "https://www.youtube.com/channel/UCl5ZUlVYLmmnyiEcFRTFJtg"),
+                                        ),
+                                        TextButton(
+                                          child: SelectableText(
+                                            "• Aditi Mayer",
+                                            style: Data.style3,
+                                          ),
+                                          onPressed: () => launch(
+                                              "https://www.adimay.com/about/"),
+                                        ),
+                                        TextButton(
+                                          child: SelectableText(
+                                            "• EthicallyKate",
+                                            style: Data.style3,
+                                          ),
+                                          onPressed: () => launch(
+                                              "https://ethicallykate.com/"),
+                                        ),
+                                        TextButton(
+                                          child: SelectableText(
+                                            "• SustainablyChic",
+                                            style: Data.style3,
+                                          ),
+                                          onPressed: () => launch(
+                                              "https://www.sustainably-chic.com/"),
+                                        ),
+                                      ],
                                     ),
-                                    TextButton(
-                                      child: SelectableText(
-                                        "• Interacting with Pinterest and creating a fashion board",
-                                        style: Data.style3,
-                                      ),
-                                      onPressed: () =>
-                                          launch("https://www.pinterest.com/"),
-                                    ),
-                                    SelectableText(
-                                      "• Styling around clothes that are already loved and owned",
-                                      style: Data.style3,
-                                    ),
-                                    SelectableText(
-                                      "• Creating a capsule wardrobe of everyday basics to rely on",
-                                      style: Data.style3,
-                                    ),
-                                    SelectableText(
-                                      "• Find style inspiration in sustainable fashion influencers",
-                                      style: Data.style3,
-                                    ),
-                                    TextButton(
-                                      child: SelectableText(
-                                        "• BestDressed",
-                                        style: Data.style3,
-                                      ),
-                                      onPressed: () => launch(
-                                          "https://www.bestdressedstore.com/shopmycloset"),
-                                    ),
-                                    TextButton(
-                                      child: SelectableText(
-                                        "• LainiOzark",
-                                        style: Data.style3,
-                                      ),
-                                      onPressed: () => launch(
-                                          "https://www.youtube.com/c/LainiOzark/playlists"),
-                                    ),
-                                    TextButton(
-                                      child: SelectableText(
-                                        "• AlexaSunshine83",
-                                        style: Data.style3,
-                                      ),
-                                      onPressed: () => launch(
-                                          "https://www.youtube.com/channel/UCl5ZUlVYLmmnyiEcFRTFJtg"),
-                                    ),
-                                    TextButton(
-                                      child: SelectableText(
-                                        "• Aditi Mayer",
-                                        style: Data.style3,
-                                      ),
-                                      onPressed: () => launch(
-                                          "https://www.adimay.com/about/"),
-                                    ),
-                                    TextButton(
-                                      child: SelectableText(
-                                        "• EthicallyKate",
-                                        style: Data.style3,
-                                      ),
-                                      onPressed: () =>
-                                          launch("https://ethicallykate.com/"),
-                                    ),
-                                    TextButton(
-                                      child: SelectableText(
-                                        "• SustainablyChic",
-                                        style: Data.style3,
-                                      ),
-                                      onPressed: () => launch(
-                                          "https://www.sustainably-chic.com/"),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ),
