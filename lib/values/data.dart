@@ -4,6 +4,20 @@
 import 'package:flutter/material.dart';
 
 class Data {
+  static String handInfo =
+      "Another option for second hand clothing is through the people in your local community. Asking for hand-me-downs from your neighbors and family friends is a great way to help others reduce their contribution to unnecessary waste as well as providing a way to expand your wardrobe without participating in fast fashion consumerism. This is also a good way to minimize personal fashion waste by giving unwanted clothes to younger members of the community instead of donating or throwing them out which usually results in the build up of landfills. Another option to give away or receive clothing is through garage sales and estate sales. These local resale events are great opportunities to connect with your community and shop sustainably and inexpensively.";
+  static String clubInfo =
+      "A unique way to promote sustainability in your community is to create and participate in clubs that focus on educating the younger generations on how to adopt a sustainable lifestyle that takes care of the earth as well as the individual. You can join the Stitches for Sustainability family by creating your own club branch in your local school. Our organization focuses on fostering a community of like minded individuals who are seeking to find ways to stop participating in modern unsustainable consumerism. We host meetings discussing sustainability and the harmful effects of the fashion industry as well as providing sessions for needlework to teach members how to crochet/knit/sew their own clothing. This provides an open community that upholds each other and shares personal ideas to educate and encourage each member. If you are interested in starting your own Stitches for Sustainability club please contact us and we would be happy to help you organize and pitch your club to your local community. :)";
+  static String thriftingInfo =
+      "Thrifting is the purchasing of used clothing at discounted prices. Thrifting is a way to recycle used clothing, reducing clothing waste that would otherwise be burnt, shredded, or dumped in landfills contributing to immense carbon emissions and landfill pollution. Thrifting can be appealing to consumers who may not be as financially privileged to afford sustainable brands and eco friendly options. These consumers may be enticed by the dramatically cheap prices of fast fashion, but thrifting is a more sustainable and inexpensive option for all consumers regardless of economic circumstances. Thrifting is a great and accessible way to shop for trends without contributing to carbon emissions from the highly manufactured fashion industry. Local thrift stores provide a place to donate and purchase second hand clothing while online thrift store platforms provide a larger variety of styles and options on a global scale.\n\nThrift Store Chains:";
+  static String borrowInfo =
+      "Before purchasing clothing goods, it can be a good idea to check if someone in your social circle already owns the product, so that you can try it on and evaluate if it would be a sustainable choice in your personal closet. This would allow an opportunity for you to consider it as an actual physical addition to your wardrobe and help inform your purchasing decision. Additionally there is a chance that your friend is willing to gift or resell it to you, which is a much more sustainable exchange than conventional shopping. ";
+  static Text comMission = Text(
+    "Ways to practice sustainability in your community and interact with others to help increase local efforts towards eco-friendly fashion.",
+    style: style2,
+    textAlign: TextAlign.center,
+  );
+  static String borrow = "Borrow From Friends";
   static String mkCloth = "Making clothes/sewing:";
   static String mkInfo =
       "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing item such as a simple top.\n\n          • Sustainable Fabrics:\n         • Recycled Cotton\n         • Organic Hemp\n         • Organic Linen\n         • Tencel (recycled wood)\n         • Econyl (recycled plastic)\n         • Qmonos (biodegradable synthetic spider silk)\n";
@@ -36,7 +50,7 @@ class Data {
     textAlign: TextAlign.center,
   );
   static SelectableText textMission = SelectableText(
-    "Our purpose is to help participants of the fashion industry navigate their way through the complicated decisions in their consumption of clothing. We seek to educate them on sustainability and provide them with ways to produce their own products, avoiding the industry’s mass production of clothes and harmful impacts on the environment, most especially carbon emissions.",
+    "Our mission is to help participants of the fashion industry navigate their way through the complicated decisions in their consumption of clothing. We seek to educate them on sustainability and provide them with ways to produce their own products, avoiding the industry’s mass production of clothes and harmful impacts on the environment, most especially carbon emissions.",
     style: style2,
     textAlign: TextAlign.center,
   );

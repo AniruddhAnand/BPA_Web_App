@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:web_app/screens/at_home_screen.dart';
 import 'package:web_app/screens/home_screen.dart';
 import 'package:web_app/screens/image_screen.dart';
+import 'package:web_app/screens/in_community_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,10 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.black,
       ),
       home: HomeScreen(),
-      routes: {"AtHome": (context) => AtHomeScreen()},
+      routes: {
+        "AtHome": (context) => AtHomeScreen(),
+        "Community": (context) => InCommunityScreen()
+      },
     );
   }
 }

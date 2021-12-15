@@ -76,7 +76,7 @@ class AtHomeScreen extends StatelessWidget {
                                 child: SelectableText(Data.embInfo,
                                     style: Data.style3)),
                             TextButton(
-                              child: SelectableText(
+                              child: Text(
                                 "• DIY Stiching",
                                 style: Data.style3,
                               ),
@@ -84,7 +84,7 @@ class AtHomeScreen extends StatelessWidget {
                                   "https://www.youtube.com/channel/UCq4Hs_x6X-rgYtMjBh2ghpg"),
                             ),
                             TextButton(
-                              child: SelectableText(
+                              child: Text(
                                 "• Crewel Ghoul Embroidery",
                                 style: Data.style3,
                               ),
@@ -92,7 +92,7 @@ class AtHomeScreen extends StatelessWidget {
                                   "https://www.youtube.com/channel/UCWYZdV3Mn3KGkhJ0puzAt8A"),
                             ),
                             TextButton(
-                              child: SelectableText(
+                              child: Text(
                                 "• HandiWorks",
                                 style: Data.style3,
                               ),
@@ -100,7 +100,7 @@ class AtHomeScreen extends StatelessWidget {
                                   "https://www.youtube.com/channel/UCGjZJ0TN1PlJIEwJXKNlm6w"),
                             ),
                             TextButton(
-                              child: SelectableText(
+                              child: Text(
                                 "• Needle'n Threat",
                                 style: Data.style3,
                               ),
@@ -108,7 +108,7 @@ class AtHomeScreen extends StatelessWidget {
                                   launch("https://www.needlenthread.com/"),
                             ),
                             TextButton(
-                              child: SelectableText(
+                              child: Text(
                                 "• Pintangle ",
                                 style: Data.style3,
                               ),
@@ -167,7 +167,7 @@ class AtHomeScreen extends StatelessWidget {
                                           style: Data.style2,
                                         ),
                                         TextButton(
-                                          child: SelectableText(
+                                          child: Text(
                                             "• Interacting with Pinterest and creating a fashion board",
                                             style: Data.style3,
                                           ),
@@ -187,7 +187,7 @@ class AtHomeScreen extends StatelessWidget {
                                           style: Data.style3,
                                         ),
                                         TextButton(
-                                          child: SelectableText(
+                                          child: Text(
                                             "• BestDressed",
                                             style: Data.style3,
                                           ),
@@ -195,7 +195,7 @@ class AtHomeScreen extends StatelessWidget {
                                               "https://www.bestdressedstore.com/shopmycloset"),
                                         ),
                                         TextButton(
-                                          child: SelectableText(
+                                          child: Text(
                                             "• LainiOzark",
                                             style: Data.style3,
                                           ),
@@ -203,7 +203,7 @@ class AtHomeScreen extends StatelessWidget {
                                               "https://www.youtube.com/c/LainiOzark/playlists"),
                                         ),
                                         TextButton(
-                                          child: SelectableText(
+                                          child: Text(
                                             "• AlexaSunshine83",
                                             style: Data.style3,
                                           ),
@@ -211,7 +211,7 @@ class AtHomeScreen extends StatelessWidget {
                                               "https://www.youtube.com/channel/UCl5ZUlVYLmmnyiEcFRTFJtg"),
                                         ),
                                         TextButton(
-                                          child: SelectableText(
+                                          child: Text(
                                             "• Aditi Mayer",
                                             style: Data.style3,
                                           ),
@@ -219,7 +219,7 @@ class AtHomeScreen extends StatelessWidget {
                                               "https://www.adimay.com/about/"),
                                         ),
                                         TextButton(
-                                          child: SelectableText(
+                                          child: Text(
                                             "• EthicallyKate",
                                             style: Data.style3,
                                           ),
@@ -227,7 +227,7 @@ class AtHomeScreen extends StatelessWidget {
                                               "https://ethicallykate.com/"),
                                         ),
                                         TextButton(
-                                          child: SelectableText(
+                                          child: Text(
                                             "• SustainablyChic",
                                             style: Data.style3,
                                           ),

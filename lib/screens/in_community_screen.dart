@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen();
+class InCommunityScreen extends StatelessWidget {
+  InCommunityScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -42,103 +43,168 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SelectableText("Mission", style: Data.style),
-                      Data.textMission,
+                      SelectableText("In Your Community", style: Data.style),
+                      Data.comMission,
                     ],
                   ),
                 ),
               ),
             ),
-            SelectableText(Data.mission, style: Data.style),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 50.0, right: 50.0, bottom: 75.0, top: 30.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(0.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset(
-                              "assets/images/Pant.PNG",
-                              scale: 2.5,
-                            ),
-                            Container(
-                                width: MediaQuery.of(context).size.width / 6,
-                                child: Data.pantInfo),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset(
-                              "assets/images/Mushroom_Less.png",
-                              scale: 2.5,
-                            ),
-                            SizedBox(height: 10),
-                            Container(
-                                width: MediaQuery.of(context).size.width / 6,
-                                child: Data.mushInfo),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 10,
-                      ),
-                      borderRadius: BorderRadius.circular(0.0),
+                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SelectableText(
+                      Data.borrow,
+                      style: Data.style2,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 25.0, right: 25.0, top: 35.0, bottom: 25.0),
-                      child: Data.info1,
+                    Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Container(
+                          child: SelectableText("• ${Data.borrowInfo}",
+                              style: Data.style3)),
                     ),
-                    width: MediaQuery.of(context).size.width / 2.5,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/images/Shirt.png",
-                          scale: 2.5,
-                        ),
-                        Container(
-                            width: MediaQuery.of(context).size.width / 6,
-                            child: Data.shirtInfo),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            Row(
-              children: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "AtHome");
-                    },
-                    child: Text("At Home Page")),
-                TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "Community");
-                    },
-                    child: Text("Com Page")),
-              ],
-            )
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SelectableText(
+                      "Thrifting",
+                      style: Data.style2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                              // width: MediaQuery.of(context).size.width / 4,
+                              child: SelectableText("• ${Data.thriftingInfo}",
+                                  style: Data.style3)),
+                          Text(
+                            "• Goodwill",
+                            style: Data.style3,
+                          ),
+                          Text(
+                            "• Goodwill",
+                            style: Data.style3,
+                          ),
+                          Text(
+                            "• Goodwill",
+                            style: Data.style3,
+                          ),
+                          Text(
+                            "• Goodwill",
+                            style: Data.style3,
+                          ),
+                          Text("\n\n Online Platforms:", style: Data.style3),
+                          TextButton(
+                            child: Text(
+                              "• thredUp",
+                              style: Data.style3,
+                            ),
+                            onPressed: () => launch("https://www.thredup.com/"),
+                          ),
+                          TextButton(
+                            child: Text(
+                              "• Poshmark",
+                              style: Data.style3,
+                            ),
+                            onPressed: () => launch("https://poshmark.com/"),
+                          ),
+                          TextButton(
+                            child: Text(
+                              "• Depop",
+                              style: Data.style3,
+                            ),
+                            onPressed: () => launch("https://www.depop.com/"),
+                          ),
+                          TextButton(
+                            child: Text(
+                              "• Swap",
+                              style: Data.style3,
+                            ),
+                            onPressed: () => launch("https://www.swap.com/"),
+                          ),
+                          TextButton(
+                            child: Text(
+                              "• eBay",
+                              style: Data.style3,
+                            ),
+                            onPressed: () => launch("https://www.ebay.com/"),
+                          ),
+                          TextButton(
+                            child: Text(
+                              "• GoodFair",
+                              style: Data.style3,
+                            ),
+                            onPressed: () => launch("https://goodfair.com/"),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SelectableText(
+                      "Hand Me Downs",
+                      style: Data.style2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Container(
+                          // width: MediaQuery.of(context).size.width / 4,
+                          child: SelectableText("• ${Data.handInfo}",
+                              style: Data.style3)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SelectableText(
+                      "Club",
+                      style: Data.style2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Container(
+                          // width: MediaQuery.of(context).size.width / 4,
+                          child: SelectableText("• ${Data.clubInfo}",
+                              style: Data.style3)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -146,8 +212,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:web_app/screens/image_screen.dart';
@@ -325,4 +389,3 @@ class HomeScreen extends StatelessWidget {
 //     );
 //   }
 // }
-
