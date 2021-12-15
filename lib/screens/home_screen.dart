@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              "assets/images/Title_Image.jpeg",
+              "assets/images/Title_Image_Short.jpeg",
             ),
             Padding(
               padding: const EdgeInsets.only(
@@ -129,7 +129,7 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, "AtHome");
                 },
-                child: SelectableText("At Home Page"))
+                child: Text("At Home Page"))
           ],
         ),
       ),

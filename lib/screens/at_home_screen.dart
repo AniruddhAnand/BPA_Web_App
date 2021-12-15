@@ -23,7 +23,7 @@ class AtHomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              "assets/images/Title_Image.jpeg",
+              "assets/images/Title_Image_Short.jpeg",
             ),
             Padding(
               padding: const EdgeInsets.only(
