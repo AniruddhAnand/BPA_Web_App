@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         PopupMenuItem(
-          child: Text("Edit"),
+          child: Text("Fashion"),
         ),
         PopupMenuItem(
           child: Text("Delete"),
