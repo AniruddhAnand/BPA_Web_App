@@ -27,7 +27,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 90.0, right: 90.0, top: 90.0, bottom: 60.0),
+                  left: 90.0, right: 90.0, top: 90.0, bottom: 20.0),
               child: Container(
                 width: MediaQuery.of(context).size.width / 1.3,
                 decoration: BoxDecoration(
@@ -52,7 +52,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+                  top: 20.0, bottom: 20.0, left: 20, right: 20),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -65,7 +65,7 @@ class InCommunityScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(40.0),
                       child: Container(
-                          child: SelectableText("• ${Data.borrowInfo}",
+                          child: SelectableText("${Data.borrowInfo}",
                               style: Data.style3)),
                     ),
                   ],
@@ -74,7 +74,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+                  top: 20.0, bottom: 20.0, left: 20, right: 20),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -91,22 +91,22 @@ class InCommunityScreen extends StatelessWidget {
                         children: [
                           Container(
                               // width: MediaQuery.of(context).size.width / 4,
-                              child: SelectableText("• ${Data.thriftingInfo}",
+                              child: SelectableText("${Data.thriftingInfo}",
                                   style: Data.style3)),
                           Text(
                             "• Goodwill",
                             style: Data.style3,
                           ),
                           Text(
-                            "• Goodwill",
+                            "• Plato's Closet",
                             style: Data.style3,
                           ),
                           Text(
-                            "• Goodwill",
+                            "• Salvation Army",
                             style: Data.style3,
                           ),
                           Text(
-                            "• Goodwill",
+                            "• Savers",
                             style: Data.style3,
                           ),
                           Text("\n\n Online Platforms:", style: Data.style3),
@@ -161,7 +161,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+                  top: 20.0, bottom: 20.0, left: 20, right: 20),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -175,7 +175,7 @@ class InCommunityScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(40.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
-                          child: SelectableText("• ${Data.handInfo}",
+                          child: SelectableText("${Data.handInfo}",
                               style: Data.style3)),
                     ),
                   ],
@@ -184,7 +184,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+                  top: 20.0, bottom: 20.0, left: 20, right: 20),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -198,7 +198,7 @@ class InCommunityScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(40.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
-                          child: SelectableText("• ${Data.clubInfo}",
+                          child: SelectableText("${Data.clubInfo}",
                               style: Data.style3)),
                     ),
                   ],

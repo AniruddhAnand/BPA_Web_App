@@ -4,6 +4,21 @@
 import 'package:flutter/material.dart';
 
 class Data {
+  static String source = "Location of sourcing";
+  static String material = "Materials";
+  static String green = "Green Certifications";
+  static String look = "Look into the Corporate Social Responsibility (CSR)";
+  static String webs =
+      "Other Websites that can help with determining sustainability";
+  static String lookInfo =
+      "• The CSR is a company's policy of social accountability through philanthropy or sustainability which can easily found on their website\n• Look out for greenwashing and unaccountable claims, as well as concrete data on programs and initiatives";
+  static String webInfo = "";
+  static String greenInfo =
+      "• Fair Trade:\n  Ensures the fair treatment of workers and protection of the environment\n• EcoCert:\n  Ensures the proper organic agricultural practices of fabric materials\n• Global Recycled Standard: \n  Verifies the recyclability and eco-friendliness of the products\n• Good Weave: \n  Certifies that no child labor was used to make the product\n• Certified B corporation: \n  Certification that evaluates the company’s impact on society and the environment as a whole";
+  static String sourceInfo =
+      "• International: When the production of the company is located far away, the carbon emissions released from shipping increases\n• Local: Although purchasing local reduces carbon emissions, be aware of other factors of the product that may not be as eco-friendly";
+  static String matInfo =
+      "• Avoids synthetic fabrics and leather\n• Uses sustainable fibers like linen, hemp, silk, or Tencel OR upcycles from waste fabrics\n• Look for natural dyes of the following standards that mark sustainably produced products free from harmful chemicals usually found in textile dyes\n        • Global Organic Textile Standard (GOTS)\n        • OEKO-TEX Standard\n• Uses recyclable packaging";
   static String handInfo =
       "Another option for second hand clothing is through the people in your local community. Asking for hand-me-downs from your neighbors and family friends is a great way to help others reduce their contribution to unnecessary waste as well as providing a way to expand your wardrobe without participating in fast fashion consumerism. This is also a good way to minimize personal fashion waste by giving unwanted clothes to younger members of the community instead of donating or throwing them out which usually results in the build up of landfills. Another option to give away or receive clothing is through garage sales and estate sales. These local resale events are great opportunities to connect with your community and shop sustainably and inexpensively.";
   static String clubInfo =
@@ -17,11 +32,16 @@ class Data {
     style: style2,
     textAlign: TextAlign.center,
   );
+  static Text mission3 = Text(
+    "As a consumer it is our responsibility to research the companies and industries we are supporting with our economic purchases. Many good willed consumers will be tricked by the greenwashing of modern companies as they attempt to appeal to eco-conscious customers. Greenwashing is the disingenuous branding of a company to attempt to appear more sustainable, however these attempts usually consist of general and inconspicuous phrasing that have no actual evidence to back up their claim to be eco-friendly. This form of marketing is directly targeting consumers who are just starting to search for more sustainable options, therefore it is extremely important to know what to look for when judging a company on its sustainability and eco-consciousness.",
+    style: style2,
+    textAlign: TextAlign.center,
+  );
   static String borrow = "Borrow From Friends";
-  static String mkCloth = "Making clothes/sewing:";
+  static String mkCloth = "Making clothes/sewing";
   static String mkInfo =
       "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing item such as a simple top.\n\n          • Sustainable Fabrics:\n         • Recycled Cotton\n         • Organic Hemp\n         • Organic Linen\n         • Tencel (recycled wood)\n         • Econyl (recycled plastic)\n         • Qmonos (biodegradable synthetic spider silk)\n";
-  static String croch = "Crocheting/Knitting:";
+  static String croch = "Crocheting/Knitting";
   static String crochInfo =
       "Crocheting and knitting are both ways to create clothing pieces through yarn. Although the process of handmade clothing is more tedious and time consuming for an individual than just buying a knitted hat, it is more sustainable since an individual can choose to source their yarn sustainably and this yarn can also be reused over and over again.\n\nCrocheted/knitted clothing pieces: \nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out.\n         • Hats\n         • Scarves\n         • Sweaters\n         • Cardigans\n         • Tank Tops\n         • Tote Bags\n\n Sustainable Yarns:\nWhen shopping for yarn, look for these materials in the yarn composition.\n         • Silk\n         • Hemp\n         • Upcycled yarn \n         • Organic Cotton\n         • Tencel/Lyocell";
   static String doInfo =
@@ -31,9 +51,9 @@ class Data {
   static TextStyle style =
       const TextStyle(fontFamily: "CrimsonText", fontSize: 60);
   static TextStyle style2 =
-      const TextStyle(fontFamily: "CrimsonText", fontSize: 25);
+      const TextStyle(fontFamily: "CrimsonText", fontSize: 28);
   static TextStyle style3 =
-      const TextStyle(fontFamily: "CrimsonText", fontSize: 20);
+      const TextStyle(fontFamily: "CrimsonText", fontSize: 23);
   static String alt = "Alterations";
   static String altInfo =
       "Alterations are small adjustments to clothing pieces, usually utilizing sewing to improve the fit or style of the clothing piece. This increases the lifespan of the clothing since repairs can be made and sizing can be adjusted through alterations. The simplest forms of alterations include taking in the waist, hemming in excessive fabric, and repairing buttons/seams which can all be easily learned through a quick internet search.";

@@ -255,7 +255,7 @@ class AtHomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SelectableText(
-                      "Do It Yourself:",
+                      "Do It Yourself",
                       style: Data.style2,
                     ),
                     Container(

@@ -3,6 +3,7 @@ import 'package:web_app/screens/at_home_screen.dart';
 import 'package:web_app/screens/home_screen.dart';
 import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/screens/in_community_screen.dart';
+import 'package:web_app/screens/sustainable_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: {
         "AtHome": (context) => AtHomeScreen(),
-        "Community": (context) => InCommunityScreen()
+        "Community": (context) => InCommunityScreen(),
+        "Shopping": (context) => SustainabilityScreen(),
       },
     );
   }

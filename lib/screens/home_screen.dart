@@ -4,8 +4,32 @@ import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen();
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  showMenus(BuildContext context, double right, double left, double top,
+      double bottom) async {
+    await showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(left, top, right, bottom),
+      items: [
+        PopupMenuItem(
+          child: Text("View"),
+        ),
+        PopupMenuItem(
+          child: Text("Edit"),
+        ),
+        PopupMenuItem(
+          child: Text("Delete"),
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +45,65 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SafeArea(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MouseRegion(
+                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
+                    child: Container(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                                onPressed: () =>
+                                    Navigator.of(context).pushNamed("AtHome"),
+                                child: Text("Home"))
+                          ]),
+                    ),
+                  ),
+                  MouseRegion(
+                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
+                    child: Container(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                                onPressed: () =>
+                                    Navigator.of(context).pushNamed("AtHome"),
+                                child: Text("At Home"))
+                          ]),
+                    ),
+                  ),
+                  MouseRegion(
+                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
+                    child: Container(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                                onPressed: () => Navigator.of(context)
+                                    .pushNamed("Community"),
+                                child: Text("In Your Community"))
+                          ]),
+                    ),
+                  ),
+                  MouseRegion(
+                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
+                    child: Container(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                                onPressed: () =>
+                                    Navigator.of(context).pushNamed("Shopping"),
+                                child: Text("Shopping Sustainably"))
+                          ]),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Image.asset(
               "assets/images/Title_Image_Short.jpeg",
             ),
@@ -80,7 +163,7 @@ class HomeScreen extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Image.asset(
-                              "assets/images/Mushroom_Less.png",
+                              "assets/images/Mushroom_2_Less.png",
                               scale: 2.5,
                             ),
                             SizedBox(height: 10),
@@ -125,20 +208,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              children: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "AtHome");
-                    },
-                    child: Text("At Home Page")),
-                TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "Community");
-                    },
-                    child: Text("Com Page")),
-              ],
-            )
           ],
         ),
       ),
