@@ -12,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  ScrollController homeController =
+      ScrollController(initialScrollOffset: 0.0, keepScrollOffset: false);
   showMenus(BuildContext context, double right, double left, double top,
       double bottom) async {
     await showMenu(
@@ -19,7 +21,16 @@ class _HomeScreenState extends State<HomeScreen> {
       position: RelativeRect.fromLTRB(left, top, right, bottom),
       items: [
         PopupMenuItem(
-          child: Text("View"),
+          child: TextButton(
+            child: Text("Mission"),
+            onPressed: () {
+              homeController.animateTo(
+                500, // change 0.0 {double offset} to corresponding widget position
+                duration: Duration(seconds: 1),
+                curve: Curves.easeOut,
+              );
+            },
+          ),
         ),
         PopupMenuItem(
           child: Text("Edit"),
@@ -42,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           //    image: AssetImage("assets/images/Background.jpeg"),
           //  fit: BoxFit.cover)),
           /* child:*/ SingleChildScrollView(
+        controller: homeController,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
