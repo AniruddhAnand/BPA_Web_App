@@ -27,7 +27,7 @@ class AtHomeScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 90.0, right: 90.0, top: 90.0, bottom: 60.0),
+                  left: 90.0, right: 90.0, top: 90.0, bottom: 10.0),
               child: Container(
                 width: MediaQuery.of(context).size.width / 1.3,
                 decoration: BoxDecoration(
@@ -39,7 +39,7 @@ class AtHomeScreen extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      left: 25.0, right: 25.0, bottom: 20.0, top: 10.0),
+                      left: 25.0, right: 25.0, bottom: 20.0, top: 0.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -52,7 +52,7 @@ class AtHomeScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+                  top: 60.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -66,11 +66,12 @@ class AtHomeScreen extends StatelessWidget {
                         child: SelectableText(Data.stylingInfo,
                             style: Data.style3)),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(
+                            left: 60, right: 40, top: 40, bottom: 40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.embroidery}",
+                            SelectableText("${Data.embroidery}",
                                 style: Data.style2),
                             Container(
                                 child: SelectableText(Data.embInfo,
@@ -121,7 +122,7 @@ class AtHomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.alt}", style: Data.style2),
+                            SelectableText("${Data.alt}", style: Data.style2),
                             Container(
                                 child: SelectableText(Data.altInfo,
                                     style: Data.style3)),
@@ -132,7 +133,7 @@ class AtHomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.styling}",
+                            SelectableText("${Data.styling}",
                                 style: Data.style2),
                             Container(
                                 child: SelectableText(Data.styInfo,
@@ -141,9 +142,10 @@ class AtHomeScreen extends StatelessWidget {
                               height: 20,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 80),
+                              padding:
+                                  const EdgeInsets.only(left: 140, top: 20),
                               child: Container(
-                                width: MediaQuery.of(context).size.width / 1.3,
+                                width: MediaQuery.of(context).size.width / 1.6,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   border: Border.all(
@@ -248,7 +250,7 @@ class AtHomeScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+                  top: 0.0, bottom: 40.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -262,15 +264,31 @@ class AtHomeScreen extends StatelessWidget {
                         // width: MediaQuery.of(context).size.width / 4,
                         child: SelectableText(Data.doInfo, style: Data.style3)),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(
+                            left: 60, right: 60, top: 30, bottom: 60),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.croch}",
-                                style: Data.style2),
+                            SelectableText("${Data.croch}", style: Data.style2),
                             Container(
                                 //  width: MediaQuery.of(context).size.width / 4,
-                                child: SelectableText(Data.crochInfo,
+                                child: SelectableText.rich(TextSpan(children: [
+                              TextSpan(
+                                  text: Data.crochInfo, style: Data.style3),
+                              TextSpan(
+                                  text: "\nCrocheted/knitted clothing pieces:",
+                                  style: TextStyle(
+                                      fontFamily: "CrimsonText", fontSize: 28)),
+                              TextSpan(
+                                  text: Data.crochInfo2, style: Data.style3),
+                              TextSpan(
+                                  text: "\nSustainable Yarns:",
+                                  style: TextStyle(
+                                      fontFamily: "CrimsonText", fontSize: 28)),
+                            ]))),
+                            Container(
+                                //  width: MediaQuery.of(context).size.width / 4,
+                                child: SelectableText(Data.crochInfo3,
                                     style: Data.style3)),
                           ],
                         )),
@@ -279,12 +297,18 @@ class AtHomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.mkCloth}",
+                            SelectableText("${Data.mkCloth}",
                                 style: Data.style2),
                             Container(
                                 //  width: MediaQuery.of(context).size.width / 4,
-                                child: SelectableText(Data.mkInfo,
-                                    style: Data.style3)),
+                                child: SelectableText.rich(TextSpan(children: [
+                              TextSpan(text: Data.mkInfo, style: Data.style3),
+                              TextSpan(
+                                  text: "\n        Sustainable Fabrics:",
+                                  style: TextStyle(
+                                      fontFamily: "CrimsonText", fontSize: 28)),
+                              TextSpan(text: Data.mkInfo2, style: Data.style3),
+                            ]))),
                           ],
                         )),
                   ],

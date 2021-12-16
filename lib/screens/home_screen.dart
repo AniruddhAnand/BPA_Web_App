@@ -57,25 +57,15 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset(
+              "assets/images/Title_Image_Short.jpeg",
+            ),
             SafeArea(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   MouseRegion(
-                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pushNamed("AtHome"),
-                                child: Text("Home"))
-                          ]),
-                    ),
-                  ),
-                  MouseRegion(
-                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
+                    onHover: (event) => showMenus(context, 0, 100, 450, 500),
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -115,9 +105,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-            ),
-            Image.asset(
-              "assets/images/Title_Image_Short.jpeg",
             ),
             Padding(
               padding: const EdgeInsets.only(

@@ -40,10 +40,16 @@ class Data {
   static String borrow = "Borrow From Friends";
   static String mkCloth = "Making clothes/sewing";
   static String mkInfo =
-      "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing item such as a simple top.\n\n          • Sustainable Fabrics:\n         • Recycled Cotton\n         • Organic Hemp\n         • Organic Linen\n         • Tencel (recycled wood)\n         • Econyl (recycled plastic)\n         • Qmonos (biodegradable synthetic spider silk)\n";
+      "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing item such as a simple top.\n";
+  static String mkInfo2 =
+      "\n         • Recycled Cotton\n         • Organic Hemp\n         • Organic Linen\n         • Tencel (recycled wood)\n         • Econyl (recycled plastic)\n         • Qmonos (biodegradable synthetic spider silk)\n";
   static String croch = "Crocheting/Knitting";
   static String crochInfo =
-      "Crocheting and knitting are both ways to create clothing pieces through yarn. Although the process of handmade clothing is more tedious and time consuming for an individual than just buying a knitted hat, it is more sustainable since an individual can choose to source their yarn sustainably and this yarn can also be reused over and over again.\n\nCrocheted/knitted clothing pieces: \nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out.\n         • Hats\n         • Scarves\n         • Sweaters\n         • Cardigans\n         • Tank Tops\n         • Tote Bags\n\n Sustainable Yarns:\nWhen shopping for yarn, look for these materials in the yarn composition.\n         • Silk\n         • Hemp\n         • Upcycled yarn \n         • Organic Cotton\n         • Tencel/Lyocell";
+      "Crocheting and knitting are both ways to create clothing pieces through yarn. Although the process of handmade clothing is more tedious and time consuming for an individual than just buying a knitted hat, it is more sustainable since an individual can choose to source their yarn sustainably and this yarn can also be reused over and over again.\n\n";
+  static String crochInfo2 =
+      "\nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out.\n         • Hats\n         • Scarves\n         • Sweaters\n         • Cardigans\n         • Tank Tops\n         • Tote Bags\n\n";
+  static String crochInfo3 =
+      "When shopping for yarn, look for these materials in the yarn composition.\n         • Silk\n         • Hemp\n         • Upcycled yarn \n         • Organic Cotton\n         • Tencel/Lyocell";
   static String doInfo =
       "Handmade clothing avoids overproduction and excess shipping, reducing carbon emission from vehicles that transport these products. Using sustainable resources and reusing fabric minimizes waste and textile pollution.";
   static String styInfo =
@@ -51,7 +57,7 @@ class Data {
   static TextStyle style =
       const TextStyle(fontFamily: "CrimsonText", fontSize: 60);
   static TextStyle style2 =
-      const TextStyle(fontFamily: "CrimsonText", fontSize: 28);
+      const TextStyle(fontFamily: "CrimsonText", fontSize: 30);
   static TextStyle style3 =
       const TextStyle(fontFamily: "CrimsonText", fontSize: 23);
   static String alt = "Alterations";
@@ -79,7 +85,7 @@ class Data {
     style: style2,
   );
   static SelectableText pantInfo = SelectableText(
-    "A pair of jeans is estimated to release about 33.4kg of carbon dioxide through its lifespan which is the equivalent of the emissions of a 69 mile road trip in the average car",
+    "A pair of jeans is estimated to release about 33.4kg of carbon dioxide through its lifespan which is the equivalent of the emissions of a 69 mile road trip in the average car.",
     style: style3,
   );
   static SelectableText shirtInfo = SelectableText(
