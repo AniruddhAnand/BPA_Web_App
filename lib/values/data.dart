@@ -28,123 +28,125 @@ class Data {
   static Widget getMenuBar(
       BuildContext context, ScrollController homeController) {
     return SafeArea(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          MouseRegion(
-            onHover: (event) {
-              Data.showMenus(
-                  context,
-                  (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      4 * style3.fontSize!,
-                  (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      4 * style3.fontSize!,
-                  getTitleHeight(context) - homeController.offset + 35,
-                  0,
-                  homeController);
-            },
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () => Navigator.of(context).pushNamed("/"),
-                        child: getMenuText("Home"))
-                  ]),
+      child: SingleChildScrollView(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            MouseRegion(
+              onHover: (event) {
+                Data.showMenus(
+                    context,
+                    (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        4 * style3.fontSize!,
+                    (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        4 * style3.fontSize!,
+                    getTitleHeight(context) - homeController.offset + 35,
+                    0,
+                    homeController);
+              },
+              child: Container(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      TextButton(
+                          onPressed: () => Navigator.of(context).pushNamed("/"),
+                          child: getMenuText("Home"))
+                    ]),
+              ),
             ),
-          ),
-          MouseRegion(
-            onHover: (event) {
-              Data.showMenus(
-                  context,
-                  2 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      15 * style3.fontSize!,
-                  2 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      15 * style3.fontSize!,
-                  getTitleHeight(context) - homeController.offset + 35,
-                  0,
-                  homeController);
-            },
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pushNamed("AtHome"),
-                        child: getMenuText("At Home"))
-                  ]),
+            MouseRegion(
+              onHover: (event) {
+                Data.showMenus(
+                    context,
+                    2 *
+                            (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        15 * style3.fontSize!,
+                    2 *
+                            (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        15 * style3.fontSize!,
+                    getTitleHeight(context) - homeController.offset + 35,
+                    0,
+                    homeController);
+              },
+              child: Container(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      TextButton(
+                          onPressed: () =>
+                              Navigator.of(context).pushNamed("AtHome"),
+                          child: getMenuText("At Home"))
+                    ]),
+              ),
             ),
-          ),
-          MouseRegion(
-            onHover: (event) {
-              Data.showMenus(
-                  context,
-                  3 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      28 * style3.fontSize!,
-                  3 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      28 * style3.fontSize!,
-                  getTitleHeight(context) - homeController.offset + 35,
-                  0,
-                  homeController);
-            },
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pushNamed("Community"),
-                        child: getMenuText("In Your Community"))
-                  ]),
+            MouseRegion(
+              onHover: (event) {
+                Data.showMenus(
+                    context,
+                    3 *
+                            (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        28 * style3.fontSize!,
+                    3 *
+                            (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        28 * style3.fontSize!,
+                    getTitleHeight(context) - homeController.offset + 35,
+                    0,
+                    homeController);
+              },
+              child: Container(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      TextButton(
+                          onPressed: () =>
+                              Navigator.of(context).pushNamed("Community"),
+                          child: getMenuText("In Your Community"))
+                    ]),
+              ),
             ),
-          ),
-          MouseRegion(
-            onHover: (event) {
-              Data.showMenus(
-                  context,
-                  4 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      40 * style3.fontSize!,
-                  4 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      40 * style3.fontSize!,
-                  getTitleHeight(context) - homeController.offset + 35,
-                  0,
-                  homeController);
-            },
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pushNamed("Shopping"),
-                        child: getMenuText("Shopping Sustainably"))
-                  ]),
+            MouseRegion(
+              onHover: (event) {
+                Data.showMenus(
+                    context,
+                    4 *
+                            (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        40 * style3.fontSize!,
+                    4 *
+                            (MediaQuery.of(context).size.width -
+                                (style3.fontSize! * numCharsHome)) /
+                            5 +
+                        40 * style3.fontSize!,
+                    getTitleHeight(context) - homeController.offset + 35,
+                    0,
+                    homeController);
+              },
+              child: Container(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      TextButton(
+                          onPressed: () =>
+                              Navigator.of(context).pushNamed("Shopping"),
+                          child: getMenuText("Shopping Sustainably"))
+                    ]),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
