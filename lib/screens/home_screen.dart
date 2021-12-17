@@ -204,6 +204,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(left: 65, bottom: 40),
+              child: Column(
+                children: [
+                  Text("Contact Info", style: Data.style3),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/Logo.png",
+                        scale: 3,
+                      ),
+                      SelectableText(
+                        "Number: 214-404-6575\nEmail: stitches4sustainability@gmail.com",
+                        style: Data.style3,
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
