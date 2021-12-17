@@ -29,6 +29,7 @@ class Data {
       BuildContext context, ScrollController homeController) {
     return SafeArea(
       child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
