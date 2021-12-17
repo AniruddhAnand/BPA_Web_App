@@ -99,4 +99,31 @@ class Data {
   static String citation = "Citations ";
   static SelectableText citationWords = SelectableText(
       "(https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car.)\n(https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development )\n(https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/ )");
+  static showMenus(BuildContext context, double right, double left, double top,
+      double bottom, ScrollController homeController) async {
+    await showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(left, top, right, bottom),
+      items: [
+        PopupMenuItem(
+          child: TextButton(
+            child: Text("Mission"),
+            onPressed: () {
+              homeController.animateTo(
+                500, // change 0.0 {double offset} to corresponding widget position
+                duration: Duration(seconds: 1),
+                curve: Curves.easeOut,
+              );
+            },
+          ),
+        ),
+        PopupMenuItem(
+          child: Text("Fashion"),
+        ),
+        PopupMenuItem(
+          child: Text("Delete"),
+        ),
+      ],
+    );
+  }
 }

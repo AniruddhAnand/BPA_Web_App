@@ -5,9 +5,16 @@ import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class AtHomeScreen extends StatelessWidget {
+class AtHomeScreen extends StatefulWidget {
   AtHomeScreen();
 
+  @override
+  State<AtHomeScreen> createState() => _AtHomeScreenState();
+}
+
+class _AtHomeScreenState extends State<AtHomeScreen> {
+  ScrollController homeController =
+      ScrollController(initialScrollOffset: 0.0, keepScrollOffset: false);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +26,61 @@ class AtHomeScreen extends StatelessWidget {
           //    image: AssetImage("assets/images/Background.jpeg"),
           //  fit: BoxFit.cover)),
           /* child:*/ SingleChildScrollView(
+        controller: homeController,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
               "assets/images/Title_Image_Short.jpeg",
+            ),
+            SafeArea(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MouseRegion(
+                    onHover: (event) => Data.showMenus(
+                        context, 0, 100, 450, 500, homeController),
+                    child: Container(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                                onPressed: () =>
+                                    Navigator.of(context).pushNamed("AtHome"),
+                                child: Text("At Home"))
+                          ]),
+                    ),
+                  ),
+                  MouseRegion(
+                    onHover: (event) =>
+                        Data.showMenus(context, 0, 0, 0, 0, homeController),
+                    child: Container(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                                onPressed: () => Navigator.of(context)
+                                    .pushNamed("Community"),
+                                child: Text("In Your Community"))
+                          ]),
+                    ),
+                  ),
+                  MouseRegion(
+                    onHover: (event) =>
+                        Data.showMenus(context, 0, 0, 0, 0, homeController),
+                    child: Container(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                                onPressed: () =>
+                                    Navigator.of(context).pushNamed("Shopping"),
+                                child: Text("Shopping Sustainably"))
+                          ]),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(

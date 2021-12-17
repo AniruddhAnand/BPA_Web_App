@@ -14,33 +14,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   ScrollController homeController =
       ScrollController(initialScrollOffset: 0.0, keepScrollOffset: false);
-  showMenus(BuildContext context, double right, double left, double top,
-      double bottom) async {
-    await showMenu(
-      context: context,
-      position: RelativeRect.fromLTRB(left, top, right, bottom),
-      items: [
-        PopupMenuItem(
-          child: TextButton(
-            child: Text("Mission"),
-            onPressed: () {
-              homeController.animateTo(
-                500, // change 0.0 {double offset} to corresponding widget position
-                duration: Duration(seconds: 1),
-                curve: Curves.easeOut,
-              );
-            },
-          ),
-        ),
-        PopupMenuItem(
-          child: Text("Fashion"),
-        ),
-        PopupMenuItem(
-          child: Text("Delete"),
-        ),
-      ],
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   MouseRegion(
-                    onHover: (event) => showMenus(context, 0, 100, 450, 500),
+                    onHover: (event) => Data.showMenus(
+                        context, 0, 100, 450, 500, homeController),
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   MouseRegion(
-                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
+                    onHover: (event) =>
+                        Data.showMenus(context, 0, 0, 0, 0, homeController),
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   MouseRegion(
-                    onHover: (event) => showMenus(context, 0, 0, 0, 0),
+                    onHover: (event) =>
+                        Data.showMenus(context, 0, 0, 0, 0, homeController),
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
