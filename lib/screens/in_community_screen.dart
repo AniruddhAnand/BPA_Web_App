@@ -52,7 +52,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 20.0, left: 20, right: 20),
+                  top: 20.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -74,7 +74,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 20.0, left: 20, right: 20),
+                  top: 20.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -161,7 +161,7 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 20.0, left: 20, right: 20),
+                  top: 20.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -184,14 +184,14 @@ class InCommunityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 20.0, left: 20, right: 20),
+                  top: 20.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SelectableText(
-                      "Club",
+                      "Creating a Club",
                       style: Data.style2,
                     ),
                     Padding(

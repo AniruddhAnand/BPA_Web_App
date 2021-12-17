@@ -67,7 +67,7 @@ class AtHomeScreen extends StatelessWidget {
                             style: Data.style3)),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: 60, right: 40, top: 40, bottom: 40),
+                            left: 60, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -76,9 +76,14 @@ class AtHomeScreen extends StatelessWidget {
                             Container(
                                 child: SelectableText(Data.embInfo,
                                     style: Data.style3)),
+                            SelectableText(
+                              "\nTutorials and Guides:",
+                              style: TextStyle(
+                                  fontFamily: "CrimsonText", fontSize: 28),
+                            ),
                             TextButton(
                               child: Text(
-                                "• DIY Stiching",
+                                "•  DIY Stitching",
                                 style: Data.style3,
                               ),
                               onPressed: () => launch(
@@ -86,7 +91,7 @@ class AtHomeScreen extends StatelessWidget {
                             ),
                             TextButton(
                               child: Text(
-                                "• Crewel Ghoul Embroidery",
+                                "•  Crewel Ghoul Embroidery",
                                 style: Data.style3,
                               ),
                               onPressed: () => launch(
@@ -94,7 +99,7 @@ class AtHomeScreen extends StatelessWidget {
                             ),
                             TextButton(
                               child: Text(
-                                "• HandiWorks",
+                                "•  HandiWorks",
                                 style: Data.style3,
                               ),
                               onPressed: () => launch(
@@ -102,7 +107,7 @@ class AtHomeScreen extends StatelessWidget {
                             ),
                             TextButton(
                               child: Text(
-                                "• Needle'n Threat",
+                                "•  Needle'n Thread",
                                 style: Data.style3,
                               ),
                               onPressed: () =>
@@ -110,7 +115,7 @@ class AtHomeScreen extends StatelessWidget {
                             ),
                             TextButton(
                               child: Text(
-                                "• Pintangle ",
+                                "•  Pintangle ",
                                 style: Data.style3,
                               ),
                               onPressed: () => launch("https://pintangle.com/"),
@@ -118,7 +123,7 @@ class AtHomeScreen extends StatelessWidget {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -133,8 +138,7 @@ class AtHomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("${Data.styling}",
-                                style: Data.style2),
+                            SelectableText("Design", style: Data.style2),
                             Container(
                                 child: SelectableText(Data.styInfo,
                                     style: Data.style3)),
@@ -168,13 +172,27 @@ class AtHomeScreen extends StatelessWidget {
                                           "How to find your style",
                                           style: Data.style2,
                                         ),
-                                        TextButton(
-                                          child: Text(
-                                            "• Interacting with Pinterest and creating a fashion board",
-                                            style: Data.style3,
-                                          ),
-                                          onPressed: () => launch(
-                                              "https://www.pinterest.com/"),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "• Interacting with",
+                                              style: Data.style3,
+                                            ),
+                                            TextButton(
+                                              child: Text(
+                                                "Pinterest",
+                                                style: Data.style3,
+                                              ),
+                                              onPressed: () => launch(
+                                                  "https://www.pinterest.com/"),
+                                            ),
+                                            Text(
+                                              "and creating a fashion board",
+                                              style: Data.style3,
+                                            )
+                                          ],
                                         ),
                                         SelectableText(
                                           "• Styling around clothes that are already loved and owned",
@@ -248,6 +266,7 @@ class AtHomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Image.asset("assets/images/Flower_Image_Small.png"),
             Padding(
               padding: const EdgeInsets.only(
                   top: 0.0, bottom: 40.0, left: 65, right: 65),
@@ -265,7 +284,7 @@ class AtHomeScreen extends StatelessWidget {
                         child: SelectableText(Data.doInfo, style: Data.style3)),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: 60, right: 60, top: 30, bottom: 60),
+                            left: 60, right: 60, top: 30, bottom: 0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -276,7 +295,7 @@ class AtHomeScreen extends StatelessWidget {
                               TextSpan(
                                   text: Data.crochInfo, style: Data.style3),
                               TextSpan(
-                                  text: "\nCrocheted/knitted clothing pieces:",
+                                  text: "\nCrocheted/Knitted clothing pieces:",
                                   style: TextStyle(
                                       fontFamily: "CrimsonText", fontSize: 28)),
                               TextSpan(
@@ -304,7 +323,7 @@ class AtHomeScreen extends StatelessWidget {
                                 child: SelectableText.rich(TextSpan(children: [
                               TextSpan(text: Data.mkInfo, style: Data.style3),
                               TextSpan(
-                                  text: "\n        Sustainable Fabrics:",
+                                  text: "\n       Sustainable Fabrics:",
                                   style: TextStyle(
                                       fontFamily: "CrimsonText", fontSize: 28)),
                               TextSpan(text: Data.mkInfo2, style: Data.style3),

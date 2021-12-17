@@ -39,7 +39,7 @@ class SustainabilityScreen extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      left: 25.0, right: 25.0, bottom: 20.0, top: 10.0),
+                      left: 65.0, right: 65.0, bottom: 20.0, top: 10.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -52,7 +52,7 @@ class SustainabilityScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 60.0, left: 20, right: 20),
+                  top: 60.0, bottom: 0.0, left: 60, right: 60),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -68,11 +68,11 @@ class SustainabilityScreen extends StatelessWidget {
                             "Here’s a guide in researching on the sustainability and ethical factors of companies to help make more informed decisions on where to shop and which brands to support:",
                             style: Data.style3)),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.source}",
+                            SelectableText("${Data.source}",
                                 style: Data.style2),
                             Padding(
                               padding: const EdgeInsets.only(left: 60),
@@ -84,11 +84,11 @@ class SustainabilityScreen extends StatelessWidget {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.material}",
+                            SelectableText("${Data.material}",
                                 style: Data.style2),
                             Padding(
                               padding: const EdgeInsets.only(left: 60),
@@ -100,12 +100,11 @@ class SustainabilityScreen extends StatelessWidget {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.green}",
-                                style: Data.style2),
+                            SelectableText("${Data.green}", style: Data.style2),
                             Padding(
                               padding: const EdgeInsets.only(left: 60),
                               child: Container(
@@ -116,12 +115,11 @@ class SustainabilityScreen extends StatelessWidget {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.look}",
-                                style: Data.style2),
+                            SelectableText("${Data.look}", style: Data.style2),
                             Padding(
                               padding: const EdgeInsets.only(left: 60),
                               child: Container(
@@ -132,12 +130,11 @@ class SustainabilityScreen extends StatelessWidget {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SelectableText("• ${Data.webs}",
-                                style: Data.style2),
+                            SelectableText("${Data.webs}", style: Data.style2),
                             Padding(
                               padding: const EdgeInsets.only(left: 60),
                               child: Column(

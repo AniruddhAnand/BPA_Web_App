@@ -189,20 +189,41 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     width: MediaQuery.of(context).size.width / 2.5,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/images/Shirt.png",
-                          scale: 2.5,
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(0.0),
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              "assets/images/Shirt.PNG",
+                              scale: 2.5,
+                            ),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 6,
+                                child: Data.shirtInfo),
+                          ],
                         ),
-                        Container(
-                            width: MediaQuery.of(context).size.width / 6,
-                            child: Data.shirtInfo),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              "assets/images/Dress_Image.png",
+                              scale: 2.5,
+                            ),
+                            SizedBox(height: 10),
+                            Container(
+                                width: MediaQuery.of(context).size.width / 6,
+                                child: Data.mushInfo),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
