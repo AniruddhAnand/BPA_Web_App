@@ -4,6 +4,189 @@
 import 'package:flutter/material.dart';
 
 class Data {
+  static double ratio = 2224 / 7038.0;
+  static double getTitleWidth(BuildContext context) {
+    return MediaQuery.of(context).size.width * .85;
+  }
+
+  static double getTitleHeight(BuildContext context) {
+    return getTitleWidth(context) * ratio;
+  }
+
+  static Widget getTitleImage(BuildContext context) {
+    return GestureDetector(
+      child: Image.asset(
+        "assets/images/Title_Image_Short.jpeg",
+        width: Data.getTitleWidth(context),
+      ),
+      onTap: () => Navigator.of(context).popAndPushNamed("/"),
+    );
+  }
+
+  static int numCharsHome = 48;
+
+  static Widget getMenuBar(
+      BuildContext context, ScrollController homeController) {
+    return SafeArea(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          MouseRegion(
+            onHover: (event) {
+              Data.showMenus(
+                  context,
+                  (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      4 * style3.fontSize!,
+                  (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      4 * style3.fontSize!,
+                  getTitleHeight(context) - homeController.offset + 35,
+                  0,
+                  homeController);
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () => Navigator.of(context).pushNamed("/"),
+                        child: getMenuText("Home"))
+                  ]),
+            ),
+          ),
+          MouseRegion(
+            onHover: (event) {
+              Data.showMenus(
+                  context,
+                  2 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      15 * style3.fontSize!,
+                  2 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      15 * style3.fontSize!,
+                  getTitleHeight(context) - homeController.offset + 35,
+                  0,
+                  homeController);
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("AtHome"),
+                        child: getMenuText("At Home"))
+                  ]),
+            ),
+          ),
+          MouseRegion(
+            onHover: (event) {
+              Data.showMenus(
+                  context,
+                  3 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      28 * style3.fontSize!,
+                  3 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      28 * style3.fontSize!,
+                  getTitleHeight(context) - homeController.offset + 35,
+                  0,
+                  homeController);
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("Community"),
+                        child: getMenuText("In Your Community"))
+                  ]),
+            ),
+          ),
+          MouseRegion(
+            onHover: (event) {
+              Data.showMenus(
+                  context,
+                  4 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      40 * style3.fontSize!,
+                  4 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      40 * style3.fontSize!,
+                  getTitleHeight(context) - homeController.offset + 35,
+                  0,
+                  homeController);
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("Shopping"),
+                        child: getMenuText("Shopping Sustainably"))
+                  ]),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static Widget missionWidget(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+          left: MediaQuery.of(context).size.width * 1.7 / 13.5,
+          right: MediaQuery.of(context).size.width * 1.7 / 13.5,
+          top: 90.0,
+          bottom: 60.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width / 1.3,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.white,
+            width: 10,
+          ),
+          borderRadius: BorderRadius.circular(0.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(
+              left: 25.0, right: 25.0, bottom: 20.0, top: 10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SelectableText("Mission", style: Data.style),
+              Data.textMission,
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  static Widget getMenuText(String s) {
+    return Text(
+      s,
+      style: style3,
+    );
+  }
+
   static String source = "Location of sourcing";
   static String material = "Materials";
   static String green = "Green Certifications";

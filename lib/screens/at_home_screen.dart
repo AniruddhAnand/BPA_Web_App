@@ -30,16 +30,27 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset(
-              "assets/images/Title_Image_Short.jpeg",
+            GestureDetector(
+              child: Image.asset(
+                "assets/images/Title_Image_Short.jpeg",
+                height: 400,
+              ),
+              onTap: () => Navigator.of(context).popAndPushNamed("/"),
             ),
             SafeArea(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   MouseRegion(
-                    onHover: (event) => Data.showMenus(
-                        context, 0, 100, 450, 500, homeController),
+                    onHover: (event) {
+                      Data.showMenus(
+                          context,
+                          MediaQuery.of(context).size.width / 4,
+                          MediaQuery.of(context).size.width / 4,
+                          400 - homeController.offset,
+                          0,
+                          homeController);
+                    },
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -52,8 +63,13 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                     ),
                   ),
                   MouseRegion(
-                    onHover: (event) =>
-                        Data.showMenus(context, 0, 0, 0, 0, homeController),
+                    onHover: (event) => Data.showMenus(
+                        context,
+                        MediaQuery.of(context).size.width / 2,
+                        MediaQuery.of(context).size.width / 2,
+                        400 - homeController.offset,
+                        0,
+                        homeController),
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -66,8 +82,13 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                     ),
                   ),
                   MouseRegion(
-                    onHover: (event) =>
-                        Data.showMenus(context, 0, 0, 0, 0, homeController),
+                    onHover: (event) => Data.showMenus(
+                        context,
+                        3 * MediaQuery.of(context).size.width / 4,
+                        3 * MediaQuery.of(context).size.width / 4,
+                        400 - homeController.offset,
+                        0,
+                        homeController),
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,

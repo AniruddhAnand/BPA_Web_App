@@ -30,83 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset(
-              "assets/images/Title_Image_Short.jpeg",
-            ),
-            SafeArea(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  MouseRegion(
-                    onHover: (event) => Data.showMenus(
-                        context, 0, 100, 450, 500, homeController),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pushNamed("AtHome"),
-                                child: Text("At Home"))
-                          ]),
-                    ),
-                  ),
-                  MouseRegion(
-                    onHover: (event) =>
-                        Data.showMenus(context, 0, 0, 0, 0, homeController),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () => Navigator.of(context)
-                                    .pushNamed("Community"),
-                                child: Text("In Your Community"))
-                          ]),
-                    ),
-                  ),
-                  MouseRegion(
-                    onHover: (event) =>
-                        Data.showMenus(context, 0, 0, 0, 0, homeController),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pushNamed("Shopping"),
-                                child: Text("Shopping Sustainably"))
-                          ]),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 90.0, right: 90.0, top: 90.0, bottom: 60.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 1.3,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 10,
-                  ),
-                  borderRadius: BorderRadius.circular(0.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 25.0, right: 25.0, bottom: 20.0, top: 10.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SelectableText("Mission", style: Data.style),
-                      Data.textMission,
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            Data.getTitleImage(context),
+            Data.getMenuBar(context, homeController),
+            Data.missionWidget(context),
             SelectableText(Data.mission, style: Data.style),
             Padding(
               padding: const EdgeInsets.only(
