@@ -17,6 +17,11 @@ class Data {
       fontSize: 23,
       color: Colors.black,
       decoration: TextDecoration.underline);
+  static TextStyle styleButton2 = TextStyle(
+      fontFamily: "CrimsonText",
+      fontSize: 30,
+      color: Colors.black,
+      decoration: TextDecoration.underline);
 
   static double ratio = 2224 / 7038.0;
   static double getTitleWidth(BuildContext context) {
@@ -238,6 +243,8 @@ class Data {
     );
   }
 
+  static String brandsInfo =
+      "Here are some sustainable brands that we have already thoroughly researched and can verify their eco-consciousness:";
   static String dressInfo =
       "A single dress made from polyester is estimated by its carbon footprint to release a total of about 17 kg of carbon dioxide throughout its lifetime.";
 
@@ -251,7 +258,7 @@ class Data {
       "• The CSR is a company's policy of social accountability through philanthropy or sustainability which can easily found on their website\n• Look out for greenwashing and unaccountable claims, as well as concrete data on programs and initiatives";
   static String webInfo = "";
   static String greenInfo =
-      "• Fair Trade:\n  Ensures the fair treatment of workers and protection of the environment\n• EcoCert:\n  Ensures the proper organic agricultural practices of fabric materials\n• Global Recycled Standard: \n  Verifies the recyclability and eco-friendliness of the products\n• Good Weave: \n  Certifies that no child labor was used to make the product\n• Certified B corporation: \n  Certification that evaluates the company’s impact on society and the environment as a whole";
+      "• Fair Trade: Ensures the fair treatment of workers and protection of the environment\n• EcoCert: Ensures the proper organic agricultural practices of fabric materials\n• Global Recycled Standard: Verifies the recyclability and eco-friendliness of the products\n• Good Weave: Certifies that no child labor was used to make the product\n• Certified B corporation: Certification that evaluates the company’s impact on society and the environment as a whole";
   static String sourceInfo =
       "• International: When the production of the company is located far away, the carbon emissions released from shipping increases\n• Local: Although purchasing local reduces carbon emissions, be aware of other factors of the product that may not be as eco-friendly";
   static String matInfo =
@@ -259,25 +266,27 @@ class Data {
   static String handInfo =
       "Another option for second hand clothing is through the people in your local community. Asking for hand-me-downs from your neighbors and family friends is a great way to help others reduce their contribution to unnecessary waste as well as providing a way to expand your wardrobe without participating in fast fashion consumerism. This is also a good way to minimize personal fashion waste by giving unwanted clothes to younger members of the community instead of donating or throwing them out which usually results in the build up of landfills. Another option to give away or receive clothing is through garage sales and estate sales. These local resale events are great opportunities to connect with your community and shop sustainably and inexpensively.";
   static String clubInfo =
-      "A unique way to promote sustainability in your community is to create and participate in clubs that focus on educating the younger generations on how to adopt a sustainable lifestyle that takes care of the earth as well as the individual. You can join the Stitches for Sustainability family by creating your own club branch in your local school. Our organization focuses on fostering a community of like minded individuals who are seeking to find ways to stop participating in modern unsustainable consumerism. We host meetings discussing sustainability and the harmful effects of the fashion industry as well as providing sessions for needlework to teach members how to crochet/knit/sew their own clothing. This provides an open community that upholds each other and shares personal ideas to educate and encourage each member. If you are interested in starting your own Stitches for Sustainability club please contact us and we would be happy to help you organize and pitch your club to your local community.";
+      "A unique way to promote sustainability in your community is to create and participate in clubs that focus on educating the younger generations on how to adopt a sustainable lifestyle that takes care of the earth as well as the individual. You can join the Stitches for Sustainability family by creating your own club branch in your local school. Our organization focuses on fostering a community of like minded individuals who are seeking ways to stop participating in modern unsustainable consumerism. We host meetings discussing sustainability and the harmful effects of the fashion industry as well as providing sessions for needlework to teach members how to crochet/knit/sew their own clothing. This provides an open community that upholds each other and shares personal ideas to educate and encourage each member. If you are interested in starting your own Stitches for Sustainability club please contact us and we would be happy to help you organize and pitch your club to your local community.";
   static String thriftingInfo =
       "Thrifting is the purchasing of used clothing at discounted prices. Thrifting is a way to recycle used clothing, reducing clothing waste that would otherwise be burnt, shredded, or dumped in landfills contributing to immense carbon emissions and landfill pollution. Thrifting can be appealing to consumers who may not be as financially privileged to afford sustainable brands and eco friendly options. These consumers may be enticed by the dramatically cheap prices of fast fashion, but thrifting is a more sustainable and inexpensive option for all consumers regardless of economic circumstances. Thrifting is a great and accessible way to shop for trends without contributing to carbon emissions from the highly manufactured fashion industry. Local thrift stores provide a place to donate and purchase second hand clothing while online thrift store platforms provide a larger variety of styles and options on a global scale.\n\nThrift Store Chains:";
   static String borrowInfo =
       "Before purchasing clothing goods, it can be a good idea to check if someone in your social circle already owns the product, so that you can try it on and evaluate if it would be a sustainable choice in your personal closet. This would allow an opportunity for you to consider it as an actual physical addition to your wardrobe and help inform your purchasing decision. Additionally there is a chance that your friend is willing to gift or resell it to you, which is a much more sustainable exchange than conventional shopping. ";
   static SelectableText comMission = SelectableText(
-    "Ways to practice sustainability in your community and interact with others to help increase local efforts towards eco-friendly fashion.",
+    "Ways to practice sustainability in your community and interact with others to help increase local efforts towards eco-friendly fashion.+",
     style: style3,
     textAlign: TextAlign.center,
   );
   static SelectableText mission3 = SelectableText(
-    "As a consumer it is our responsibility to research the companies and industries we are supporting with our economic purchases. Many good willed consumers will be tricked by the greenwashing of modern companies as they attempt to appeal to eco-conscious customers. Greenwashing is the disingenuous branding of a company to attempt to appear more sustainable, however these attempts usually consist of general and inconspicuous phrasing that have no actual evidence to back up their claim to be eco-friendly. This form of marketing is directly targeting consumers who are just starting to search for more sustainable options, therefore it is extremely important to know what to look for when judging a company on its sustainability and eco-consciousness.",
+    "As consumers, it is our responsibility to research the companies and industries we are supporting with our economic purchases and keep those companies and industries accountable.",
     style: style3,
     textAlign: TextAlign.center,
   );
+  static String susInfo =
+      "Many good willed consumers will be tricked by the greenwashing of modern companies as they attempt to appeal to eco-conscious customers. Greenwashing is the disingenuous branding of a company to attempt to appear more sustainable, however these attempts usually consist of general and inconspicuous phrasing that have no actual evidence to back up their claim of being eco-friendly. This form of marketing is directly targeting consumers who are starting to search for more sustainable options, therefore it is extremely important to know what to look for when judging a company on its sustainability and eco-consciousness.\nHere’s a guide in researching on the sustainability and ethical factors of companies to help make more informed decisions on where to shop and which brands to support:";
   static String borrow = "Borrow From Friends";
   static String mkCloth = "Making clothes/sewing";
   static String mkInfo =
-      "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing item such as a simple top.\n";
+      "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article of clothing since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally, the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing piece such as a simple top.\n";
   static String mkInfo2 =
       "\n         • Recycled Cotton\n         • Organic Hemp\n         • Organic Linen\n         • Tencel (recycled wood)\n         • Econyl (recycled plastic)\n         • Qmonos (biodegradable synthetic spider silk)\n";
   static String croch = "Crocheting/Knitting";
@@ -286,14 +295,14 @@ class Data {
   static String crochInfo2 =
       "\nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out.\n         • Hats\n         • Scarves\n         • Sweaters\n         • Cardigans\n         • Tank Tops\n         • Tote Bags\n\n";
   static String crochInfo3 =
-      "When shopping for yarn, look for these materials in the yarn composition.\n         • Silk\n         • Hemp\n         • Upcycled yarn \n         • Organic Cotton\n         • Tencel/Lyocell";
+      "When shopping for yarn, look for these materials in the yarn composition:\n         • Silk\n         • Hemp\n         • Upcycled yarn \n         • Organic Cotton\n         • Tencel/Lyocell(recycled plant pulp)";
   static String doInfo =
       "Handmade clothing avoids overproduction and excess shipping, reducing carbon emission from vehicles that transport these products. Using sustainable resources and reusing fabric minimizes waste and textile pollution.";
   static String styInfo =
-      "The most crucial skill for sustaining an environmentally friendly wardrobe is the ability to style and actually wear your clothing long term in order to avoid purchasing unnecessary clothing and creating excessive carbon emissions and pollution. Styling clothes is the key factor in reusing the same clothes for years even as fashion trends change. This ability relies on creativity and well thought out initial purchases of clothing, usually of pieces that are versatile and can be worn in many different outfits. Instead of browsing and window shopping for trends, developing your own style can help you make more cautious and conservative shopping choices. ";
+      "The most crucial skill for sustaining an environmentally friendly wardrobe is the ability to style and actually wear your clothing long term in order to avoid purchasing unnecessary clothing that creates excessive carbon emissions and pollution. Styling clothes is the key factor in reusing the same clothes for years even as fashion trends change. This ability relies on creativity and well thought out initial purchases of clothing, usually of pieces that are versatile and able to be worn in many different outfits. Instead of browsing and window shopping for trends, developing your own style can help you make more cautious and conservative shopping choices.";
   static String alt = "Alterations";
   static String altInfo =
-      "Alterations are small adjustments to clothing pieces, usually utilizing sewing to improve the fit or style of the clothing piece. This increases the lifespan of the clothing since repairs can be made and sizing can be adjusted through alterations. The simplest forms of alterations include taking in the waist, hemming in excessive fabric, and repairing buttons/seams which can all be easily learned through a quick internet search.";
+      "Alterations are small adjustments to clothing pieces which usually utilize sewing to improve the fit or style of the clothing piece. This increases the lifespan of the clothing since repairs can be made and sizing can be adjusted through alterations. The simplest forms of alterations include taking in the waist, hemming in excessive fabric, and repairing buttons or seams, which can all be easily learned through a quick internet search.";
   static String styling = "Styling";
   static String embroidery = "Embroidery";
   static String embInfo =
@@ -307,7 +316,7 @@ class Data {
     textAlign: TextAlign.center,
   );
   static SelectableText textMission = SelectableText(
-    "Our mission is to help participants of the fashion industry navigate their way through the complicated decisions in their consumption of clothing. We seek to educate them on sustainability and provide them with ways to produce their own products, avoiding the industry’s mass production of clothes and harmful impacts on the environment, most especially carbon emissions.",
+    "Our purpose is to help participants of the fashion industry navigate their way through the complicated decisions in their consumption of clothing. We seek to educate them on sustainability and provide them with ways to produce their own products, avoiding the industry’s mass production of clothes and harmful impacts on the environment, most especially carbon emissions.",
     style: style3,
     textAlign: TextAlign.center,
   );
@@ -320,7 +329,7 @@ class Data {
     style: style3,
   );
   static SelectableText shirtInfo = SelectableText(
-    "Textile manufacturing released around 1.2 billion tons of carbon dioxide in 2015, which is more than the combined emissions of all international flights, maritime, and shipping.",
+    "Textile manufacturing released around 1.2 billion tons of carbon dioxide in 2015, which is more than the combined emissions of all international flights, maritime, and shipping in the same year.",
     style: style3,
   );
   static SelectableText mushInfo = SelectableText(

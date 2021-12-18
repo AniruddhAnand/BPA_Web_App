@@ -178,6 +178,217 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 40.0, bottom: 0.0, left: 65, right: 65),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SelectableText(
+                      "List of Sustainable Brands",
+                      style: Data.style2,
+                    ),
+                    Container(
+                        // width: MediaQuery.of(context).size.width / 4,
+                        child: SelectableText("${Data.brandsInfo}",
+                            style: Data.style3)),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 60, right: 40, top: 40, bottom: 0.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Boody(\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () => launch("https://boodywear.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Boody creates soft, comfortable, everyday essentials using organic bamboo as their main material. Additionally their products are Oeko-Tex Standard certified and minimize textile waste using low-waste cutting techniques.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "CHNGE(\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () => launch("https://chnge.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "CHNGE is a bold new brand determined to take a stand for change, socially and environmentally. They ensure that their clothing is carbon neutral, meaning that all carbon emissions are offset through their protection of trees. All of their material is also Global Textile Standard certified cotton while their packaging is 100% recyclable.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Honest Basics(\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () =>
+                                launch("https://www.honest-basics.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Honest Basics is a European based company that uses only sustainably sourced materials like Global Textile standard certified cotton. Additionally they only use climate neutral shipping of their products which is factored into the price of their clothing.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Mighty Good Basics(\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () =>
+                                launch("https://mightygoodbasics.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Mighty Good Basics is a clothing company that focuses on producing the most ethically sourced basics for both women and men. This store uses Global Textile Standard certified cotton and textile dyes to create low impact clothing and reduce pollution and water waste.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Swedish Stockings(\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () =>
+                                launch("https://swedishstockings.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Swedish Stockings produces tights, socks, and other forms of pantyhoses for women around the world. This company uses eco-friendly and recycled materials as well as their offcut fabrics. They deploy renewable energy sources for production to reduce their climate impact and have zero-waste factories",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "House of Sunny(\$\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () =>
+                                launch("https://www.houseofsunny.co.uk/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "As a trendy online brand, House of Sunny is actively working against fast fashion by reusing water consumption, using recycled materials, and selling extra products on Depop. Additionally they only produce two seasonal collections per year to avoid mass production and use forms of shipping that are less impactful on the environment.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Ninety Percent(\$\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () =>
+                                launch("https://ninetypercent.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Ninety Percent designs everyday essentials that are sustainably sourced and versatile enough to be staples in anyone’s closet. They use Global Textile Standard certified cotton, Tencel, EcoVero, and other sustainable synthetic fibers to make their products.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Boyish(\$\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () => launch("https://www.boyish.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Boyish is a sustainable denim company as well as a consignment shop to encourage the reusing of unwanted clothes. All of their products are vegan, made of organic cotton, recycled fabrics, and Tencel, dyed with natural dyes, and use recycled water to wash the products.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Gaâla(\$\$\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () => launch("https://gaala.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Gaâla uses sustainable fabrics such as linen, crepe silks, wool, silk, cotton, and Tencel. Along with these they also repurpose deadstock clothing in small-scale workshops by individual tailors to avoid excess production. They focus on timeless high fashion designs, handcrafted by each tailor.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "Navygrey(\$\$\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () => launch("https://navygrey.co/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "Navygrey primarily focuses on knitwear and classic clothing pieces for women. They use traceable raw materials certified by the Responsible Wool Standard, organic textile dyes, and purify water used for dyeing so that it can be reused. Additionally they produce in limited quantities to avoid overproduction and excess waste.",
+                                style: Data.style3),
+                          ),
+                          TextButton(
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style2),
+                              TextSpan(
+                                text: "The Odder Side(\$\$\$)",
+                                style: Data.styleButton2,
+                              )
+                            ])),
+                            onPressed: () =>
+                                launch("https://theodderside.com/"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60.0),
+                            child: SelectableText(
+                                "The Odder Side focuses on simple, effortless designs to make women feel empowered while protecting the Earth. Their production is completely plastic free and they are certified by the Oeko-Tex Standard, Global Organic Textile Standard, and LENZING Standard.",
+                                style: Data.style3),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             Data.footer(context)
           ],
         ),

@@ -45,12 +45,13 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                       Data.borrow,
                       style: Data.style2,
                     ),
-                    //  Padding(
-                    //    padding: const EdgeInsets.all(40.0),
-                    /*  child: */ Container(
-                        child: SelectableText("${Data.borrowInfo}",
-                            style: Data.style3)),
-                    //  ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 60, right: 40, top: 40, bottom: 0.0),
+                      child: Container(
+                          child: SelectableText("${Data.borrowInfo}",
+                              style: Data.style3)),
+                    ),
                   ],
                 ),
               ),
