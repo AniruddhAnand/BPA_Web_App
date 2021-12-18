@@ -1,9 +1,23 @@
 // ignore_for_file: prefer_const_constructors
 //g
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class Data {
+  static TextStyle style =
+      TextStyle(fontFamily: "CrimsonText", fontSize: 60, color: Colors.black);
+  static TextStyle style2 =
+      TextStyle(fontFamily: "CrimsonText", fontSize: 30, color: Colors.black);
+  static TextStyle style3 =
+      TextStyle(fontFamily: "CrimsonText", fontSize: 23, color: Colors.black);
+  static TextStyle styleButton = TextStyle(
+      fontFamily: "CrimsonText",
+      fontSize: 23,
+      color: Colors.black,
+      decoration: TextDecoration.underline);
+
   static double ratio = 2224 / 7038.0;
   static double getTitleWidth(BuildContext context) {
     return MediaQuery.of(context).size.width * .85;
@@ -27,132 +41,142 @@ class Data {
 
   static Widget getMenuBar(
       BuildContext context, ScrollController homeController) {
+    style3 = new TextStyle(
+        fontFamily: style3.fontFamily,
+        fontSize: MediaQuery.of(context).size.width < 700
+            ? style3.fontSize! * .5
+            : style3.fontSize);
+    // print(MediaQuery.of(context).size.width);
     return SafeArea(
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            MouseRegion(
-              onHover: (event) {
-                Data.showMenus(
-                    context,
-                    (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        4 * style3.fontSize!,
-                    (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        4 * style3.fontSize!,
-                    getTitleHeight(context) - homeController.offset + 35,
-                    0,
-                    homeController);
-              },
-              child: Container(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      TextButton(
-                          onPressed: () => Navigator.of(context).pushNamed("/"),
-                          child: getMenuText("Home"))
-                    ]),
-              ),
+      // child: SingleChildScrollView(
+      //  scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          MouseRegion(
+            // onExit: (event) => Navigator.of(context).pop(),
+            onHover: (event) {
+              // Navigator.of(context).pushNamed("/");
+              // Data.showMenus(
+              //     context,
+              //     (MediaQuery.of(context).size.width -
+              //                 (style3.fontSize! * numCharsHome)) /
+              //             5 +
+              //         4 * style3.fontSize!,
+              //     (MediaQuery.of(context).size.width -
+              //                 (style3.fontSize! * numCharsHome)) /
+              //             5 +
+              //         4 * style3.fontSize!,
+              //     getTitleHeight(context) - homeController.offset + 35,
+              //     0,
+              //     homeController);
+              //sho
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () => Navigator.of(context).pushNamed("/"),
+                        child: getMenuText("Home"))
+                  ]),
             ),
-            MouseRegion(
-              onHover: (event) {
-                Data.showMenus(
-                    context,
-                    2 *
-                            (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        15 * style3.fontSize!,
-                    2 *
-                            (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        15 * style3.fontSize!,
-                    getTitleHeight(context) - homeController.offset + 35,
-                    0,
-                    homeController);
-              },
-              child: Container(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      TextButton(
-                          onPressed: () =>
-                              Navigator.of(context).pushNamed("AtHome"),
-                          child: getMenuText("At Home"))
-                    ]),
-              ),
+          ),
+          MouseRegion(
+            onHover: (event) {
+              // Navigator.of(context).pushNamed("AtHome");
+              //     Data.showMenus(
+              //         context,
+              //         2 *
+              //                 (MediaQuery.of(context).size.width -
+              //                     (style3.fontSize! * numCharsHome)) /
+              //                 5 +
+              //             15 * style3.fontSize!,
+              //         2 *
+              //                 (MediaQuery.of(context).size.width -
+              //                     (style3.fontSize! * numCharsHome)) /
+              //                 5 +
+              //             15 * style3.fontSize!,
+              //         getTitleHeight(context) - homeController.offset + 35,
+              //         0,
+              //         homeController);
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("AtHome"),
+                        child: getMenuText("At Home"))
+                  ]),
             ),
-            MouseRegion(
-              onHover: (event) {
-                Data.showMenus(
-                    context,
-                    3 *
-                            (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        28 * style3.fontSize!,
-                    3 *
-                            (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        28 * style3.fontSize!,
-                    getTitleHeight(context) - homeController.offset + 35,
-                    0,
-                    homeController);
-              },
-              child: Container(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      TextButton(
-                          onPressed: () =>
-                              Navigator.of(context).pushNamed("Community"),
-                          child: getMenuText("In Your Community"))
-                    ]),
-              ),
+          ),
+          MouseRegion(
+            onHover: (event) {
+              //     Data.showMenus(
+              //         context,
+              //         3 *
+              //                 (MediaQuery.of(context).size.width -
+              //                     (style3.fontSize! * numCharsHome)) /
+              //                 5 +
+              //             28 * style3.fontSize!,
+              //         3 *
+              //                 (MediaQuery.of(context).size.width -
+              //                     (style3.fontSize! * numCharsHome)) /
+              //                 5 +
+              //             28 * style3.fontSize!,
+              //         getTitleHeight(context) - homeController.offset + 35,
+              //         0,
+              //         homeController);
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("Community"),
+                        child: getMenuText("In Your Community"))
+                  ]),
             ),
-            MouseRegion(
-              onHover: (event) {
-                Data.showMenus(
-                    context,
-                    4 *
-                            (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        40 * style3.fontSize!,
-                    4 *
-                            (MediaQuery.of(context).size.width -
-                                (style3.fontSize! * numCharsHome)) /
-                            5 +
-                        40 * style3.fontSize!,
-                    getTitleHeight(context) - homeController.offset + 35,
-                    0,
-                    homeController);
-              },
-              child: Container(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      TextButton(
-                          onPressed: () =>
-                              Navigator.of(context).pushNamed("Shopping"),
-                          child: getMenuText("Shopping Sustainably"))
-                    ]),
-              ),
+          ),
+          MouseRegion(
+            onHover: (event) {
+              // Data.showMenus(
+              //     context,
+              //     4 *
+              //             (MediaQuery.of(context).size.width -
+              //                 (style3.fontSize! * numCharsHome)) /
+              //             5 +
+              //         40 * style3.fontSize!,
+              //     4 *
+              //             (MediaQuery.of(context).size.width -
+              //                 (style3.fontSize! * numCharsHome)) /
+              //             5 +
+              //         40 * style3.fontSize!,
+              //     getTitleHeight(context) - homeController.offset + 35,
+              //     0,
+              //     homeController);
+            },
+            child: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("Shopping"),
+                        child: getMenuText("Shopping Sustainably"))
+                  ]),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
+      //  ),
     );
   }
 
-  static Widget missionWidget(BuildContext context) {
+  static Widget missionWidget(BuildContext context, String one, Widget two) {
     return Padding(
       padding: EdgeInsets.only(
           left: MediaQuery.of(context).size.width * 1.7 / 13.5,
@@ -174,8 +198,9 @@ class Data {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SelectableText("Mission", style: Data.style),
-              Data.textMission,
+              SelectableText(one, style: Data.style),
+              two
+              // Data.textMission,
             ],
           ),
         ),
@@ -186,9 +211,35 @@ class Data {
   static Widget getMenuText(String s) {
     return Text(
       s,
-      style: style3,
+      style: styleButton,
     );
   }
+
+  static Widget footer(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(left: 65, bottom: 40),
+      child: Column(
+        children: [
+          Text("Contact Info", style: Data.style3),
+          Row(
+            children: [
+              Image.asset(
+                "assets/images/Logo.png",
+                scale: 3,
+              ),
+              SelectableText(
+                "Number: 214-404-6575\nEmail: stitches4sustainability@gmail.com",
+                style: Data.style3,
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  static String dressInfo =
+      "A single dress made from polyester is estimated by its carbon footprint to release a total of about 17 kg of carbon dioxide throughout its lifetime.";
 
   static String source = "Location of sourcing";
   static String material = "Materials";
@@ -213,14 +264,14 @@ class Data {
       "Thrifting is the purchasing of used clothing at discounted prices. Thrifting is a way to recycle used clothing, reducing clothing waste that would otherwise be burnt, shredded, or dumped in landfills contributing to immense carbon emissions and landfill pollution. Thrifting can be appealing to consumers who may not be as financially privileged to afford sustainable brands and eco friendly options. These consumers may be enticed by the dramatically cheap prices of fast fashion, but thrifting is a more sustainable and inexpensive option for all consumers regardless of economic circumstances. Thrifting is a great and accessible way to shop for trends without contributing to carbon emissions from the highly manufactured fashion industry. Local thrift stores provide a place to donate and purchase second hand clothing while online thrift store platforms provide a larger variety of styles and options on a global scale.\n\nThrift Store Chains:";
   static String borrowInfo =
       "Before purchasing clothing goods, it can be a good idea to check if someone in your social circle already owns the product, so that you can try it on and evaluate if it would be a sustainable choice in your personal closet. This would allow an opportunity for you to consider it as an actual physical addition to your wardrobe and help inform your purchasing decision. Additionally there is a chance that your friend is willing to gift or resell it to you, which is a much more sustainable exchange than conventional shopping. ";
-  static Text comMission = Text(
+  static SelectableText comMission = SelectableText(
     "Ways to practice sustainability in your community and interact with others to help increase local efforts towards eco-friendly fashion.",
-    style: style2,
+    style: style3,
     textAlign: TextAlign.center,
   );
-  static Text mission3 = Text(
+  static SelectableText mission3 = SelectableText(
     "As a consumer it is our responsibility to research the companies and industries we are supporting with our economic purchases. Many good willed consumers will be tricked by the greenwashing of modern companies as they attempt to appeal to eco-conscious customers. Greenwashing is the disingenuous branding of a company to attempt to appear more sustainable, however these attempts usually consist of general and inconspicuous phrasing that have no actual evidence to back up their claim to be eco-friendly. This form of marketing is directly targeting consumers who are just starting to search for more sustainable options, therefore it is extremely important to know what to look for when judging a company on its sustainability and eco-consciousness.",
-    style: style2,
+    style: style3,
     textAlign: TextAlign.center,
   );
   static String borrow = "Borrow From Friends";
@@ -240,12 +291,6 @@ class Data {
       "Handmade clothing avoids overproduction and excess shipping, reducing carbon emission from vehicles that transport these products. Using sustainable resources and reusing fabric minimizes waste and textile pollution.";
   static String styInfo =
       "The most crucial skill for sustaining an environmentally friendly wardrobe is the ability to style and actually wear your clothing long term in order to avoid purchasing unnecessary clothing and creating excessive carbon emissions and pollution. Styling clothes is the key factor in reusing the same clothes for years even as fashion trends change. This ability relies on creativity and well thought out initial purchases of clothing, usually of pieces that are versatile and can be worn in many different outfits. Instead of browsing and window shopping for trends, developing your own style can help you make more cautious and conservative shopping choices. ";
-  static TextStyle style =
-      const TextStyle(fontFamily: "CrimsonText", fontSize: 60);
-  static TextStyle style2 =
-      const TextStyle(fontFamily: "CrimsonText", fontSize: 30);
-  static TextStyle style3 =
-      const TextStyle(fontFamily: "CrimsonText", fontSize: 23);
   static String alt = "Alterations";
   static String altInfo =
       "Alterations are small adjustments to clothing pieces, usually utilizing sewing to improve the fit or style of the clothing piece. This increases the lifespan of the clothing since repairs can be made and sizing can be adjusted through alterations. The simplest forms of alterations include taking in the waist, hemming in excessive fabric, and repairing buttons/seams which can all be easily learned through a quick internet search.";
@@ -258,12 +303,12 @@ class Data {
   static String mission = "How Fashion Impacts Our Environment";
   static SelectableText mission2 = SelectableText(
     "Things you can do as an individual in the fashion industry to create and maintain a sustainable closet to reduce carbon emissions.",
-    style: style2,
+    style: style3,
     textAlign: TextAlign.center,
   );
   static SelectableText textMission = SelectableText(
     "Our mission is to help participants of the fashion industry navigate their way through the complicated decisions in their consumption of clothing. We seek to educate them on sustainability and provide them with ways to produce their own products, avoiding the industry’s mass production of clothes and harmful impacts on the environment, most especially carbon emissions.",
-    style: style2,
+    style: style3,
     textAlign: TextAlign.center,
   );
   static SelectableText info1 = SelectableText(
@@ -285,31 +330,47 @@ class Data {
   static String citation = "Citations ";
   static SelectableText citationWords = SelectableText(
       "(https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car.)\n(https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development )\n(https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/ )");
-  static showMenus(BuildContext context, double right, double left, double top,
-      double bottom, ScrollController homeController) async {
-    await showMenu(
-      context: context,
-      position: RelativeRect.fromLTRB(left, top, right, bottom),
-      items: [
-        PopupMenuItem(
-          child: TextButton(
-            child: Text("Mission"),
-            onPressed: () {
-              homeController.animateTo(
-                500, // change 0.0 {double offset} to corresponding widget position
-                duration: Duration(seconds: 1),
-                curve: Curves.easeOut,
-              );
-            },
-          ),
-        ),
-        PopupMenuItem(
-          child: Text("Fashion"),
-        ),
-        PopupMenuItem(
-          child: Text("Delete"),
-        ),
-      ],
-    );
-  }
+  // static showMenus(
+  //   BuildContext context,
+  //   double right,
+  //   double left,
+  //   double top,
+  //   double bottom,
+  //   ScrollController homeController,
+  // ) async {
+  //   Navigator.of(context).pushNamed("AtHome");
+  //   List<PopupMenuItem> atHome = [
+  //     PopupMenuItem(
+  //       child: TextButton(
+  //         child: Text("Styling"),
+  //         onPressed: () {
+  //           homeController.jumpTo(
+  //             800, // change 0.0 {double offset} to corresponding widget position
+  //             //  duration: Duration(seconds: 1),
+  //             // curve: Curves.easeOut,
+  //           );
+  //           Navigator.pop(context);
+  //         },
+  //       ),
+  //     ),
+  //     PopupMenuItem(
+  //       child: TextButton(
+  //         child: Text("Do It Yourself"),
+  //         onPressed: () {
+  //           homeController.jumpTo(
+  //             2500, // change 0.0 {double offset} to corresponding widget position
+  //             //  duration: Duration(seconds: 1),
+  //             // curve: Curves.easeOut,
+  //           );
+  //           Navigator.pop(context);
+  //         },
+  //       ),
+  //     ),
+  //   ];
+
+  //   await showMenu(
+  //       context: context,
+  //       position: RelativeRect.fromLTRB(left, top, right, bottom),
+  //       items: atHome);
+  // }
 }

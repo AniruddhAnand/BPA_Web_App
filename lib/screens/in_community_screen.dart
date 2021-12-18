@@ -30,104 +30,9 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            GestureDetector(
-              child: Image.asset(
-                "assets/images/Title_Image_Short.jpeg",
-                height: 400,
-              ),
-              onTap: () => Navigator.of(context).popAndPushNamed("/"),
-            ),
-            SafeArea(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  MouseRegion(
-                    onHover: (event) {
-                      Data.showMenus(
-                          context,
-                          MediaQuery.of(context).size.width / 4,
-                          MediaQuery.of(context).size.width / 4,
-                          400 - homeController.offset,
-                          0,
-                          homeController);
-                    },
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pushNamed("AtHome"),
-                                child: Text("At Home"))
-                          ]),
-                    ),
-                  ),
-                  MouseRegion(
-                    onHover: (event) => Data.showMenus(
-                        context,
-                        MediaQuery.of(context).size.width / 2,
-                        MediaQuery.of(context).size.width / 2,
-                        400 - homeController.offset,
-                        0,
-                        homeController),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () => Navigator.of(context)
-                                    .pushNamed("Community"),
-                                child: Text("In Your Community"))
-                          ]),
-                    ),
-                  ),
-                  MouseRegion(
-                    onHover: (event) => Data.showMenus(
-                        context,
-                        3 * MediaQuery.of(context).size.width / 4,
-                        3 * MediaQuery.of(context).size.width / 4,
-                        400 - homeController.offset,
-                        0,
-                        homeController),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pushNamed("Shopping"),
-                                child: Text("Shopping Sustainably"))
-                          ]),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 90.0, right: 90.0, top: 90.0, bottom: 20.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 1.3,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 10,
-                  ),
-                  borderRadius: BorderRadius.circular(0.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 25.0, right: 25.0, bottom: 20.0, top: 10.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SelectableText("In Your Community", style: Data.style),
-                      Data.comMission,
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            Data.getTitleImage(context),
+            Data.getMenuBar(context, homeController),
+            Data.missionWidget(context, "In Your Community", Data.comMission),
             Padding(
               padding: const EdgeInsets.only(
                   top: 20.0, bottom: 0.0, left: 65, right: 65),
@@ -140,19 +45,20 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                       Data.borrow,
                       style: Data.style2,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(40.0),
-                      child: Container(
-                          child: SelectableText("${Data.borrowInfo}",
-                              style: Data.style3)),
-                    ),
+                    //  Padding(
+                    //    padding: const EdgeInsets.all(40.0),
+                    /*  child: */ Container(
+                        child: SelectableText("${Data.borrowInfo}",
+                            style: Data.style3)),
+                    //  ),
                   ],
                 ),
               ),
             ),
+            Image.asset("assets/images/Floral_Border_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 0.0, left: 65, right: 65),
+                  top: 40.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -163,7 +69,8 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                       style: Data.style2,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(40.0),
+                      padding: EdgeInsets.only(
+                          left: 60, right: 40, top: 40, bottom: 0.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -189,45 +96,63 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                           ),
                           Text("\n\n Online Platforms:", style: Data.style3),
                           TextButton(
-                            child: Text(
-                              "• thredUp",
-                              style: Data.style3,
-                            ),
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(
+                                text: "thredUp",
+                                style: Data.styleButton,
+                              )
+                            ])),
                             onPressed: () => launch("https://www.thredup.com/"),
                           ),
                           TextButton(
-                            child: Text(
-                              "• Poshmark",
-                              style: Data.style3,
-                            ),
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(
+                                text: "Poshmark",
+                                style: Data.styleButton,
+                              )
+                            ])),
                             onPressed: () => launch("https://poshmark.com/"),
                           ),
                           TextButton(
-                            child: Text(
-                              "• Depop",
-                              style: Data.style3,
-                            ),
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(
+                                text: "Depop",
+                                style: Data.styleButton,
+                              )
+                            ])),
                             onPressed: () => launch("https://www.depop.com/"),
                           ),
                           TextButton(
-                            child: Text(
-                              "• Swap",
-                              style: Data.style3,
-                            ),
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(
+                                text: "Swap",
+                                style: Data.styleButton,
+                              )
+                            ])),
                             onPressed: () => launch("https://www.swap.com/"),
                           ),
                           TextButton(
-                            child: Text(
-                              "• eBay",
-                              style: Data.style3,
-                            ),
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(
+                                text: "eBay",
+                                style: Data.styleButton,
+                              )
+                            ])),
                             onPressed: () => launch("https://www.ebay.com/"),
                           ),
                           TextButton(
-                            child: Text(
-                              "• GoodFair",
-                              style: Data.style3,
-                            ),
+                            child: Text.rich(TextSpan(children: [
+                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(
+                                text: "GoodFair",
+                                style: Data.styleButton,
+                              )
+                            ])),
                             onPressed: () => launch("https://goodfair.com/"),
                           ),
                         ],
@@ -237,9 +162,10 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                 ),
               ),
             ),
+            Image.asset("assets/images/Floral_Border_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 0.0, left: 65, right: 65),
+                  top: 40.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -250,7 +176,8 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                       style: Data.style2,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(40.0),
+                      padding: EdgeInsets.only(
+                          left: 60, right: 40, top: 40, bottom: 0.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
                           child: SelectableText("${Data.handInfo}",
@@ -260,9 +187,10 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                 ),
               ),
             ),
+            Image.asset("assets/images/Floral_Border_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 0.0, left: 65, right: 65),
+                  top: 40.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -273,7 +201,8 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                       style: Data.style2,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(40.0),
+                      padding: EdgeInsets.only(
+                          left: 60, right: 40, top: 40, bottom: 0.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
                           child: SelectableText("${Data.clubInfo}",
@@ -283,6 +212,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                 ),
               ),
             ),
+            Data.footer(context)
           ],
         ),
       ),

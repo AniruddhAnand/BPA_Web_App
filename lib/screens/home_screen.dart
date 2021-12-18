@@ -32,12 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Data.getTitleImage(context),
             Data.getMenuBar(context, homeController),
-            Data.missionWidget(context),
+            Data.missionWidget(context, "Mission", Data.textMission),
             SelectableText(Data.mission, style: Data.style),
             Padding(
               padding: const EdgeInsets.only(
                   left: 50.0, right: 50.0, bottom: 75.0, top: 30.0),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
@@ -86,7 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(
-                          left: 25.0, right: 25.0, top: 35.0, bottom: 25.0),
+                          left: 25.0,
+                          right: 25.0,
+                          /* top: 35.0,*/ bottom: 25.0),
                       child: Data.info1,
                     ),
                     width: MediaQuery.of(context).size.width / 2.5,
@@ -108,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 25,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
@@ -121,7 +124,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(height: 10),
                             Container(
                                 width: MediaQuery.of(context).size.width / 6,
-                                child: Data.mushInfo),
+                                child: Text(
+                                  Data.dressInfo,
+                                  style: Data.style3,
+                                )),
                           ],
                         ),
                       ),
@@ -130,26 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 65, bottom: 40),
-              child: Column(
-                children: [
-                  Text("Contact Info", style: Data.style3),
-                  Row(
-                    children: [
-                      Image.asset(
-                        "assets/images/Logo.png",
-                        scale: 3,
-                      ),
-                      SelectableText(
-                        "Number: 214-404-6575\nEmail: stitches4sustainability@gmail.com",
-                        style: Data.style3,
-                      )
-                    ],
-                  )
-                ],
-              ),
-            )
+            Data.footer(context),
           ],
         ),
       ),

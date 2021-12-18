@@ -30,107 +30,12 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            GestureDetector(
-              child: Image.asset(
-                "assets/images/Title_Image_Short.jpeg",
-                height: 400,
-              ),
-              onTap: () => Navigator.of(context).popAndPushNamed("/"),
-            ),
-            SafeArea(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  MouseRegion(
-                    onHover: (event) {
-                      Data.showMenus(
-                          context,
-                          MediaQuery.of(context).size.width / 4,
-                          MediaQuery.of(context).size.width / 4,
-                          400 - homeController.offset,
-                          0,
-                          homeController);
-                    },
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pushNamed("AtHome"),
-                                child: Text("At Home"))
-                          ]),
-                    ),
-                  ),
-                  MouseRegion(
-                    onHover: (event) => Data.showMenus(
-                        context,
-                        MediaQuery.of(context).size.width / 2,
-                        MediaQuery.of(context).size.width / 2,
-                        400 - homeController.offset,
-                        0,
-                        homeController),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () => Navigator.of(context)
-                                    .pushNamed("Community"),
-                                child: Text("In Your Community"))
-                          ]),
-                    ),
-                  ),
-                  MouseRegion(
-                    onHover: (event) => Data.showMenus(
-                        context,
-                        3 * MediaQuery.of(context).size.width / 4,
-                        3 * MediaQuery.of(context).size.width / 4,
-                        400 - homeController.offset,
-                        0,
-                        homeController),
-                    child: Container(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pushNamed("Shopping"),
-                                child: Text("Shopping Sustainably"))
-                          ]),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            Data.getTitleImage(context),
+            Data.getMenuBar(context, homeController),
+            Data.missionWidget(context, "Shopping Sustainably", Data.mission3),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 90.0, right: 90.0, top: 90.0, bottom: 60.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 1.3,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 10,
-                  ),
-                  borderRadius: BorderRadius.circular(0.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 65.0, right: 65.0, bottom: 20.0, top: 10.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SelectableText("Shopping Sustainably", style: Data.style),
-                      Data.mission3,
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 60.0, bottom: 0.0, left: 60, right: 60),
+                  top: 20.0, bottom: 0.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -146,7 +51,8 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                             "Here’s a guide in researching on the sustainability and ethical factors of companies to help make more informed decisions on where to shop and which brands to support:",
                             style: Data.style3)),
                     Padding(
-                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
+                        padding: EdgeInsets.only(
+                            left: 60, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -162,7 +68,8 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
+                        padding: EdgeInsets.only(
+                            left: 60, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -178,7 +85,8 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
+                        padding: EdgeInsets.only(
+                            left: 60, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -193,7 +101,8 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
+                        padding: EdgeInsets.only(
+                            left: 60, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -208,7 +117,8 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                           ],
                         )),
                     Padding(
-                        padding: EdgeInsets.only(left: 40, right: 40, top: 40),
+                        padding: EdgeInsets.only(
+                            left: 60, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -268,6 +178,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                 ),
               ),
             ),
+            Data.footer(context)
           ],
         ),
       ),
