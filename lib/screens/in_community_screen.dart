@@ -43,11 +43,11 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                   children: [
                     SelectableText(
                       Data.borrow,
-                      style: Data.style2,
+                      style: Data.style5,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 0.0, right: 40, top: 40, bottom: 0.0),
+                      padding:
+                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
                       child: Container(
                           child: SelectableText("${Data.borrowInfo}",
                               style: Data.style3)),
@@ -67,11 +67,11 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                   children: [
                     SelectableText(
                       "Thrifting",
-                      style: Data.style2,
+                      style: Data.style5,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 0.0, right: 40, top: 40, bottom: 0.0),
+                      padding:
+                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -95,7 +95,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                             "• Savers",
                             style: Data.style3,
                           ),
-                          Text("\n\n Online Platforms:", style: Data.style3),
+                          Text("\n Online Platforms:", style: Data.style3),
                           TextButton(
                             child: Text.rich(TextSpan(children: [
                               TextSpan(text: "•  ", style: Data.style3),
@@ -174,11 +174,11 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                   children: [
                     SelectableText(
                       "Hand Me Downs",
-                      style: Data.style2,
+                      style: Data.style5,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 0.0, right: 40, top: 40, bottom: 0.0),
+                      padding:
+                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
                           child: SelectableText("${Data.handInfo}",
@@ -199,11 +199,11 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                   children: [
                     SelectableText(
                       "Creating a Club",
-                      style: Data.style2,
+                      style: Data.style5,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 0.0, right: 40, top: 40, bottom: 0.0),
+                      padding:
+                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
                           child: SelectableText("${Data.clubInfo}",

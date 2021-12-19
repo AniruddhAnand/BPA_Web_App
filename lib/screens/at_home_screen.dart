@@ -35,27 +35,33 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
             Data.missionWidget(context, "At Home", Data.mission2),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 0.0, left: 65, right: 65),
+                  top: 10.0, bottom: 40.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SelectableText(
-                      Data.styling,
-                      style: Data.style2,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5.0),
+                      child: SelectableText(
+                        Data.styling,
+                        style: Data.style5,
+                      ),
                     ),
                     Container(
                         child: SelectableText(Data.stylingInfo,
                             style: Data.style3)),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: 60, right: 40, top: 40, bottom: 0.0),
+                            left: 0, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             SelectableText("${Data.embroidery}",
                                 style: Data.style2),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Container(
                                 child: SelectableText(Data.embInfo,
                                     style: Data.style3)),
@@ -122,11 +128,14 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                         )),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: 60, right: 40, top: 40, bottom: 0.0),
+                            left: 0, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             SelectableText("${Data.alt}", style: Data.style2),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Container(
                                 child: SelectableText(Data.altInfo,
                                     style: Data.style3)),
@@ -134,11 +143,14 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                         )),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: 60, right: 40, top: 40, bottom: 0.0),
+                            left: 0, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             SelectableText("Design", style: Data.style2),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Container(
                                 child: SelectableText(Data.styInfo,
                                     style: Data.style3)),
@@ -153,7 +165,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
             ),
             Padding(
               padding:
-                  EdgeInsets.only(left: 60, right: 60, top: 40, bottom: 0.0),
+                  EdgeInsets.only(left: 0, right: 60, top: 40, bottom: 20.0),
               child: Container(
                 width: MediaQuery.of(context).size.width / 1.6,
                 alignment: Alignment.center,
@@ -168,7 +180,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                   // width: MediaQuery.of(context).size.width / 1.3,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                        left: 25.0, right: 25.0, top: 35.0, bottom: 25.0),
+                        left: 25.0, right: 25.0, top: 10.0, bottom: 20.0),
                     child: Column(
                       children: [
                         SelectableText(
@@ -279,7 +291,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                 ),
               ),
             ),
-            Image.asset("assets/images/Floral_Border_New.PNG"),
+            SizedBox(
+              height: 5,
+            ),
+            Image.asset("assets/images/Floral_Design_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
                   top: 40.0, bottom: 0.0, left: 65, right: 65),
@@ -288,20 +303,26 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SelectableText(
-                      "Do It Yourself",
-                      style: Data.style2,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5.0),
+                      child: SelectableText(
+                        "Do It Yourself",
+                        style: Data.style5,
+                      ),
                     ),
                     Container(
                         // width: MediaQuery.of(context).size.width / 4,
                         child: SelectableText(Data.doInfo, style: Data.style3)),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: 60, right: 40, top: 40, bottom: 0.0),
+                            left: 0, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             SelectableText("${Data.croch}", style: Data.style2),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Container(
                                 //  width: MediaQuery.of(context).size.width / 4,
                                 child: SelectableText.rich(TextSpan(children: [
@@ -326,18 +347,21 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                         )),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: 60, right: 40, top: 40, bottom: 0.0),
+                            left: 0.0, right: 40.0, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             SelectableText("${Data.mkCloth}",
                                 style: Data.style2),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Container(
                                 //  width: MediaQuery.of(context).size.width / 4,
                                 child: SelectableText.rich(TextSpan(children: [
                               TextSpan(text: Data.mkInfo, style: Data.style3),
                               TextSpan(
-                                  text: "\n       Sustainable Fabrics:",
+                                  text: "\n\nSustainable Fabrics:",
                                   style: TextStyle(
                                       fontFamily: "CrimsonText", fontSize: 28)),
                               TextSpan(text: Data.mkInfo2, style: Data.style3),

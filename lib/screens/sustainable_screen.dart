@@ -43,7 +43,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                   children: [
                     SelectableText(
                       "How to Identify Sustainable Companies",
-                      style: Data.style2,
+                      style: Data.style5,
                     ),
                     Container(
                         // width: MediaQuery.of(context).size.width / 4,
@@ -189,7 +189,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                   children: [
                     SelectableText(
                       "List of Sustainable Brands",
-                      style: Data.style2,
+                      style: Data.style5,
                     ),
                     Container(
                         // width: MediaQuery.of(context).size.width / 4,

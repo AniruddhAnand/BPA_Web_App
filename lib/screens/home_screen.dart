@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   left: 50.0, right: 50.0, bottom: 75.0, top: 40.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Column(
                     children: <Widget>[
@@ -50,6 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             Image.asset(
                               "assets/images/Pant.PNG",
                               scale: 2.5,
+                            ),
+                            SizedBox(
+                              height: 10,
                             ),
                             Container(
                                 width: MediaQuery.of(context).size.width / 6,
@@ -116,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           children: <Widget>[
                             Image.asset(
-                              "assets/images/Dress_Image_New.png",
+                              "assets/images/Dress_Titled.png",
                               scale: 2.5,
                             ),
                             SizedBox(height: 10),
