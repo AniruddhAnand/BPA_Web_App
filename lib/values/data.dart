@@ -47,7 +47,8 @@ class Data {
   static Widget getTitleImage(BuildContext context) {
     return GestureDetector(
       child: Image.asset(
-        "assets/images/Title_Different.jpeg",
+        "assets/images/Title_Image_Short.jpeg",
+        width: Data.getTitleWidth(context),
       ),
       onTap: () => Navigator.of(context).popAndPushNamed("/"),
     );
