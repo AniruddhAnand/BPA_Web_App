@@ -5,16 +5,9 @@ import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class InCommunityScreen extends StatefulWidget {
-  InCommunityScreen();
-
-  @override
-  State<InCommunityScreen> createState() => _InCommunityScreenState();
-}
-
-class _InCommunityScreenState extends State<InCommunityScreen> {
-  ScrollController homeController =
-      ScrollController(initialScrollOffset: 0.0, keepScrollOffset: false);
+class InCommunityScreen extends StatelessWidget {
+  InCommunityScreen(this.homeController);
+  ScrollController homeController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +24,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar(context, homeController),
+            Data.getMenuBar2(context, homeController),
             Data.missionWidget(context, "In Your Community", Data.comMission),
             Padding(
               padding: const EdgeInsets.only(

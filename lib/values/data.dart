@@ -4,6 +4,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:web_app/screens/at_home_screen.dart';
 
 class Data {
   static TextStyle style =
@@ -28,6 +29,11 @@ class Data {
       fontSize: 30,
       color: Colors.black,
       decoration: TextDecoration.underline);
+  static TextStyle styleButton3 = TextStyle(
+      fontFamily: "CrimsonText",
+      fontSize: 18,
+      color: Colors.black,
+      decoration: TextDecoration.underline);
 
   static double ratio = 2224 / 7038.0;
   static double getTitleWidth(BuildContext context) {
@@ -49,11 +55,180 @@ class Data {
   }
 
   static int numCharsHome = 48;
+  static Widget getMenuBar2(
+      BuildContext context, ScrollController homeController) {
+    // OverlayEntry entry1 = OverlayEntry(builder: (context) {
+    //   return Container(
+    //     child: Stack(
+    //       children: [
+    //         Positioned(
+    //           top: getTitleHeight(context) - homeController.offset + 35,
+    //           child: Column(
+    //             children: [
+    //               TextButton(
+    //                   onPressed: () {
+    //                     Navigator.of(context).pushNamed("Style");
+    //                   },
+    //                   child: Text("Hi"))
+    //             ],
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //   );
+    // });
+    return SafeArea(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed("/");
+                },
+                child: getMenuText("Home")),
+            Icon(
+              Icons.arrow_drop_up_rounded,
+              color: Colors.transparent,
+            )
+          ],
+        ),
+        Column(
+          children: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed("AtHome");
+                },
+                child: getMenuText("At Home")),
+            MouseRegion(
+              child: PopupMenuButton(
+                enabled: true,
+                child: Icon(Icons.arrow_drop_down_rounded),
+                offset: Offset(-125, 10),
+                shape: const TooltipShape(),
+                itemBuilder: (_) => <PopupMenuEntry>[
+                  PopupMenuItem(
+                      child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextButton(
+                        child: getMenuText2("Styling"),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed("Style");
+                        },
+                      ),
+                      Image.asset("assets/images/At_Home_Image.png", scale: 7),
+                    ],
+                  )),
+                  PopupMenuItem(
+                      child: TextButton(
+                    child: getMenuText2("Do it Yourself"),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("DoYourSelf");
+                    },
+                  )),
+                ],
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed("Community");
+                },
+                child: getMenuText("In Your Community")),
+            MouseRegion(
+              child: PopupMenuButton(
+                enabled: true,
+                child: Icon(Icons.arrow_drop_down_rounded),
+                offset: Offset(-130, 0),
+                shape: const TooltipShape(),
+                itemBuilder: (_) => <PopupMenuEntry>[
+                  PopupMenuItem(
+                      child: Row(
+                    children: [
+                      TextButton(
+                        child: getMenuText2("Borrow From Friends"),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed("Borrow");
+                        },
+                      ),
+                      Image.asset("assets/images/Com_Image.png", scale: 5)
+                    ],
+                  )),
+                  PopupMenuItem(
+                      child: TextButton(
+                    child: getMenuText2("Thrifting"),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("Thrifting");
+                    },
+                  )),
+                  PopupMenuItem(
+                      child: TextButton(
+                    child: getMenuText2("Hand Me Down"),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("Hand");
+                    },
+                  )),
+                  PopupMenuItem(
+                      child: TextButton(
+                    child: getMenuText2("Creating a Club"),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("Club");
+                    },
+                  )),
+                ],
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed("Shopping");
+                },
+                child: getMenuText("Shopping Sustainably")),
+            MouseRegion(
+              child: PopupMenuButton(
+                enabled: true,
+                child: Icon(Icons.arrow_drop_down_rounded),
+                offset: Offset(130, 0),
+                shape: const TooltipShape(),
+                itemBuilder: (_) => <PopupMenuEntry>[
+                  PopupMenuItem(
+                      child: Row(
+                    children: [
+                      TextButton(
+                        child: getMenuText2("Sustaibale Companies"),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed("Indentify");
+                        },
+                      ),
+                      Image.asset("assets/images/Sus_Image.png", scale: 5)
+                    ],
+                  )),
+                  PopupMenuItem(
+                      child: TextButton(
+                    child: getMenuText2("Sustainable Brands"),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("Brands");
+                    },
+                  )),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ],
+    ));
+  }
 
   static Widget getMenuBar(
       BuildContext context, ScrollController homeController) {
-    style3 =
-        new TextStyle(fontFamily: style3.fontFamily, fontSize: style3.fontSize);
     // print(MediaQuery.of(context).size.width);
     return SafeArea(
       // child: SingleChildScrollView(
@@ -86,7 +261,7 @@ class Data {
                   children: <Widget>[
                     TextButton(
                         onPressed: () => Navigator.of(context).pushNamed("/"),
-                        child: getMenuText("Home"))
+                        child: getMenuText2("Home"))
                   ]),
             ),
           ),
@@ -116,7 +291,7 @@ class Data {
                     TextButton(
                         onPressed: () =>
                             Navigator.of(context).pushNamed("AtHome"),
-                        child: getMenuText("At Home"))
+                        child: getMenuText2("At Home"))
                   ]),
             ),
           ),
@@ -145,7 +320,7 @@ class Data {
                     TextButton(
                         onPressed: () =>
                             Navigator.of(context).pushNamed("Community"),
-                        child: getMenuText("In Your Community"))
+                        child: getMenuText2("In Your Community"))
                   ]),
             ),
           ),
@@ -174,7 +349,7 @@ class Data {
                     TextButton(
                         onPressed: () =>
                             Navigator.of(context).pushNamed("Shopping"),
-                        child: getMenuText("Shopping Sustainably"))
+                        child: getMenuText2("Shopping Sustainably"))
                   ]),
             ),
           ),
@@ -220,6 +395,13 @@ class Data {
     return Text(
       s,
       style: styleButton,
+    );
+  }
+
+  static Widget getMenuText2(String s) {
+    return Text(
+      s,
+      style: styleButton3,
     );
   }
 
@@ -339,50 +521,123 @@ class Data {
     "Almost 70% of clothing is made from polyester and other synthetic fibers that are created from the burning and melting of fossil fuels like crude oil.",
     style: style3,
   );
-  static String citation = "Citations ";
-  static SelectableText citationWords = SelectableText(
-      "(https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car.)\n(https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development )\n(https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/ )");
-  // static showMenus(
-  //   BuildContext context,
-  //   double right,
-  //   double left,
-  //   double top,
-  //   double bottom,
-  //   ScrollController homeController,
-  // ) async {
-  //   Navigator.of(context).pushNamed("AtHome");
-  //   List<PopupMenuItem> atHome = [
-  //     PopupMenuItem(
-  //       child: TextButton(
-  //         child: Text("Styling"),
-  //         onPressed: () {
-  //           homeController.jumpTo(
-  //             800, // change 0.0 {double offset} to corresponding widget position
-  //             //  duration: Duration(seconds: 1),
-  //             // curve: Curves.easeOut,
-  //           );
-  //           Navigator.pop(context);
-  //         },
-  //       ),
-  //     ),
-  //     PopupMenuItem(
-  //       child: TextButton(
-  //         child: Text("Do It Yourself"),
-  //         onPressed: () {
-  //           homeController.jumpTo(
-  //             2500, // change 0.0 {double offset} to corresponding widget position
-  //             //  duration: Duration(seconds: 1),
-  //             // curve: Curves.easeOut,
-  //           );
-  //           Navigator.pop(context);
-  //         },
-  //       ),
-  //     ),
-  //   ];
+  static showMenus(
+    BuildContext context,
+    double right,
+    double left,
+    double top,
+    double bottom,
+  ) async {
+    List<PopupMenuItem> atHome = [
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Style");
+              },
+              child: Text(
+                "Styling",
+              )))
+    ];
+    List<PopupMenuItem> com = [];
+    List<PopupMenuItem> sus = [];
+    await showMenu(
+        context: context,
+        position: RelativeRect.fromLTRB(left, top, right, bottom),
+        items: []);
+  }
+}
 
-  //   await showMenu(
-  //       context: context,
-  //       position: RelativeRect.fromLTRB(left, top, right, bottom),
-  //       items: atHome);
-  // }
+class TooltipShape extends ShapeBorder {
+  const TooltipShape();
+
+  final BorderSide _side = BorderSide.none;
+  final BorderRadiusGeometry _borderRadius = BorderRadius.zero;
+
+  @override
+  EdgeInsetsGeometry get dimensions => EdgeInsets.all(_side.width);
+
+  @override
+  Path getInnerPath(
+    Rect rect, {
+    TextDirection? textDirection,
+  }) {
+    final Path path = Path();
+
+    path.addRRect(
+      _borderRadius.resolve(textDirection).toRRect(rect).deflate(_side.width),
+    );
+
+    return path;
+  }
+
+  @override
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
+    final Path path = Path();
+    final RRect rrect = _borderRadius.resolve(textDirection).toRRect(rect);
+
+    // path.moveTo(0, 10);
+    // path.quadraticBezierTo(0, 0, 10, 0);
+    // path.lineTo(rrect.width - 30, 0);
+    // path.lineTo(rrect.width - 20, -10);
+    // path.lineTo(rrect.width - 10, 0);
+    // path.quadraticBezierTo(rrect.width, 0, rrect.width, 10);
+    // path.lineTo(rrect.width, rrect.height - 30);
+    // path.quadraticBezierTo(
+    //    rrect.width, rrect.height, rrect.width - 10, rrect.height);
+    // path.lineTo(10, rrect.height);
+    // path.quadraticBezierTo(0, rrect.height, 0, rrect.height - 10);
+
+    // path.quadraticBezierTo(10, rrect.height, rrect.width - 20, rrect.height);
+
+    // path.lineTo(rrect.width - 20, rrect.height);
+    path.addRRect(rrect);
+
+    return path;
+  }
+
+  @override
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
+    // Paint p = Paint()
+    //   ..color = Colors.white24
+    //   ..style = PaintingStyle.stroke
+    //   ..strokeWidth = 1.0;
+    // canvas.drawPaint(p);
+    //canvas.drawRect(rect, p);
+  }
+
+  @override
+  ShapeBorder scale(double t) => RoundedRectangleBorder(
+        side: _side.scale(t),
+        borderRadius: _borderRadius * t,
+      );
+}
+
+class DropRegion extends StatefulWidget {
+  const DropRegion({Key? key}) : super(key: key);
+
+  @override
+  _DropRegionState createState() => _DropRegionState();
+}
+
+class _DropRegionState extends State<DropRegion> {
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      child: PopupMenuButton(
+        enabled: true,
+        child: Icon(Icons.arrow_downward),
+        offset: Offset(0, 50),
+        shape: const TooltipShape(),
+        itemBuilder: (_) => <PopupMenuEntry>[
+          PopupMenuItem(
+              child: TextButton(
+            child: Data.getMenuText("Styling"),
+            onPressed: () {
+              Navigator.of(context).pushNamed("Style");
+            },
+          )),
+        ],
+      ),
+    );
+  }
 }

@@ -28,9 +28,28 @@ class MyApp extends StatelessWidget {
       ),
       home: HomeScreen(),
       routes: {
-        "AtHome": (context) => AtHomeScreen(),
-        "Community": (context) => InCommunityScreen(),
-        "Shopping": (context) => SustainabilityScreen(),
+        "AtHome": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 0.0)),
+        "Style": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 750.0)),
+        "DoYourSelf": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 2750.0)),
+        "Community": (context) => InCommunityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 0.0)),
+        "Borrow": (context) => InCommunityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 750.0)),
+        "Thrifting": (context) => InCommunityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 1150.0)),
+        "Hand": (context) => InCommunityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 2150.0)),
+        "Club": (context) => InCommunityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 2750.0)),
+        "Shopping": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 0.0)),
+        "Indentify": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 800.0)),
+        "Brands": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 2275.0)),
       },
     );
   }

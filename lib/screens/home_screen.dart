@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar(context, homeController),
+            Data.getMenuBar2(context, homeController),
             Data.missionWidget(context, "Mission", Data.textMission),
             SelectableText(Data.mission, style: Data.style),
             Padding(

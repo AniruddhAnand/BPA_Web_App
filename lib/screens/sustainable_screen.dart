@@ -5,16 +5,10 @@ import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class SustainabilityScreen extends StatefulWidget {
-  SustainabilityScreen();
+class SustainabilityScreen extends StatelessWidget {
+  SustainabilityScreen(this.homeController);
 
-  @override
-  State<SustainabilityScreen> createState() => _SustainabilityScreenState();
-}
-
-class _SustainabilityScreenState extends State<SustainabilityScreen> {
-  ScrollController homeController =
-      ScrollController(initialScrollOffset: 0.0, keepScrollOffset: false);
+  ScrollController homeController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +25,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar(context, homeController),
+            Data.getMenuBar2(context, homeController),
             Data.missionWidget(context, "Shopping Sustainably", Data.mission3),
             Padding(
               padding: const EdgeInsets.only(

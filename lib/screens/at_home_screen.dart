@@ -5,16 +5,9 @@ import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class AtHomeScreen extends StatefulWidget {
-  AtHomeScreen();
-
-  @override
-  State<AtHomeScreen> createState() => _AtHomeScreenState();
-}
-
-class _AtHomeScreenState extends State<AtHomeScreen> {
-  ScrollController homeController =
-      ScrollController(initialScrollOffset: 0.0, keepScrollOffset: false);
+class AtHomeScreen extends StatelessWidget {
+  AtHomeScreen(this.homeController);
+  ScrollController homeController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +24,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar(context, homeController),
+            Data.getMenuBar2(context, homeController),
             Data.missionWidget(context, "At Home", Data.mission2),
             Padding(
               padding: const EdgeInsets.only(
