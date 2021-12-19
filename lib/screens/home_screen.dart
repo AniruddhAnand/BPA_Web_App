@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
@@ -31,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar2(context, homeController),
+            Data.getMenuBar(context, homeController),
             Data.missionWidget(context, "Mission", Data.textMission),
             SelectableText(Data.mission, style: Data.style),
             Padding(
@@ -47,9 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.all(0.0),
                         child: Column(
                           children: <Widget>[
-                            Image.asset(
-                              "assets/images/Pant.PNG",
-                              scale: 2.5,
+                            GestureDetector(
+                              onTap: () => launch(
+                                  "https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car"),
+                              child: Image.asset(
+                                "assets/images/Pant.PNG",
+                                scale: 2.5,
+                              ),
                             ),
                             SizedBox(
                               height: 10,
@@ -67,9 +72,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.all(10.0),
                         child: Column(
                           children: <Widget>[
-                            Image.asset(
-                              "assets/images/Mushroom_2_Less.png",
-                              scale: 2.5,
+                            GestureDetector(
+                              onTap: () => launch(
+                                  "https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/"),
+                              child: Image.asset(
+                                "assets/images/Mushroom_2_Less.png",
+                                scale: 2.5,
+                              ),
                             ),
                             SizedBox(height: 10),
                             Container(
@@ -101,9 +110,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.all(0.0),
                         child: Column(
                           children: <Widget>[
-                            Image.asset(
-                              "assets/images/Shirt.PNG",
-                              scale: 2.5,
+                            GestureDetector(
+                              onTap: () => launch(
+                                  "https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development"),
+                              child: Image.asset(
+                                "assets/images/Shirt.PNG",
+                                scale: 2.5,
+                              ),
                             ),
                             Container(
                                 width: MediaQuery.of(context).size.width / 6,

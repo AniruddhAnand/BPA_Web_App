@@ -24,7 +24,7 @@ class AtHomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar2(context, homeController),
+            Data.getMenuBar(context, homeController),
             Data.missionWidget(context, "At Home", Data.mission2),
             Padding(
               padding: const EdgeInsets.only(
@@ -307,13 +307,13 @@ class AtHomeScreen extends StatelessWidget {
                         // width: MediaQuery.of(context).size.width / 4,
                         child: SelectableText(Data.doInfo, style: Data.style3)),
                     Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 0, right: 40, top: 40, bottom: 0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             SelectableText("${Data.croch}", style: Data.style2),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Container(
@@ -321,17 +321,74 @@ class AtHomeScreen extends StatelessWidget {
                                 child: SelectableText.rich(TextSpan(children: [
                               TextSpan(
                                   text: Data.crochInfo, style: Data.style3),
-                              TextSpan(
+                              const TextSpan(
                                   text: "\nCrocheted/Knitted clothing pieces:",
                                   style: TextStyle(
                                       fontFamily: "CrimsonText", fontSize: 28)),
-                              TextSpan(
-                                  text: Data.crochInfo2, style: Data.style3),
-                              TextSpan(
-                                  text: "\nSustainable Yarns:",
-                                  style: TextStyle(
-                                      fontFamily: "CrimsonText", fontSize: 28)),
                             ]))),
+                            TextButton(
+                                onPressed: () =>
+                                    launch("https://youtu.be/a7eqIn4Umdc"),
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(
+                                    text: "Hats",
+                                    style: Data.styleButton,
+                                  )
+                                ]))),
+                            TextButton(
+                                onPressed: () => launch(
+                                    "https://sarahmaker.com/free-crochet-scarf-patterns/"),
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(
+                                    text: "Scarves",
+                                    style: Data.styleButton,
+                                  )
+                                ]))),
+                            TextButton(
+                                onPressed: () => launch(
+                                    "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(
+                                    text: "Sweaters",
+                                    style: Data.styleButton,
+                                  )
+                                ]))),
+                            TextButton(
+                                onPressed: () => launch(
+                                    "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(
+                                    text: "Cardigans",
+                                    style: Data.styleButton,
+                                  )
+                                ]))),
+                            TextButton(
+                                onPressed: () => launch(
+                                    "https://www.youtube.com/watch?v=1WluE599ccI"),
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(
+                                    text: "Tank Tops",
+                                    style: Data.styleButton,
+                                  )
+                                ]))),
+                            TextButton(
+                                onPressed: () => launch(
+                                    "https://www.diytomake.com/30-easy-crochet-tote-bag-patterns/"),
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(
+                                    text: "Tote Bag",
+                                    style: Data.styleButton,
+                                  )
+                                ]))),
+                            SelectableText("\nSustainable Yarns:",
+                                style: TextStyle(
+                                    fontFamily: "CrimsonText", fontSize: 28)),
                             Container(
                                 //  width: MediaQuery.of(context).size.width / 4,
                                 child: SelectableText(Data.crochInfo3,

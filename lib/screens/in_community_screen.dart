@@ -24,7 +24,7 @@ class InCommunityScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar2(context, homeController),
+            Data.getMenuBar(context, homeController),
             Data.missionWidget(context, "In Your Community", Data.comMission),
             Padding(
               padding: const EdgeInsets.only(

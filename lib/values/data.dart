@@ -47,8 +47,7 @@ class Data {
   static Widget getTitleImage(BuildContext context) {
     return GestureDetector(
       child: Image.asset(
-        "assets/images/Title_Image_Short.jpeg",
-        width: Data.getTitleWidth(context),
+        "assets/images/Title_Different.jpeg",
       ),
       onTap: () => Navigator.of(context).popAndPushNamed("/"),
     );
@@ -238,51 +237,33 @@ class Data {
         children: [
           MouseRegion(
             // onExit: (event) => Navigator.of(context).pop(),
-            onHover: (event) {
-              // Navigator.of(context).pushNamed("/");
-              // Data.showMenus(
-              //     context,
-              //     (MediaQuery.of(context).size.width -
-              //                 (style3.fontSize! * numCharsHome)) /
-              //             5 +
-              //         4 * style3.fontSize!,
-              //     (MediaQuery.of(context).size.width -
-              //                 (style3.fontSize! * numCharsHome)) /
-              //             5 +
-              //         4 * style3.fontSize!,
-              //     getTitleHeight(context) - homeController.offset + 35,
-              //     0,
-              //     homeController);
-              //sho
-            },
             child: Container(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     TextButton(
                         onPressed: () => Navigator.of(context).pushNamed("/"),
-                        child: getMenuText2("Home"))
+                        child: getMenuText("Home"))
                   ]),
             ),
           ),
           MouseRegion(
             onHover: (event) {
-              // Navigator.of(context).pushNamed("AtHome");
-              //     Data.showMenus(
-              //         context,
-              //         2 *
-              //                 (MediaQuery.of(context).size.width -
-              //                     (style3.fontSize! * numCharsHome)) /
-              //                 5 +
-              //             15 * style3.fontSize!,
-              //         2 *
-              //                 (MediaQuery.of(context).size.width -
-              //                     (style3.fontSize! * numCharsHome)) /
-              //                 5 +
-              //             15 * style3.fontSize!,
-              //         getTitleHeight(context) - homeController.offset + 35,
-              //         0,
-              //         homeController);
+              Data.showMenus(
+                  context,
+                  2 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      8.5 * style3.fontSize!,
+                  2 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      8.5 * style3.fontSize!,
+                  getTitleHeight(context) - homeController.offset + 35,
+                  0,
+                  1);
             },
             child: Container(
               child: Column(
@@ -291,27 +272,27 @@ class Data {
                     TextButton(
                         onPressed: () =>
                             Navigator.of(context).pushNamed("AtHome"),
-                        child: getMenuText2("At Home"))
+                        child: getMenuText("At Home"))
                   ]),
             ),
           ),
           MouseRegion(
             onHover: (event) {
-              //     Data.showMenus(
-              //         context,
-              //         3 *
-              //                 (MediaQuery.of(context).size.width -
-              //                     (style3.fontSize! * numCharsHome)) /
-              //                 5 +
-              //             28 * style3.fontSize!,
-              //         3 *
-              //                 (MediaQuery.of(context).size.width -
-              //                     (style3.fontSize! * numCharsHome)) /
-              //                 5 +
-              //             28 * style3.fontSize!,
-              //         getTitleHeight(context) - homeController.offset + 35,
-              //         0,
-              //         homeController);
+              Data.showMenus(
+                  context,
+                  3 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      21 * style3.fontSize!,
+                  3 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      21 * style3.fontSize!,
+                  getTitleHeight(context) - homeController.offset + 35,
+                  0,
+                  2);
             },
             child: Container(
               child: Column(
@@ -320,27 +301,27 @@ class Data {
                     TextButton(
                         onPressed: () =>
                             Navigator.of(context).pushNamed("Community"),
-                        child: getMenuText2("In Your Community"))
+                        child: getMenuText("In Your Community"))
                   ]),
             ),
           ),
           MouseRegion(
             onHover: (event) {
-              // Data.showMenus(
-              //     context,
-              //     4 *
-              //             (MediaQuery.of(context).size.width -
-              //                 (style3.fontSize! * numCharsHome)) /
-              //             5 +
-              //         40 * style3.fontSize!,
-              //     4 *
-              //             (MediaQuery.of(context).size.width -
-              //                 (style3.fontSize! * numCharsHome)) /
-              //             5 +
-              //         40 * style3.fontSize!,
-              //     getTitleHeight(context) - homeController.offset + 35,
-              //     0,
-              //     homeController);
+              Data.showMenus(
+                  context,
+                  4 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      34 * style3.fontSize!,
+                  4 *
+                          (MediaQuery.of(context).size.width -
+                              (style3.fontSize! * numCharsHome)) /
+                          5 +
+                      34 * style3.fontSize!,
+                  getTitleHeight(context) - homeController.offset + 35,
+                  0,
+                  3);
             },
             child: Container(
               child: Column(
@@ -349,7 +330,7 @@ class Data {
                     TextButton(
                         onPressed: () =>
                             Navigator.of(context).pushNamed("Shopping"),
-                        child: getMenuText2("Shopping Sustainably"))
+                        child: getMenuText("Shopping Sustainably"))
                   ]),
             ),
           ),
@@ -433,12 +414,12 @@ class Data {
   static String dressInfo =
       "A single dress made from polyester is estimated by its carbon footprint to release a total of about 17 kg of carbon dioxide throughout its lifetime.";
 
-  static String source = "Location of sourcing";
+  static String source = "Location of Sourcing";
   static String material = "Materials";
   static String green = "Green Certifications";
   static String look = "Look into the Corporate Social Responsibility (CSR)";
   static String webs =
-      "Other Websites that can help with determining sustainability";
+      "Other Websites that can help with Determining Sustainability";
   static String lookInfo =
       "• The CSR is a company's policy of social accountability through philanthropy or sustainability which can easily found on their website\n• Look out for greenwashing and unaccountable claims, as well as concrete data on programs and initiatives";
   static String webInfo = "";
@@ -451,9 +432,9 @@ class Data {
   static String handInfo =
       "Another option for second hand clothing is through the people in your local community. Asking for hand-me-downs from your neighbors and family friends is a great way to help others reduce their contribution to unnecessary waste as well as providing a way to expand your wardrobe without participating in fast fashion consumerism. This is also a good way to minimize personal fashion waste by giving unwanted clothes to younger members of the community instead of donating or throwing them out which usually results in the build up of landfills. Another option to give away or receive clothing is through garage sales and estate sales. These local resale events are great opportunities to connect with your community and shop sustainably and inexpensively.";
   static String clubInfo =
-      "A unique way to promote sustainability in your community is to create and participate in clubs that focus on educating the younger generations on how to adopt a sustainable lifestyle that takes care of the earth as well as the individual. You can join the Stitches for Sustainability family by creating your own club branch in your local school. Our organization focuses on fostering a community of like minded individuals who are seeking ways to stop participating in modern unsustainable consumerism. We host meetings discussing sustainability and the harmful effects of the fashion industry as well as providing sessions for needlework to teach members how to crochet/knit/sew their own clothing. This provides an open community that upholds each other and shares personal ideas to educate and encourage each member. If you are interested in starting your own Stitches for Sustainability club please contact us and we would be happy to help you organize and pitch your club to your local community.";
+      "A unique way to promote sustainability in your community is to create and participate in clubs that focus on educating the younger generations on how to adopt a sustainable lifestyle that takes care of the earth as well as the individual. You can join the Stitches for Sustainability family by creating your own club branch in your local school. Our organization focuses on fostering a community of like minded individuals who are seeking ways to stop participating in modern unsustainable consumerism. We host meetings discussing sustainability and the harmful effects of the fashion industry as well as providing sessions for needlework to teach members how to crochet/knit/sew their own clothing. This provides an open community that upholds each other and shares personal ideas to educate and encourage each member. If you are interested in starting your own Stitches for Sustainability club please contact us and we would be happy to help you organize and pitch your club to your local community. ";
   static String thriftingInfo =
-      "Thrifting is the purchasing of used clothing at discounted prices. Thrifting is a way to recycle used clothing, reducing clothing waste that would otherwise be burnt, shredded, or dumped in landfills contributing to immense carbon emissions and landfill pollution. Thrifting can be appealing to consumers who may not be as financially privileged to afford sustainable brands and eco friendly options. These consumers may be enticed by the dramatically cheap prices of fast fashion, but thrifting is a more sustainable and inexpensive option for all consumers regardless of economic circumstances. Thrifting is a great and accessible way to shop for trends without contributing to carbon emissions from the highly manufactured fashion industry. Local thrift stores provide a place to donate and purchase second hand clothing while online thrift store platforms provide a larger variety of styles and options on a global scale.\n\nThrift Store Chains:";
+      "Thrifting is the purchasing of used clothing at discounted prices. Additionally, thrifting is a way to recycle used clothing, reducing clothing waste that would otherwise be burnt; shredded; or dumped in landfills, contributing to immense carbon emissions and landfill pollution. Second hand purchasing can be appealing to consumers who may not be as financially privileged to afford sustainable brands and eco friendly options. These consumers may be enticed by the dramatically cheap prices of fast fashion, but thrifting is a more sustainable and inexpensive option for all consumers regardless of economic circumstances. Thrifting is a great and accessible way to shop for trends without contributing to carbon emissions from the highly manufactured fashion industry. Local thrift stores provide a place to donate and purchase second hand clothing while online thrift store platforms supply a larger variety of styles and options on a global scale.\n\nThrift Store Chains:";
   static String borrowInfo =
       "Before purchasing clothing goods, it can be a good idea to check if someone in your social circle already owns the product, so that you can try it on and evaluate if it would be a sustainable choice in your personal closet. This would allow an opportunity for you to consider it as an actual physical addition to your wardrobe and help inform your purchasing decision. Additionally there is a chance that your friend is willing to gift or resell it to you, which is a much more sustainable exchange than conventional shopping. ";
   static SelectableText comMission = SelectableText(
@@ -462,27 +443,27 @@ class Data {
     textAlign: TextAlign.center,
   );
   static SelectableText mission3 = SelectableText(
-    "As consumers, it is our responsibility to research the companies and industries we are supporting with our economic purchases and keep those companies and industries accountable.",
+    "As consumers it is our responsibility to research the companies and industries we are supporting with our economic purchases and keep them accountable. ",
     style: style4,
     textAlign: TextAlign.center,
   );
   static String susInfo =
       "Many good willed consumers will be tricked by the greenwashing of modern companies as they attempt to appeal to eco-conscious customers. Greenwashing is the disingenuous branding of a company to attempt to appear more sustainable, however these attempts usually consist of general and inconspicuous phrasing that have no actual evidence to back up their claim of being eco-friendly. This form of marketing is directly targeting consumers who are starting to search for more sustainable options, therefore it is extremely important to know what to look for when judging a company on its sustainability and eco-consciousness.\nHere’s a guide in researching on the sustainability and ethical factors of companies to help make more informed decisions on where to shop and which brands to support:";
   static String borrow = "Borrow From Friends";
-  static String mkCloth = "Making clothes/sewing";
+  static String mkCloth = "Making Clothes/Sewing";
   static String mkInfo =
       "Sewing clothing from scratch is the most substantial way to avoid participation in the fashion industry since it eliminates all consumption of unethically and unsustainably made products and also completely avoids the carbon footprint caused by the factories and shipping of these manufactured goods. Sewing also allows complete creative freedom and liberty in the making of the article of clothing since the design and style is entirely up to you, making every homemade piece of clothing customizable. Additionally, the sourcing of textiles is now in the consumers hands so they have the opportunity to purchase sustainable fabric instead of relying on the sustainability of the brand. For beginners it’s best to start off following a beginner video tutorial on a specific clothing piece such as a simple top.\n";
   static String mkInfo2 =
-      "\n• Recycled Cotton\n• Organic Hemp\n• Organic Linen\n• Tencel (recycled wood)\n• Econyl (recycled plastic)\n• Qmonos (biodegradable synthetic spider silk)\n";
+      "Look for these types of fabrics and textiles when shopping:\n• Recycled Cotton\n• Organic Hemp\n• Organic Linen\n• Tencel (recycled wood)\n• Econyl (recycled plastic)\n• Qmonos (biodegradable synthetic spider silk)\n";
   static String croch = "Crocheting/Knitting";
   static String crochInfo =
       "Crocheting and knitting are both ways to create clothing pieces through yarn. Although the process of handmade clothing is more tedious and time consuming for an individual than just buying a knitted hat, it is more sustainable since an individual can choose to source their yarn sustainably and this yarn can also be reused over and over again.\n\n";
   static String crochInfo2 =
-      "\nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out.\n• Hats\n• Scarves\n• Sweaters\n• Cardigans\n• Tank Tops\n• Tote Bags\n\n";
+      "\nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out."; //\n• Hats\n• Scarves\n• Sweaters\n• Cardigans\n• Tank Tops\n• Tote Bags\n\n";
   static String crochInfo3 =
-      "When shopping for yarn, look for these materials in the yarn composition:\n• Silk\n• Hemp\n• Upcycled yarn \n• Organic Cotton\n• Tencel/Lyocell(recycled plant pulp)";
+      "\nWhen shopping for yarn, look for these materials:\n• Silk\n• Hemp\n• Upcycled yarn \n• Organic Cotton\n• Tencel/Lyocell(recycled plant pulp)";
   static String doInfo =
-      "Handmade clothing avoids overproduction and excess shipping, reducing carbon emissions from vehicles that transport these products. Using sustainable resources and reusing fabric minimizes waste and textile pollution.";
+      "Handmade clothing avoids overproduction and excess shipping, reducing carbon emission from vehicles that transport these products. Using sustainable resources and reusing fabric minimizes waste and textile pollution.";
   static String styInfo =
       "The most crucial skill for sustaining an environmentally friendly wardrobe is the ability to style and actually wear your clothing long term in order to avoid purchasing unnecessary clothing that creates excessive carbon emissions and pollution. Styling clothes is the key factor in reusing the same clothes for years even as fashion trends change. This ability relies on creativity and well thought out initial purchases of clothing, usually of pieces that are versatile and able to be worn in many different outfits. Instead of browsing and window shopping for trends, developing your own style can help you make more cautious and conservative shopping choices.";
   static String alt = "Alterations";
@@ -521,29 +502,85 @@ class Data {
     "Almost 70% of clothing is made from polyester and other synthetic fibers that are created from the burning and melting of fossil fuels like crude oil.",
     style: style3,
   );
-  static showMenus(
-    BuildContext context,
-    double right,
-    double left,
-    double top,
-    double bottom,
-  ) async {
+  static showMenus(BuildContext context, double right, double left, double top,
+      double bottom, int index) async {
     List<PopupMenuItem> atHome = [
       PopupMenuItem(
           child: TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamed("Style");
               },
-              child: Text(
-                "Styling",
-              )))
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  getMenuText2("Styling"),
+                  Image.asset("assets/images/At_Home_image.png", scale: 5),
+                ],
+              ))),
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("DoYourSelf");
+              },
+              child: getMenuText2("Do it Yourself"))),
     ];
-    List<PopupMenuItem> com = [];
-    List<PopupMenuItem> sus = [];
+    List<PopupMenuItem> com = [
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Borrow");
+              },
+              child: getMenuText2("Borrow From Friends"))),
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Thrifting");
+              },
+              child: getMenuText2("Thrifiting"))),
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Hand");
+              },
+              child: getMenuText2("Hand Me Downs"))),
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Style");
+              },
+              child: getMenuText2("Styling"))),
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Club");
+              },
+              child: getMenuText2("Creating a Club"))),
+    ];
+    List<PopupMenuItem> sus = [
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Identify");
+              },
+              child: getMenuText2("Sustainable Companies"))),
+      PopupMenuItem(
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("Sustainable");
+              },
+              child: getMenuText2("Sustainable Brands"))),
+    ];
     await showMenu(
+        color: Colors.white,
         context: context,
         position: RelativeRect.fromLTRB(left, top, right, bottom),
-        items: []);
+        items: index == 1
+            ? atHome
+            : index == 2
+                ? com
+                : index == 3
+                    ? sus
+                    : []);
   }
 }
 

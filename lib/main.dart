@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         "Style": (context) => AtHomeScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 750.0)),
         "DoYourSelf": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2750.0)),
+            keepScrollOffset: false, initialScrollOffset: 2550.0)),
         "Community": (context) => InCommunityScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
         "Borrow": (context) => InCommunityScreen(ScrollController(

@@ -25,7 +25,7 @@ class SustainabilityScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Data.getTitleImage(context),
-            Data.getMenuBar2(context, homeController),
+            Data.getMenuBar(context, homeController),
             Data.missionWidget(context, "Shopping Sustainably", Data.mission3),
             Padding(
               padding: const EdgeInsets.only(
@@ -124,42 +124,67 @@ class SustainabilityScreen extends StatelessWidget {
                                 //  width: MediaQuery.of(context).size.width / 4,
                                 children: [
                                   TextButton(
-                                    child: Text(
-                                      "• Environmental Working Group",
-                                      style: Data.style3,
-                                    ),
+                                    child: Text.rich(TextSpan(children: [
+                                      TextSpan(
+                                        text: "• ",
+                                        style: Data.style3,
+                                      ),
+                                      TextSpan(
+                                          text: "Environmental Working Group",
+                                          style: Data.styleButton)
+                                    ])),
                                     onPressed: () =>
                                         launch("https://www.ewg.org/"),
                                   ),
                                   TextButton(
-                                    child: Text(
-                                      "• Fashion Transparency Index",
-                                      style: Data.style3,
-                                    ),
+                                    child: Text.rich(TextSpan(children: [
+                                      TextSpan(
+                                        text: "• ",
+                                        style: Data.style3,
+                                      ),
+                                      TextSpan(
+                                          text: "Fashion Transparency Index",
+                                          style: Data.styleButton)
+                                    ])),
                                     onPressed: () => launch(
                                         "https://www.fashionrevolution.org/about/transparency/ "),
                                   ),
                                   TextButton(
-                                    child: Text(
-                                      "• Good On You",
-                                      style: Data.style3,
-                                    ),
+                                    child: Text.rich(TextSpan(children: [
+                                      TextSpan(
+                                        text: "• ",
+                                        style: Data.style3,
+                                      ),
+                                      TextSpan(
+                                          text: "Good On You",
+                                          style: Data.styleButton)
+                                    ])),
                                     onPressed: () =>
                                         launch("https://goodonyou.eco/"),
                                   ),
                                   TextButton(
-                                    child: Text(
-                                      "• Rank A Brand",
-                                      style: Data.style3,
-                                    ),
+                                    child: Text.rich(TextSpan(children: [
+                                      TextSpan(
+                                        text: "• ",
+                                        style: Data.style3,
+                                      ),
+                                      TextSpan(
+                                          text: "Rank A Brand",
+                                          style: Data.styleButton)
+                                    ])),
                                     onPressed: () => launch(
                                         "https://directory.goodonyou.eco/?_ga=2.245103557.1977874556.1639541414-1113788776.1637860368&_gl=1*mxll0f*_ga*MTExMzc4ODc3Ni4xNjM3ODYwMzY4*_ga_TTB1J3Q9MN*MTYzOTU0MTQxMy40LjEuMTYzOTU0MjkwMy42MA"),
                                   ),
                                   TextButton(
-                                    child: Text(
-                                      "• Sustainable Apparel Coalition",
-                                      style: Data.style3,
-                                    ),
+                                    child: Text.rich(TextSpan(children: [
+                                      TextSpan(
+                                        text: "• ",
+                                        style: Data.style3,
+                                      ),
+                                      TextSpan(
+                                          text: "Sustainable Apparel Coalition",
+                                          style: Data.styleButton)
+                                    ])),
                                     onPressed: () => launch(
                                         "https://apparelcoalition.org/ "),
                                   ),
