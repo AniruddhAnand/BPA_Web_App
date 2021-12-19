@@ -46,11 +46,8 @@ class Data {
 
   static Widget getMenuBar(
       BuildContext context, ScrollController homeController) {
-    style3 = new TextStyle(
-        fontFamily: style3.fontFamily,
-        fontSize: MediaQuery.of(context).size.width < 700
-            ? style3.fontSize! * .5
-            : style3.fontSize);
+    style3 =
+        new TextStyle(fontFamily: style3.fontFamily, fontSize: style3.fontSize);
     // print(MediaQuery.of(context).size.width);
     return SafeArea(
       // child: SingleChildScrollView(
@@ -272,7 +269,7 @@ class Data {
   static String borrowInfo =
       "Before purchasing clothing goods, it can be a good idea to check if someone in your social circle already owns the product, so that you can try it on and evaluate if it would be a sustainable choice in your personal closet. This would allow an opportunity for you to consider it as an actual physical addition to your wardrobe and help inform your purchasing decision. Additionally there is a chance that your friend is willing to gift or resell it to you, which is a much more sustainable exchange than conventional shopping. ";
   static SelectableText comMission = SelectableText(
-    "Ways to practice sustainability in your community and interact with others to help increase local efforts towards eco-friendly fashion.+",
+    "Ways to practice sustainability in your community and interact with others to help increase local efforts towards eco-friendly fashion.",
     style: style3,
     textAlign: TextAlign.center,
   );
@@ -293,9 +290,9 @@ class Data {
   static String crochInfo =
       "Crocheting and knitting are both ways to create clothing pieces through yarn. Although the process of handmade clothing is more tedious and time consuming for an individual than just buying a knitted hat, it is more sustainable since an individual can choose to source their yarn sustainably and this yarn can also be reused over and over again.\n\n";
   static String crochInfo2 =
-      "\nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out.\n         • Hats\n         • Scarves\n         • Sweaters\n         • Cardigans\n         • Tank Tops\n         • Tote Bags\n\n";
+      "\nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out.\n• Hats\n• Scarves\n• Sweaters\n• Cardigans\n• Tank Tops\n• Tote Bags\n\n";
   static String crochInfo3 =
-      "When shopping for yarn, look for these materials in the yarn composition:\n         • Silk\n         • Hemp\n         • Upcycled yarn \n         • Organic Cotton\n         • Tencel/Lyocell(recycled plant pulp)";
+      "When shopping for yarn, look for these materials in the yarn composition:\n• Silk\n• Hemp\n• Upcycled yarn \n• Organic Cotton\n• Tencel/Lyocell(recycled plant pulp)";
   static String doInfo =
       "Handmade clothing avoids overproduction and excess shipping, reducing carbon emission from vehicles that transport these products. Using sustainable resources and reusing fabric minimizes waste and textile pollution.";
   static String styInfo =
@@ -308,7 +305,7 @@ class Data {
   static String embInfo =
       "Embroidery is a form of stitching used to decorate textiles and fabrics. Learning how to embroider can help in personalizing more basic clothing items to make them more wearable resulting in reduced clothing waste. Essentially by only learning the basic stitches, creative liberties can be taken to embroider any image or phrase through practice. All you need to start is a needle, thread, the article of clothing that is being embroidered on, and preferably an embroidery hoop.";
   static String stylingInfo =
-      "The most important practice towards sustainability is simply using the clothes you already own to avoid participating in the fast fashion industry. Here are some ways to keep your wardrobe unique and creative without the help of purchasing new clothes:";
+      "The most important practice towards sustainability is simply using the clothes you already own to avoid participating in the fast fashion industry. Here are some ways to keep your wardrobe unique and creative without the:";
   static String mission = "How Fashion Impacts Our Environment";
   static SelectableText mission2 = SelectableText(
     "Things you can do as an individual in the fashion industry to create and maintain a sustainable closet to reduce carbon emissions.",

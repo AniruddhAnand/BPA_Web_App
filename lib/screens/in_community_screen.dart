@@ -47,7 +47,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          left: 60, right: 40, top: 40, bottom: 0.0),
+                          left: 0.0, right: 40, top: 40, bottom: 0.0),
                       child: Container(
                           child: SelectableText("${Data.borrowInfo}",
                               style: Data.style3)),
@@ -56,7 +56,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                 ),
               ),
             ),
-            Image.asset("assets/images/Floral_Border_New.PNG"),
+            Image.asset("assets/images/Floral_Design_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
                   top: 40.0, bottom: 0.0, left: 65, right: 65),
@@ -71,7 +71,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          left: 60, right: 40, top: 40, bottom: 0.0),
+                          left: 0.0, right: 40, top: 40, bottom: 0.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -163,7 +163,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                 ),
               ),
             ),
-            Image.asset("assets/images/Floral_Border_New.PNG"),
+            Image.asset("assets/images/Floral_Design_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
                   top: 40.0, bottom: 0.0, left: 65, right: 65),
@@ -178,7 +178,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          left: 60, right: 40, top: 40, bottom: 0.0),
+                          left: 0.0, right: 40, top: 40, bottom: 0.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
                           child: SelectableText("${Data.handInfo}",
@@ -188,7 +188,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                 ),
               ),
             ),
-            Image.asset("assets/images/Floral_Border_New.PNG"),
+            Image.asset("assets/images/Floral_Design_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
                   top: 40.0, bottom: 0.0, left: 65, right: 65),
@@ -203,7 +203,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          left: 60, right: 40, top: 40, bottom: 0.0),
+                          left: 0.0, right: 40, top: 40, bottom: 0.0),
                       child: Container(
                           // width: MediaQuery.of(context).size.width / 4,
                           child: SelectableText("${Data.clubInfo}",

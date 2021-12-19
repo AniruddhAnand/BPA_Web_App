@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SelectableText(Data.mission, style: Data.style),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 50.0, right: 50.0, bottom: 75.0, top: 30.0),
+                  left: 50.0, right: 50.0, bottom: 75.0, top: 40.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -87,9 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(
-                          left: 25.0,
-                          right: 25.0,
-                          /* top: 35.0,*/ bottom: 25.0),
+                          left: 25.0, right: 25.0, top: 25.0, bottom: 25.0),
                       child: Data.info1,
                     ),
                     width: MediaQuery.of(context).size.width / 2.5,
@@ -118,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           children: <Widget>[
                             Image.asset(
-                              "assets/images/Dress_Image.png",
+                              "assets/images/Dress_Image_New.png",
                               scale: 2.5,
                             ),
                             SizedBox(height: 10),
