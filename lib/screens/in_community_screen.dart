@@ -184,7 +184,7 @@ class InCommunityScreen extends StatelessWidget {
             Image.asset("assets/images/Floral_Design_New.PNG"),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 40.0, bottom: 0.0, left: 65, right: 65),
+                  top: 40.0, bottom: 40.0, left: 65, right: 65),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(

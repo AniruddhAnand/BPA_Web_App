@@ -34,10 +34,15 @@ class Data {
       fontSize: 18,
       color: Colors.black,
       decoration: TextDecoration.underline);
+  static TextStyle styleButton4 = TextStyle(
+      fontFamily: "CrimsonText",
+      fontSize: 12,
+      color: Colors.black,
+      decoration: TextDecoration.underline);
 
-  static double ratio = 2224 / 7038.0;
+  static double ratio = 2224 / 11485.0;
   static double getTitleWidth(BuildContext context) {
-    return MediaQuery.of(context).size.width * .85;
+    return MediaQuery.of(context).size.width;
   }
 
   static double getTitleHeight(BuildContext context) {
@@ -47,7 +52,7 @@ class Data {
   static Widget getTitleImage(BuildContext context) {
     return GestureDetector(
       child: Image.asset(
-        "assets/images/Title_Image_Short.jpeg",
+        "assets/images/Title_Different.jpeg",
         width: Data.getTitleWidth(context),
       ),
       onTap: () => Navigator.of(context).popAndPushNamed("/"),
@@ -55,177 +60,6 @@ class Data {
   }
 
   static int numCharsHome = 48;
-  static Widget getMenuBar2(
-      BuildContext context, ScrollController homeController) {
-    // OverlayEntry entry1 = OverlayEntry(builder: (context) {
-    //   return Container(
-    //     child: Stack(
-    //       children: [
-    //         Positioned(
-    //           top: getTitleHeight(context) - homeController.offset + 35,
-    //           child: Column(
-    //             children: [
-    //               TextButton(
-    //                   onPressed: () {
-    //                     Navigator.of(context).pushNamed("Style");
-    //                   },
-    //                   child: Text("Hi"))
-    //             ],
-    //           ),
-    //         ),
-    //       ],
-    //     ),
-    //   );
-    // });
-    return SafeArea(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Column(
-          children: [
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("/");
-                },
-                child: getMenuText("Home")),
-            Icon(
-              Icons.arrow_drop_up_rounded,
-              color: Colors.transparent,
-            )
-          ],
-        ),
-        Column(
-          children: [
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("AtHome");
-                },
-                child: getMenuText("At Home")),
-            MouseRegion(
-              child: PopupMenuButton(
-                enabled: true,
-                child: Icon(Icons.arrow_drop_down_rounded),
-                offset: Offset(-125, 10),
-                shape: const TooltipShape(),
-                itemBuilder: (_) => <PopupMenuEntry>[
-                  PopupMenuItem(
-                      child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        child: getMenuText2("Styling"),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed("Style");
-                        },
-                      ),
-                      Image.asset("assets/images/At_Home_Image.png", scale: 7),
-                    ],
-                  )),
-                  PopupMenuItem(
-                      child: TextButton(
-                    child: getMenuText2("Do it Yourself"),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("DoYourSelf");
-                    },
-                  )),
-                ],
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("Community");
-                },
-                child: getMenuText("In Your Community")),
-            MouseRegion(
-              child: PopupMenuButton(
-                enabled: true,
-                child: Icon(Icons.arrow_drop_down_rounded),
-                offset: Offset(-130, 0),
-                shape: const TooltipShape(),
-                itemBuilder: (_) => <PopupMenuEntry>[
-                  PopupMenuItem(
-                      child: Row(
-                    children: [
-                      TextButton(
-                        child: getMenuText2("Borrow From Friends"),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed("Borrow");
-                        },
-                      ),
-                      Image.asset("assets/images/Com_Image.png", scale: 5)
-                    ],
-                  )),
-                  PopupMenuItem(
-                      child: TextButton(
-                    child: getMenuText2("Thrifting"),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("Thrifting");
-                    },
-                  )),
-                  PopupMenuItem(
-                      child: TextButton(
-                    child: getMenuText2("Hand Me Down"),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("Hand");
-                    },
-                  )),
-                  PopupMenuItem(
-                      child: TextButton(
-                    child: getMenuText2("Creating a Club"),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("Club");
-                    },
-                  )),
-                ],
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("Shopping");
-                },
-                child: getMenuText("Shopping Sustainably")),
-            MouseRegion(
-              child: PopupMenuButton(
-                enabled: true,
-                child: Icon(Icons.arrow_drop_down_rounded),
-                offset: Offset(130, 0),
-                shape: const TooltipShape(),
-                itemBuilder: (_) => <PopupMenuEntry>[
-                  PopupMenuItem(
-                      child: Row(
-                    children: [
-                      TextButton(
-                        child: getMenuText2("Sustaibale Companies"),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed("Indentify");
-                        },
-                      ),
-                      Image.asset("assets/images/Sus_Image.png", scale: 5)
-                    ],
-                  )),
-                  PopupMenuItem(
-                      child: TextButton(
-                    child: getMenuText2("Sustainable Brands"),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("Brands");
-                    },
-                  )),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ],
-    ));
-  }
 
   static Widget getMenuBar(
       BuildContext context, ScrollController homeController) {
@@ -233,109 +67,116 @@ class Data {
     return SafeArea(
       // child: SingleChildScrollView(
       //  scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          MouseRegion(
-            // onExit: (event) => Navigator.of(context).pop(),
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () => Navigator.of(context).pushNamed("/"),
-                        child: getMenuText("Home"))
-                  ]),
-            ),
+      child: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              MouseRegion(
+                // onExit: (event) => Navigator.of(context).pop(),
+                child: Container(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        TextButton(
+                            onPressed: () =>
+                                Navigator.of(context).pushNamed("/"),
+                            child: getMenuText("Home"))
+                      ]),
+                ),
+              ),
+              MouseRegion(
+                onHover: (event) {
+                  Data.showMenus(
+                      context,
+                      2 *
+                              (MediaQuery.of(context).size.width -
+                                  (style3.fontSize! * numCharsHome)) /
+                              5 +
+                          8.5 * style3.fontSize!,
+                      2 *
+                              (MediaQuery.of(context).size.width -
+                                  (style3.fontSize! * numCharsHome)) /
+                              5 +
+                          8.5 * style3.fontSize!,
+                      getTitleHeight(context) - homeController.offset + 47,
+                      0,
+                      1);
+                },
+                child: Container(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        TextButton(
+                            onPressed: () =>
+                                Navigator.of(context).pushNamed("AtHome"),
+                            child: getMenuText("At Home"))
+                      ]),
+                ),
+              ),
+              MouseRegion(
+                onHover: (event) {
+                  Data.showMenus(
+                      context,
+                      3 *
+                              (MediaQuery.of(context).size.width -
+                                  (style3.fontSize! * numCharsHome)) /
+                              5 +
+                          20.5 * style3.fontSize!,
+                      3 *
+                              (MediaQuery.of(context).size.width -
+                                  (style3.fontSize! * numCharsHome)) /
+                              5 +
+                          20.5 * style3.fontSize!,
+                      getTitleHeight(context) - homeController.offset + 47,
+                      0,
+                      2);
+                },
+                child: Container(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        TextButton(
+                            onPressed: () =>
+                                Navigator.of(context).pushNamed("Community"),
+                            child: getMenuText("In Your Community"))
+                      ]),
+                ),
+              ),
+              MouseRegion(
+                onHover: (event) {
+                  Data.showMenus(
+                      context,
+                      4 *
+                              (MediaQuery.of(context).size.width -
+                                  (style3.fontSize! * numCharsHome)) /
+                              5 +
+                          33.75 * style3.fontSize!,
+                      4 *
+                              (MediaQuery.of(context).size.width -
+                                  (style3.fontSize! * numCharsHome)) /
+                              5 +
+                          33.75 * style3.fontSize!,
+                      getTitleHeight(context) - homeController.offset + 47,
+                      0,
+                      3);
+                },
+                child: Container(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        TextButton(
+                            onPressed: () =>
+                                Navigator.of(context).pushNamed("Shopping"),
+                            child: getMenuText("Shopping Sustainably"))
+                      ]),
+                ),
+              ),
+            ],
           ),
-          MouseRegion(
-            onHover: (event) {
-              Data.showMenus(
-                  context,
-                  2 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      8.5 * style3.fontSize!,
-                  2 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      8.5 * style3.fontSize!,
-                  getTitleHeight(context) - homeController.offset + 35,
-                  0,
-                  1);
-            },
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pushNamed("AtHome"),
-                        child: getMenuText("At Home"))
-                  ]),
-            ),
-          ),
-          MouseRegion(
-            onHover: (event) {
-              Data.showMenus(
-                  context,
-                  3 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      21 * style3.fontSize!,
-                  3 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      21 * style3.fontSize!,
-                  getTitleHeight(context) - homeController.offset + 35,
-                  0,
-                  2);
-            },
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pushNamed("Community"),
-                        child: getMenuText("In Your Community"))
-                  ]),
-            ),
-          ),
-          MouseRegion(
-            onHover: (event) {
-              Data.showMenus(
-                  context,
-                  4 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      34 * style3.fontSize!,
-                  4 *
-                          (MediaQuery.of(context).size.width -
-                              (style3.fontSize! * numCharsHome)) /
-                          5 +
-                      34 * style3.fontSize!,
-                  getTitleHeight(context) - homeController.offset + 35,
-                  0,
-                  3);
-            },
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pushNamed("Shopping"),
-                        child: getMenuText("Shopping Sustainably"))
-                  ]),
-            ),
-          ),
-        ],
+        ),
       ),
       //  ),
     );
@@ -346,8 +187,8 @@ class Data {
       padding: EdgeInsets.only(
           left: MediaQuery.of(context).size.width * 1.7 / 13.5,
           right: MediaQuery.of(context).size.width * 1.7 / 13.5,
-          top: 90.0,
-          bottom: 60.0),
+          top: 40.0,
+          bottom: 40.0),
       child: Container(
         width: MediaQuery.of(context).size.width / 1.3,
         decoration: BoxDecoration(
@@ -387,25 +228,54 @@ class Data {
     );
   }
 
+  static Widget getMenuText3(String s) {
+    return Text.rich(
+      TextSpan(children: [
+        TextSpan(text: "     "),
+        TextSpan(text: s, style: styleButton4)
+      ]),
+    );
+  }
+
   static Widget footer(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 65, bottom: 40),
-      child: Column(
-        children: [
-          Text("Contact Info", style: Data.style3),
-          Row(
+      padding: const EdgeInsets.only(bottom: 40.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width / 2,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.white,
+            width: 10,
+          ),
+          borderRadius: BorderRadius.circular(0.0),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 40, top: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                "assets/images/Logo.png",
-                scale: 3,
+              Text("Contact Info", style: Data.style3),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    "assets/images/Logo_2.png",
+                    scale: 3,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  SelectableText(
+                    "Number: 214-404-6575\nEmail: stitches4sustainability@gmail.com",
+                    style: Data.style3,
+                  )
+                ],
               ),
-              SelectableText(
-                "Number: 214-404-6575\nEmail: stitches4sustainability@gmail.com",
-                style: Data.style3,
-              )
+              TextButton(onPressed: () {}, child: getMenuText("Citations"))
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
@@ -462,7 +332,7 @@ class Data {
   static String crochInfo2 =
       "\nThese projects are so common that basic tutorials and patterns can be found all over the internet including on Youtube since visuals are extremely helpful when just starting out."; //\n• Hats\n• Scarves\n• Sweaters\n• Cardigans\n• Tank Tops\n• Tote Bags\n\n";
   static String crochInfo3 =
-      "\nWhen shopping for yarn, look for these materials:\n• Silk\n• Hemp\n• Upcycled yarn \n• Organic Cotton\n• Tencel/Lyocell(recycled plant pulp)";
+      "When shopping for yarn, look for these materials:\n• Silk\n• Hemp\n• Upcycled yarn \n• Organic Cotton\n• Tencel/Lyocell(recycled plant pulp)";
   static String doInfo =
       "Handmade clothing avoids overproduction and excess shipping, reducing carbon emission from vehicles that transport these products. Using sustainable resources and reusing fabric minimizes waste and textile pollution.";
   static String styInfo =
@@ -508,22 +378,52 @@ class Data {
     List<PopupMenuItem> atHome = [
       PopupMenuItem(
           child: TextButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed("Style");
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  getMenuText2("Styling"),
-                  Image.asset("assets/images/At_Home_image.png", scale: 5),
-                ],
-              ))),
+        onPressed: () {
+          Navigator.of(context).pushNamed("Style");
+        },
+        child: getMenuText2("Styling"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Emb");
+        },
+        child: getMenuText3("Embroidery"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Alt");
+        },
+        child: getMenuText3("Alterations"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Des");
+        },
+        child: getMenuText3("Design"),
+      )),
       PopupMenuItem(
           child: TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamed("DoYourSelf");
               },
               child: getMenuText2("Do it Yourself"))),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Croch");
+        },
+        child: getMenuText3("Crocheting/Knitting"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("MK");
+        },
+        child: getMenuText3("Making Clothes/Sewing"),
+      )),
     ];
     List<PopupMenuItem> com = [
       PopupMenuItem(
@@ -566,8 +466,43 @@ class Data {
               child: getMenuText2("Sustainable Companies"))),
       PopupMenuItem(
           child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Src");
+        },
+        child: getMenuText3("Location of Sourcing"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Mat");
+        },
+        child: getMenuText3("Materials"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Green");
+        },
+        child: getMenuText3("Green Certifications"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("CSR");
+        },
+        child: getMenuText3("CSR"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("Webs");
+        },
+        child: getMenuText3("Other Websites"),
+      )),
+      PopupMenuItem(
+          child: TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed("Sustainable");
+                Navigator.of(context).pushNamed("Brands");
               },
               child: getMenuText2("Sustainable Brands"))),
     ];

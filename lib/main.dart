@@ -31,25 +31,45 @@ class MyApp extends StatelessWidget {
         "AtHome": (context) => AtHomeScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
         "Style": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 600.0)),
+        "Emb": (context) => AtHomeScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 750.0)),
+        "Alt": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 1200.0)),
+        "Des": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 1450.0)),
         "DoYourSelf": (context) => AtHomeScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 2550.0)),
+        "Croch": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 2600.0)),
+        "MK": (context) => AtHomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 3325.0)),
         "Community": (context) => InCommunityScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
         "Borrow": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 750.0)),
+            keepScrollOffset: false, initialScrollOffset: 600.0)),
         "Thrifting": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 1150.0)),
+            keepScrollOffset: false, initialScrollOffset: 1000.0)),
         "Hand": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2150.0)),
+            keepScrollOffset: false, initialScrollOffset: 2000.0)),
         "Club": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2750.0)),
+            keepScrollOffset: false, initialScrollOffset: 2480.0)),
         "Shopping": (context) => SustainabilityScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
-        "Indentify": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 800.0)),
+        "Identify": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 600.0)),
+        "Src": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 750.0)),
+        "Mat": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 900.0)),
+        "Green": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 1220.0)),
+        "CSR": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 1480.0)),
+        "Webs": (context) => SustainabilityScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 1640.0)),
         "Brands": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2275.0)),
+            keepScrollOffset: false, initialScrollOffset: 2105.0)),
       },
     );
   }
