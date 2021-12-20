@@ -73,8 +73,11 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
               getMenuBar(context, widget.homeController),
               missionWidget(context, "At Home", mission2),
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 10.0, bottom: 40.0, left: 65, right: 65),
+                padding: EdgeInsets.only(
+                    top: 10.0,
+                    bottom: 40.0,
+                    left: 65 * aspectRatio,
+                    right: 65 * aspectRatio),
                 child: Container(
                   alignment: Alignment.centerLeft,
                   child: Column(
@@ -91,7 +94,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           child: SelectableText(stylingInfo, style: style3)),
                       Padding(
                           padding: EdgeInsets.only(
-                              left: 0, right: 40, top: 40, bottom: 0.0),
+                              left: 0,
+                              right: 40 * aspectRatio,
+                              top: 40,
+                              bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -105,7 +111,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               SelectableText(
                                 "\nTutorials and Guides:",
                                 style: TextStyle(
-                                    fontFamily: "CrimsonText", fontSize: 28),
+                                    fontFamily: "CrimsonText",
+                                    fontSize: 28 * aspectRatio),
                               ),
                               TextButton(
                                 child: Text.rich(TextSpan(children: [
@@ -166,7 +173,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           )),
                       Padding(
                           padding: EdgeInsets.only(
-                              left: 0, right: 40, top: 40, bottom: 0.0),
+                              left: 0,
+                              right: 40 * aspectRatio,
+                              top: 40,
+                              bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -181,7 +191,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           )),
                       Padding(
                           padding: EdgeInsets.only(
-                              left: 0, right: 40, top: 40, bottom: 0.0),
+                              left: 0,
+                              right: 40 * aspectRatio,
+                              top: 40,
+                              bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -202,8 +215,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                 ),
               ),
               Padding(
-                padding:
-                    EdgeInsets.only(left: 0, right: 60, top: 40, bottom: 20.0),
+                padding: EdgeInsets.only(
+                    left: 0, right: 60 * aspectRatio, top: 40, bottom: 20.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width / 1.6,
                   alignment: Alignment.center,
@@ -217,8 +230,11 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                   child: Container(
                     // width: MediaQuery.of(context).size.width / 1.3,
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 25.0, right: 25.0, top: 10.0, bottom: 20.0),
+                      padding: EdgeInsets.only(
+                          left: 25.0 * aspectRatio,
+                          right: 25.0 * aspectRatio,
+                          top: 10.0,
+                          bottom: 20.0),
                       child: Column(
                         children: [
                           SelectableText(
@@ -335,8 +351,11 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
               ),
               Image.asset("assets/images/Floral_Design_New.PNG"),
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 40.0, bottom: 0.0, left: 65, right: 65),
+                padding: EdgeInsets.only(
+                    top: 40.0,
+                    bottom: 0.0,
+                    left: 65 * aspectRatio,
+                    right: 65 * aspectRatio),
                 child: Container(
                   alignment: Alignment.centerLeft,
                   child: Column(
@@ -353,8 +372,11 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           // width: MediaQuery.of(context).size.width / 4,
                           child: SelectableText(doInfo, style: style3)),
                       Padding(
-                          padding: const EdgeInsets.only(
-                              left: 0, right: 40, top: 40, bottom: 0.0),
+                          padding: EdgeInsets.only(
+                              left: 0,
+                              right: 40 * aspectRatio,
+                              top: 40,
+                              bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -367,12 +389,12 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   child:
                                       SelectableText.rich(TextSpan(children: [
                                 TextSpan(text: crochInfo, style: style3),
-                                const TextSpan(
+                                TextSpan(
                                     text:
                                         "\nCrocheted/Knitted clothing pieces:",
                                     style: TextStyle(
                                         fontFamily: "CrimsonText",
-                                        fontSize: 28)),
+                                        fontSize: 28 * aspectRatio)),
                               ]))),
                               TextButton(
                                   onPressed: () =>
@@ -445,7 +467,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           )),
                       Padding(
                           padding: EdgeInsets.only(
-                              left: 0.0, right: 40.0, top: 40, bottom: 0.0),
+                              left: 0.0,
+                              right: 40.0 * aspectRatio,
+                              top: 40,
+                              bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -462,7 +487,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                     text: "\n\nSustainable Fabrics:",
                                     style: TextStyle(
                                         fontFamily: "CrimsonText",
-                                        fontSize: 28)),
+                                        fontSize: 28 * aspectRatio)),
                                 TextSpan(text: mkInfo2, style: style3),
                               ]))),
                             ],

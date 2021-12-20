@@ -366,7 +366,7 @@ SelectableText info1 = SelectableText(
   "The fashion industry contributes to about 8-10% of global carbon emissions. These emissions originate from transportation of resources and products as well as the development of extreme mass production of clothing. This superfluous production creates excessive amounts of textile waste leading to the burning of unwanted products in order to prevent lowering prices and make room for new designs. This widespread practice of burning unsold garments is a major contributor to carbon emissions from the fashion industry. The major cause of unrestrained manufacturing is attributed to the fast paced consumerism of the modern population. As overconsumption becomes popularized through media, the lifespan of clothing has dramatically declined fueling the unsustainable practices of the fashion industry as the demand for new clothing surges. Therefore it is the new generation of consumers’ responsibility to support sustainable fashion through their shopping habits and educated decisions.",
   style: style6,
 );
-AutoSizeText pantInfo = AutoSizeText(
+SelectableText pantInfo = SelectableText(
   "A pair of jeans is estimated to release about 33.4kg of carbon dioxide through its lifespan which is the equivalent of the emissions of a 69 mile road trip in the average car.",
   style: style3,
 );
