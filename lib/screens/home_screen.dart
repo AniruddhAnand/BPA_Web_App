@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    buildContext = context;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: //Container(
@@ -68,13 +71,16 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Data.getTitleImage(context),
-              Data.getMenuBar(context, widget.homeController),
-              Data.missionWidget(context, "Mission", Data.textMission),
-              SelectableText(Data.mission, style: Data.style),
+              getTitleImage(context),
+              getMenuBar(context, widget.homeController),
+              missionWidget(context, "Mission", textMission),
+              SelectableText(mission, style: style),
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 50.0, right: 50.0, bottom: 75.0, top: 40.0),
+                padding: EdgeInsets.only(
+                    left: 50.0 * aspectRatio,
+                    right: 50.0 * aspectRatio,
+                    bottom: 75.0,
+                    top: 40.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car"),
                                 child: Image.asset(
                                   "assets/images/Pant.PNG",
-                                  scale: 2.5,
+                                  scale: 2.5 / aspectRatio,
                                 ),
                               ),
                               SizedBox(
@@ -98,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Container(
                                   width: MediaQuery.of(context).size.width / 6,
-                                  child: Data.pantInfo),
+                                  child: pantInfo),
                             ],
                           ),
                         ),
@@ -106,7 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 30,
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: EdgeInsets.only(
+                              top: 10.0,
+                              bottom: 10,
+                              right: 10 * aspectRatio,
+                              left: 10 * aspectRatio),
                           child: Column(
                             children: <Widget>[
                               GestureDetector(
@@ -114,13 +124,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/"),
                                 child: Image.asset(
                                   "assets/images/Mushroom_2_Less.png",
-                                  scale: 2.5,
+                                  scale: 2.5 / aspectRatio,
                                 ),
                               ),
                               SizedBox(height: 10),
                               Container(
                                   width: MediaQuery.of(context).size.width / 6,
-                                  child: Data.mushInfo),
+                                  child: mushInfo),
                             ],
                           ),
                         ),
@@ -135,9 +145,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(0.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 25.0, right: 25.0, top: 25.0, bottom: 25.0),
-                        child: Data.info1,
+                        padding: EdgeInsets.only(
+                            left: 25.0 * aspectRatio,
+                            right: 25.0 * aspectRatio,
+                            top: 25.0,
+                            bottom: 25.0),
+                        child: info1,
                       ),
                       width: MediaQuery.of(context).size.width / 2.5,
                     ),
@@ -152,12 +165,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development"),
                                 child: Image.asset(
                                   "assets/images/Shirt.PNG",
-                                  scale: 2.5,
+                                  scale: 2.5 / aspectRatio,
                                 ),
                               ),
                               Container(
                                   width: MediaQuery.of(context).size.width / 6,
-                                  child: Data.shirtInfo),
+                                  child: shirtInfo),
                             ],
                           ),
                         ),
@@ -165,19 +178,23 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 25,
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: EdgeInsets.only(
+                              top: 10.0,
+                              bottom: 10,
+                              right: 10 * aspectRatio,
+                              left: 10 * aspectRatio),
                           child: Column(
                             children: <Widget>[
                               Image.asset(
                                 "assets/images/Dress_Titled.png",
-                                scale: 2.5,
+                                scale: 2.5 / aspectRatio,
                               ),
                               SizedBox(height: 10),
                               Container(
                                   width: MediaQuery.of(context).size.width / 6,
                                   child: Text(
-                                    Data.dressInfo,
-                                    style: Data.style3,
+                                    dressInfo,
+                                    style: style3,
                                   )),
                             ],
                           ),
@@ -187,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Data.footer(context),
+              footer(context),
             ],
           ),
         ),
@@ -217,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //           mainAxisAlignment: MainAxisAlignment.center,
 //           children: <Widget>[
 //             Image.asset("assets/images/Title_Image.jpeg"),
-//             Text(Data.mission,
+//             Text(mission,
 //                 style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
@@ -234,12 +251,12 @@ class _HomeScreenState extends State<HomeScreen> {
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
 //                     TextSpan(
-//                         text: Data.textMission, style: Styles.mediumTextStyle),
+//                         text: textMission, style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),
 //               ),
 //             ),
-//             Text(Data.sub1, style: Styles.titleTextStyleWithSecondaryTextColor),
+//             Text(sub1, style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
 //               child: Container(
@@ -254,7 +271,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //                   child: RichText(
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
-//                     TextSpan(text: Data.info1, style: Styles.mediumTextStyle),
+//                     TextSpan(text: info1, style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),
 //               ),
@@ -279,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.pantInfo,
+//                               text: pantInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -308,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.shirtInfo,
+//                               text: shirtInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -337,7 +354,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.mushInfo,
+//                               text: mushInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -346,7 +363,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //                 ],
 //               ),
 //             ),
-//             Text(Data.citation,
+//             Text(citation,
 //                 style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
@@ -363,7 +380,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
 //                     TextSpan(
-//                         text: Data.citationWords,
+//                         text: citationWords,
 //                         style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),

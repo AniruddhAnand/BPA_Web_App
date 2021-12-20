@@ -51,6 +51,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    buildContext = context;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: //Container(
@@ -68,9 +69,9 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Data.getTitleImage(context),
-              Data.getMenuBar(context, widget.homeController),
-              Data.missionWidget(context, "At Home", Data.mission2),
+              getTitleImage(context),
+              getMenuBar(context, widget.homeController),
+              missionWidget(context, "At Home", mission2),
               Padding(
                 padding: const EdgeInsets.only(
                     top: 10.0, bottom: 40.0, left: 65, right: 65),
@@ -82,27 +83,25 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 5.0),
                         child: SelectableText(
-                          Data.styling,
-                          style: Data.style5,
+                          styling,
+                          style: style5,
                         ),
                       ),
                       Container(
-                          child: SelectableText(Data.stylingInfo,
-                              style: Data.style3)),
+                          child: SelectableText(stylingInfo, style: style3)),
                       Padding(
                           padding: EdgeInsets.only(
                               left: 0, right: 40, top: 40, bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              SelectableText("${Data.embroidery}",
-                                  style: Data.style2),
+                              SelectableText("${embroidery}", style: style2),
                               SizedBox(
                                 height: 5,
                               ),
                               Container(
-                                  child: SelectableText(Data.embInfo,
-                                      style: Data.style3)),
+                                  child:
+                                      SelectableText(embInfo, style: style3)),
                               SelectableText(
                                 "\nTutorials and Guides:",
                                 style: TextStyle(
@@ -110,10 +109,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               ),
                               TextButton(
                                 child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(text: "•  ", style: style3),
                                   TextSpan(
                                     text: "DIY Stitching",
-                                    style: Data.styleButton,
+                                    style: styleButton,
                                   )
                                 ])),
                                 onPressed: () => launch(
@@ -121,10 +120,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               ),
                               TextButton(
                                 child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(text: "•  ", style: style3),
                                   TextSpan(
                                     text: "Crewel Ghoul Embroidery",
-                                    style: Data.styleButton,
+                                    style: styleButton,
                                   )
                                 ])),
                                 onPressed: () => launch(
@@ -132,10 +131,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               ),
                               TextButton(
                                 child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(text: "•  ", style: style3),
                                   TextSpan(
                                     text: "HandiWorks",
-                                    style: Data.styleButton,
+                                    style: styleButton,
                                   )
                                 ])),
                                 onPressed: () => launch(
@@ -143,10 +142,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               ),
                               TextButton(
                                 child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(text: "•  ", style: style3),
                                   TextSpan(
                                     text: "Needle'n Thread",
-                                    style: Data.styleButton,
+                                    style: styleButton,
                                   )
                                 ])),
                                 onPressed: () =>
@@ -154,10 +153,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               ),
                               TextButton(
                                 child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: Data.style3),
+                                  TextSpan(text: "•  ", style: style3),
                                   TextSpan(
                                     text: "Pintangle",
-                                    style: Data.styleButton,
+                                    style: styleButton,
                                   )
                                 ])),
                                 onPressed: () =>
@@ -171,13 +170,13 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              SelectableText("${Data.alt}", style: Data.style2),
+                              SelectableText("${alt}", style: style2),
                               SizedBox(
                                 height: 5,
                               ),
                               Container(
-                                  child: SelectableText(Data.altInfo,
-                                      style: Data.style3)),
+                                  child:
+                                      SelectableText(altInfo, style: style3)),
                             ],
                           )),
                       Padding(
@@ -186,13 +185,13 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              SelectableText("Design", style: Data.style2),
+                              SelectableText("Design", style: style2),
                               SizedBox(
                                 height: 5,
                               ),
                               Container(
-                                  child: SelectableText(Data.styInfo,
-                                      style: Data.style3)),
+                                  child:
+                                      SelectableText(styInfo, style: style3)),
                               SizedBox(
                                 height: 20,
                               ),
@@ -224,47 +223,47 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                         children: [
                           SelectableText(
                             "How to find your style",
-                            style: Data.style2,
+                            style: style2,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 "• Interacting with",
-                                style: Data.style3,
+                                style: style3,
                               ),
                               TextButton(
                                 child: Text(
                                   "Pinterest",
-                                  style: Data.styleButton,
+                                  style: styleButton,
                                 ),
                                 onPressed: () =>
                                     launch("https://www.pinterest.com/"),
                               ),
                               Text(
                                 "and creating a fashion board",
-                                style: Data.style3,
+                                style: style3,
                               )
                             ],
                           ),
                           SelectableText(
                             "• Styling around clothes that are already loved and owned",
-                            style: Data.style3,
+                            style: style3,
                           ),
                           SelectableText(
                             "• Creating a capsule wardrobe of everyday basics to rely on",
-                            style: Data.style3,
+                            style: style3,
                           ),
                           SelectableText(
                             "• Find style inspiration in sustainable fashion influencers",
-                            style: Data.style3,
+                            style: style3,
                           ),
                           TextButton(
                             child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(text: "•  ", style: style3),
                               TextSpan(
                                 text: "BestDressed",
-                                style: Data.styleButton,
+                                style: styleButton,
                               )
                             ])),
                             onPressed: () => launch(
@@ -272,10 +271,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           ),
                           TextButton(
                             child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(text: "•  ", style: style3),
                               TextSpan(
                                 text: "LainiOzark",
-                                style: Data.styleButton,
+                                style: styleButton,
                               )
                             ])),
                             onPressed: () => launch(
@@ -283,10 +282,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           ),
                           TextButton(
                             child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(text: "•  ", style: style3),
                               TextSpan(
                                 text: "AlexaSunshine83",
-                                style: Data.styleButton,
+                                style: styleButton,
                               )
                             ])),
                             onPressed: () => launch(
@@ -294,10 +293,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           ),
                           TextButton(
                             child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(text: "•  ", style: style3),
                               TextSpan(
                                 text: "Aditi Mayer",
-                                style: Data.styleButton,
+                                style: styleButton,
                               )
                             ])),
                             onPressed: () =>
@@ -305,10 +304,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           ),
                           TextButton(
                             child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(text: "•  ", style: style3),
                               TextSpan(
                                 text: "EthicallyKate",
-                                style: Data.styleButton,
+                                style: styleButton,
                               )
                             ])),
                             onPressed: () =>
@@ -316,10 +315,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           ),
                           TextButton(
                             child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
+                              TextSpan(text: "•  ", style: style3),
                               TextSpan(
                                 text: "SustainablyChic",
-                                style: Data.styleButton,
+                                style: styleButton,
                               )
                             ])),
                             onPressed: () =>
@@ -347,21 +346,19 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                         padding: const EdgeInsets.only(top: 5.0),
                         child: SelectableText(
                           "Do It Yourself",
-                          style: Data.style5,
+                          style: style5,
                         ),
                       ),
                       Container(
                           // width: MediaQuery.of(context).size.width / 4,
-                          child:
-                              SelectableText(Data.doInfo, style: Data.style3)),
+                          child: SelectableText(doInfo, style: style3)),
                       Padding(
                           padding: const EdgeInsets.only(
                               left: 0, right: 40, top: 40, bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              SelectableText("${Data.croch}",
-                                  style: Data.style2),
+                              SelectableText("${croch}", style: style2),
                               const SizedBox(
                                 height: 5,
                               ),
@@ -369,8 +366,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   //  width: MediaQuery.of(context).size.width / 4,
                                   child:
                                       SelectableText.rich(TextSpan(children: [
-                                TextSpan(
-                                    text: Data.crochInfo, style: Data.style3),
+                                TextSpan(text: crochInfo, style: style3),
                                 const TextSpan(
                                     text:
                                         "\nCrocheted/Knitted clothing pieces:",
@@ -382,60 +378,60 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   onPressed: () =>
                                       launch("https://youtu.be/a7eqIn4Umdc"),
                                   child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: Data.style3),
+                                    TextSpan(text: "•  ", style: style3),
                                     TextSpan(
                                       text: "Hats\n",
-                                      style: Data.styleButton,
+                                      style: styleButton,
                                     )
                                   ]))),
                               TextButton(
                                   onPressed: () => launch(
                                       "https://sarahmaker.com/free-crochet-scarf-patterns/"),
                                   child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: Data.style3),
+                                    TextSpan(text: "•  ", style: style3),
                                     TextSpan(
                                       text: "Scarves",
-                                      style: Data.styleButton,
+                                      style: styleButton,
                                     )
                                   ]))),
                               TextButton(
                                   onPressed: () => launch(
                                       "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
                                   child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: Data.style3),
+                                    TextSpan(text: "•  ", style: style3),
                                     TextSpan(
                                       text: "Sweaters",
-                                      style: Data.styleButton,
+                                      style: styleButton,
                                     )
                                   ]))),
                               TextButton(
                                   onPressed: () => launch(
                                       "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
                                   child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: Data.style3),
+                                    TextSpan(text: "•  ", style: style3),
                                     TextSpan(
                                       text: "Cardigans",
-                                      style: Data.styleButton,
+                                      style: styleButton,
                                     )
                                   ]))),
                               TextButton(
                                   onPressed: () => launch(
                                       "https://www.youtube.com/watch?v=1WluE599ccI"),
                                   child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: Data.style3),
+                                    TextSpan(text: "•  ", style: style3),
                                     TextSpan(
                                       text: "Tank Tops",
-                                      style: Data.styleButton,
+                                      style: styleButton,
                                     )
                                   ]))),
                               TextButton(
                                   onPressed: () => launch(
                                       "https://www.diytomake.com/30-easy-crochet-tote-bag-patterns/"),
                                   child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: Data.style3),
+                                    TextSpan(text: "•  ", style: style3),
                                     TextSpan(
                                       text: "Tote Bag",
-                                      style: Data.styleButton,
+                                      style: styleButton,
                                     )
                                   ]))),
                               SelectableText("\nSustainable Yarns:",
@@ -443,8 +439,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       fontFamily: "CrimsonText", fontSize: 28)),
                               Container(
                                   //  width: MediaQuery.of(context).size.width / 4,
-                                  child: SelectableText(Data.crochInfo3,
-                                      style: Data.style3)),
+                                  child: SelectableText(crochInfo3,
+                                      style: style3)),
                             ],
                           )),
                       Padding(
@@ -453,8 +449,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              SelectableText("${Data.mkCloth}",
-                                  style: Data.style2),
+                              SelectableText("${mkCloth}", style: style2),
                               SizedBox(
                                 height: 5,
                               ),
@@ -462,14 +457,13 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   //  width: MediaQuery.of(context).size.width / 4,
                                   child:
                                       SelectableText.rich(TextSpan(children: [
-                                TextSpan(text: Data.mkInfo, style: Data.style3),
+                                TextSpan(text: mkInfo, style: style3),
                                 TextSpan(
                                     text: "\n\nSustainable Fabrics:",
                                     style: TextStyle(
                                         fontFamily: "CrimsonText",
                                         fontSize: 28)),
-                                TextSpan(
-                                    text: Data.mkInfo2, style: Data.style3),
+                                TextSpan(text: mkInfo2, style: style3),
                               ]))),
                             ],
                           )),
@@ -477,7 +471,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                   ),
                 ),
               ),
-              Data.footer(context)
+              footer(context)
             ],
           ),
         ),
@@ -505,7 +499,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //           mainAxisAlignment: MainAxisAlignment.center,
 //           children: <Widget>[
 //             Image.asset("assets/images/Title_Image.jpeg"),
-//             Text(Data.mission,
+//             Text(mission,
 //                 style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
@@ -522,12 +516,12 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
 //                     TextSpan(
-//                         text: Data.textMission, style: Styles.mediumTextStyle),
+//                         text: textMission, style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),
 //               ),
 //             ),
-//             Text(Data.sub1, style: Styles.titleTextStyleWithSecondaryTextColor),
+//             Text(sub1, style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
 //               child: Container(
@@ -542,7 +536,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //                   child: RichText(
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
-//                     TextSpan(text: Data.info1, style: Styles.mediumTextStyle),
+//                     TextSpan(text: info1, style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),
 //               ),
@@ -567,7 +561,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.pantInfo,
+//                               text: pantInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -596,7 +590,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.shirtInfo,
+//                               text: shirtInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -625,7 +619,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.mushInfo,
+//                               text: mushInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -634,7 +628,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //                 ],
 //               ),
 //             ),
-//             Text(Data.citation,
+//             Text(citation,
 //                 style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
@@ -651,7 +645,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
 //                     TextSpan(
-//                         text: Data.citationWords,
+//                         text: citationWords,
 //                         style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),

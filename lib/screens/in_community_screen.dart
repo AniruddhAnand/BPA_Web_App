@@ -50,6 +50,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 
   @override
   Widget build(BuildContext context) {
+    buildContext = context;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: //Container(
@@ -67,9 +68,9 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Data.getTitleImage(context),
-              Data.getMenuBar(context, widget.homeController),
-              Data.missionWidget(context, "In Your Community", Data.comMission),
+              getTitleImage(context),
+              getMenuBar(context, widget.homeController),
+              missionWidget(context, "In Your Community", comMission),
               Padding(
                 padding: const EdgeInsets.only(
                     top: 20.0, bottom: 0.0, left: 65, right: 65),
@@ -79,15 +80,15 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SelectableText(
-                        Data.borrow,
-                        style: Data.style5,
+                        borrow,
+                        style: style5,
                       ),
                       Padding(
                         padding:
                             EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
                         child: Container(
-                            child: SelectableText("${Data.borrowInfo}",
-                                style: Data.style3)),
+                            child:
+                                SelectableText("${borrowInfo}", style: style3)),
                       ),
                     ],
                   ),
@@ -104,7 +105,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     children: [
                       SelectableText(
                         "Thrifting",
-                        style: Data.style5,
+                        style: style5,
                       ),
                       Padding(
                         padding:
@@ -114,31 +115,31 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                           children: [
                             Container(
                                 // width: MediaQuery.of(context).size.width / 4,
-                                child: SelectableText("${Data.thriftingInfo}",
-                                    style: Data.style3)),
+                                child: SelectableText("${thriftingInfo}",
+                                    style: style3)),
                             Text(
                               "• Goodwill",
-                              style: Data.style3,
+                              style: style3,
                             ),
                             Text(
                               "• Plato's Closet",
-                              style: Data.style3,
+                              style: style3,
                             ),
                             Text(
                               "• Salvation Army",
-                              style: Data.style3,
+                              style: style3,
                             ),
                             Text(
                               "• Savers",
-                              style: Data.style3,
+                              style: style3,
                             ),
-                            Text("\n Online Platforms:", style: Data.style3),
+                            Text("\n Online Platforms:", style: style3),
                             TextButton(
                               child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(text: "•  ", style: style3),
                                 TextSpan(
                                   text: "thredUp",
-                                  style: Data.styleButton,
+                                  style: styleButton,
                                 )
                               ])),
                               onPressed: () =>
@@ -146,50 +147,50 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                             ),
                             TextButton(
                               child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(text: "•  ", style: style3),
                                 TextSpan(
                                   text: "Poshmark",
-                                  style: Data.styleButton,
+                                  style: styleButton,
                                 )
                               ])),
                               onPressed: () => launch("https://poshmark.com/"),
                             ),
                             TextButton(
                               child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(text: "•  ", style: style3),
                                 TextSpan(
                                   text: "Depop",
-                                  style: Data.styleButton,
+                                  style: styleButton,
                                 )
                               ])),
                               onPressed: () => launch("https://www.depop.com/"),
                             ),
                             TextButton(
                               child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(text: "•  ", style: style3),
                                 TextSpan(
                                   text: "Swap",
-                                  style: Data.styleButton,
+                                  style: styleButton,
                                 )
                               ])),
                               onPressed: () => launch("https://www.swap.com/"),
                             ),
                             TextButton(
                               child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(text: "•  ", style: style3),
                                 TextSpan(
                                   text: "eBay",
-                                  style: Data.styleButton,
+                                  style: styleButton,
                                 )
                               ])),
                               onPressed: () => launch("https://www.ebay.com/"),
                             ),
                             TextButton(
                               child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(text: "•  ", style: style3),
                                 TextSpan(
                                   text: "GoodFair",
-                                  style: Data.styleButton,
+                                  style: styleButton,
                                 )
                               ])),
                               onPressed: () => launch("https://goodfair.com/"),
@@ -212,15 +213,15 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     children: [
                       SelectableText(
                         "Hand Me Downs",
-                        style: Data.style5,
+                        style: style5,
                       ),
                       Padding(
                         padding:
                             EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
                         child: Container(
                             // width: MediaQuery.of(context).size.width / 4,
-                            child: SelectableText("${Data.handInfo}",
-                                style: Data.style3)),
+                            child:
+                                SelectableText("${handInfo}", style: style3)),
                       ),
                     ],
                   ),
@@ -237,21 +238,21 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                     children: [
                       SelectableText(
                         "Creating a Club",
-                        style: Data.style5,
+                        style: style5,
                       ),
                       Padding(
                         padding:
                             EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
                         child: Container(
                             // width: MediaQuery.of(context).size.width / 4,
-                            child: SelectableText("${Data.clubInfo}",
-                                style: Data.style3)),
+                            child:
+                                SelectableText("${clubInfo}", style: style3)),
                       ),
                     ],
                   ),
                 ),
               ),
-              Data.footer(context)
+              footer(context)
             ],
           ),
         ),
@@ -279,7 +280,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //           mainAxisAlignment: MainAxisAlignment.center,
 //           children: <Widget>[
 //             Image.asset("assets/images/Title_Image.jpeg"),
-//             Text(Data.mission,
+//             Text(mission,
 //                 style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
@@ -296,12 +297,12 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
 //                     TextSpan(
-//                         text: Data.textMission, style: Styles.mediumTextStyle),
+//                         text: textMission, style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),
 //               ),
 //             ),
-//             Text(Data.sub1, style: Styles.titleTextStyleWithSecondaryTextColor),
+//             Text(sub1, style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
 //               child: Container(
@@ -316,7 +317,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //                   child: RichText(
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
-//                     TextSpan(text: Data.info1, style: Styles.mediumTextStyle),
+//                     TextSpan(text: info1, style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),
 //               ),
@@ -341,7 +342,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.pantInfo,
+//                               text: pantInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -370,7 +371,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.shirtInfo,
+//                               text: shirtInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -399,7 +400,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //                             //softWrap: true,
 //                             text: TextSpan(children: <TextSpan>[
 //                           TextSpan(
-//                               text: Data.mushInfo,
+//                               text: mushInfo,
 //                               style: Styles.mediumTextStyle),
 //                         ])),
 //                       ),
@@ -408,7 +409,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //                 ],
 //               ),
 //             ),
-//             Text(Data.citation,
+//             Text(citation,
 //                 style: Styles.titleTextStyleWithSecondaryTextColor),
 //             Padding(
 //               padding: const EdgeInsets.all(20.0),
@@ -425,7 +426,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
 //                       //softWrap: true,
 //                       text: TextSpan(children: <TextSpan>[
 //                     TextSpan(
-//                         text: Data.citationWords,
+//                         text: citationWords,
 //                         style: Styles.mediumTextStyle),
 //                   ])),
 //                 ),
