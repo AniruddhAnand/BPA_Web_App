@@ -4,6 +4,7 @@ import 'package:web_app/screens/home_screen.dart';
 import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/screens/in_community_screen.dart';
 import 'package:web_app/screens/sustainable_screen.dart';
+import 'package:web_app/screens/works_cited.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,6 +72,8 @@ class MyApp extends StatelessWidget {
             keepScrollOffset: false, initialScrollOffset: 1640.0)),
         "Brands": (context) => SustainabilityScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 2105.0)),
+        "Cited": (context) => WorksCited(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 0.0)),
       },
     );
   }

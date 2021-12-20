@@ -364,7 +364,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 5.0),
                         child: SelectableText(
-                          "Do It Yourself",
+                          "Do it Yourself",
                           style: style5,
                         ),
                       ),
@@ -391,7 +391,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                 TextSpan(text: crochInfo, style: style3),
                                 TextSpan(
                                     text:
-                                        "\nCrocheted/Knitted clothing pieces:",
+                                        "\nCrocheted/Knitted Clothing Pieces:",
                                     style: TextStyle(
                                         fontFamily: "CrimsonText",
                                         fontSize: 28 * aspectRatio)),
@@ -402,7 +402,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   child: Text.rich(TextSpan(children: [
                                     TextSpan(text: "•  ", style: style3),
                                     TextSpan(
-                                      text: "Hats\n",
+                                      text: "Hats",
                                       style: styleButton,
                                     )
                                   ]))),
@@ -456,7 +456,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       style: styleButton,
                                     )
                                   ]))),
-                              SelectableText("\nSustainable Yarns:",
+                              SelectableText("\nSustainable Yarns",
                                   style: TextStyle(
                                       fontFamily: "CrimsonText", fontSize: 28)),
                               Container(
@@ -484,7 +484,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       SelectableText.rich(TextSpan(children: [
                                 TextSpan(text: mkInfo, style: style3),
                                 TextSpan(
-                                    text: "\n\nSustainable Fabrics:",
+                                    text: "\n\nSustainable Fabrics\n",
                                     style: TextStyle(
                                         fontFamily: "CrimsonText",
                                         fontSize: 28 * aspectRatio)),

@@ -90,9 +90,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                       ),
                       Container(
                           // width: MediaQuery.of(context).size.width / 4,
-                          child: SelectableText(
-                              "Here’s a guide in researching on the sustainability and ethical factors of companies to help make more informed decisions on where to shop and which brands to support:",
-                              style: style3)),
+                          child: SelectableText(susComps, style: style3)),
                       Padding(
                           padding: EdgeInsets.only(
                               left: 0,
