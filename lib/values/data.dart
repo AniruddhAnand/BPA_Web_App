@@ -8,11 +8,11 @@ import 'package:web_app/screens/at_home_screen.dart';
 
 class Data {
   static TextStyle style =
-      TextStyle(fontFamily: "CrimsonText", fontSize: 60, color: Colors.black);
+      TextStyle(fontFamily: "Abril", fontSize: 60, color: Colors.black);
   static TextStyle style2 =
       TextStyle(fontFamily: "CrimsonText", fontSize: 35, color: Colors.black);
   static TextStyle style5 =
-      TextStyle(fontFamily: "CrimsonText", fontSize: 45, color: Colors.black);
+      TextStyle(fontFamily: "Abril", fontSize: 45, color: Colors.black);
   static TextStyle style3 =
       TextStyle(fontFamily: "CrimsonText", fontSize: 23, color: Colors.black);
   static TextStyle style4 =
@@ -36,7 +36,7 @@ class Data {
       decoration: TextDecoration.underline);
   static TextStyle styleButton4 = TextStyle(
       fontFamily: "CrimsonText",
-      fontSize: 12,
+      fontSize: 16,
       color: Colors.black,
       decoration: TextDecoration.underline);
 

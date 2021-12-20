@@ -332,7 +332,7 @@ class AtHomeScreen extends StatelessWidget {
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: Data.style3),
                                   TextSpan(
-                                    text: "Hats",
+                                    text: "Hats\n",
                                     style: Data.styleButton,
                                   )
                                 ]))),

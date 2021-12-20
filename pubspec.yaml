@@ -75,9 +75,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: BodoAmat
+    - family: Abril
       fonts:
-        - asset: assets/fonts/BodoAmat.ttf
+        - asset: assets/fonts/AbrilFatFace-Regular.ttf
     - family: CrimsonText
       fonts:
         - asset: assets/fonts/CrimsonText-Regular.ttf
