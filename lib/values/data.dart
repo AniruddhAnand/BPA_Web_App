@@ -84,7 +84,11 @@ Widget getMenuBar(BuildContext context, ScrollController homeController) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             MouseRegion(
-              onExit: (event) => {if(event.distance>10){Navigator.of(context).pop();}},
+              onExit: (event) {
+                if (event.distance > 10) {
+                  Navigator.of(context).pop();
+                }
+              },
               child: Container(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
