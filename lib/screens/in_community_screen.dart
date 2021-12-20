@@ -1,13 +1,53 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
 
-class InCommunityScreen extends StatelessWidget {
+class InCommunityScreen extends StatefulWidget {
   InCommunityScreen(this.homeController);
   ScrollController homeController;
+
+  @override
+  State<InCommunityScreen> createState() => _InCommunityScreenState();
+}
+
+class _InCommunityScreenState extends State<InCommunityScreen> {
+  final FocusNode _focusNode = FocusNode();
+  void _handleKeyEvent(RawKeyEvent event) {
+    var offset = widget.homeController.offset;
+    if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+      setState(() {
+        if (kReleaseMode) {
+          widget.homeController.animateTo(offset - 200,
+              duration: Duration(milliseconds: 30), curve: Curves.ease);
+        } else {
+          widget.homeController.animateTo(offset - 200,
+              duration: Duration(milliseconds: 30), curve: Curves.ease);
+        }
+      });
+    } else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+      setState(() {
+        if (kReleaseMode) {
+          widget.homeController.animateTo(offset + 200,
+              duration: Duration(milliseconds: 30), curve: Curves.ease);
+        } else {
+          widget.homeController.animateTo(offset + 200,
+              duration: Duration(milliseconds: 30), curve: Curves.ease);
+        }
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,196 +58,202 @@ class InCommunityScreen extends StatelessWidget {
           //  image: DecorationImage(
           //    image: AssetImage("assets/images/Background.jpeg"),
           //  fit: BoxFit.cover)),
-          /* child:*/ SingleChildScrollView(
-        controller: homeController,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Data.getTitleImage(context),
-            Data.getMenuBar(context, homeController),
-            Data.missionWidget(context, "In Your Community", Data.comMission),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 20.0, bottom: 0.0, left: 65, right: 65),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SelectableText(
-                      Data.borrow,
-                      style: Data.style5,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
-                      child: Container(
-                          child: SelectableText("${Data.borrowInfo}",
-                              style: Data.style3)),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Image.asset("assets/images/Floral_Design_New.PNG"),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 40.0, bottom: 0.0, left: 65, right: 65),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SelectableText(
-                      "Thrifting",
-                      style: Data.style5,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                              // width: MediaQuery.of(context).size.width / 4,
-                              child: SelectableText("${Data.thriftingInfo}",
-                                  style: Data.style3)),
-                          Text(
-                            "• Goodwill",
-                            style: Data.style3,
-                          ),
-                          Text(
-                            "• Plato's Closet",
-                            style: Data.style3,
-                          ),
-                          Text(
-                            "• Salvation Army",
-                            style: Data.style3,
-                          ),
-                          Text(
-                            "• Savers",
-                            style: Data.style3,
-                          ),
-                          Text("\n Online Platforms:", style: Data.style3),
-                          TextButton(
-                            child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
-                              TextSpan(
-                                text: "thredUp",
-                                style: Data.styleButton,
-                              )
-                            ])),
-                            onPressed: () => launch("https://www.thredup.com/"),
-                          ),
-                          TextButton(
-                            child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
-                              TextSpan(
-                                text: "Poshmark",
-                                style: Data.styleButton,
-                              )
-                            ])),
-                            onPressed: () => launch("https://poshmark.com/"),
-                          ),
-                          TextButton(
-                            child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
-                              TextSpan(
-                                text: "Depop",
-                                style: Data.styleButton,
-                              )
-                            ])),
-                            onPressed: () => launch("https://www.depop.com/"),
-                          ),
-                          TextButton(
-                            child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
-                              TextSpan(
-                                text: "Swap",
-                                style: Data.styleButton,
-                              )
-                            ])),
-                            onPressed: () => launch("https://www.swap.com/"),
-                          ),
-                          TextButton(
-                            child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
-                              TextSpan(
-                                text: "eBay",
-                                style: Data.styleButton,
-                              )
-                            ])),
-                            onPressed: () => launch("https://www.ebay.com/"),
-                          ),
-                          TextButton(
-                            child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "•  ", style: Data.style3),
-                              TextSpan(
-                                text: "GoodFair",
-                                style: Data.styleButton,
-                              )
-                            ])),
-                            onPressed: () => launch("https://goodfair.com/"),
-                          ),
-                        ],
+          /* child:*/ RawKeyboardListener(
+        autofocus: true,
+        focusNode: _focusNode,
+        onKey: _handleKeyEvent,
+        child: SingleChildScrollView(
+          controller: widget.homeController,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Data.getTitleImage(context),
+              Data.getMenuBar(context, widget.homeController),
+              Data.missionWidget(context, "In Your Community", Data.comMission),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 20.0, bottom: 0.0, left: 65, right: 65),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SelectableText(
+                        Data.borrow,
+                        style: Data.style5,
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding:
+                            EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
+                        child: Container(
+                            child: SelectableText("${Data.borrowInfo}",
+                                style: Data.style3)),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Image.asset("assets/images/Floral_Design_New.PNG"),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 40.0, bottom: 0.0, left: 65, right: 65),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SelectableText(
-                      "Hand Me Downs",
-                      style: Data.style5,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
-                      child: Container(
-                          // width: MediaQuery.of(context).size.width / 4,
-                          child: SelectableText("${Data.handInfo}",
-                              style: Data.style3)),
-                    ),
-                  ],
+              Image.asset("assets/images/Floral_Design_New.PNG"),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 40.0, bottom: 0.0, left: 65, right: 65),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SelectableText(
+                        "Thrifting",
+                        style: Data.style5,
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                                // width: MediaQuery.of(context).size.width / 4,
+                                child: SelectableText("${Data.thriftingInfo}",
+                                    style: Data.style3)),
+                            Text(
+                              "• Goodwill",
+                              style: Data.style3,
+                            ),
+                            Text(
+                              "• Plato's Closet",
+                              style: Data.style3,
+                            ),
+                            Text(
+                              "• Salvation Army",
+                              style: Data.style3,
+                            ),
+                            Text(
+                              "• Savers",
+                              style: Data.style3,
+                            ),
+                            Text("\n Online Platforms:", style: Data.style3),
+                            TextButton(
+                              child: Text.rich(TextSpan(children: [
+                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(
+                                  text: "thredUp",
+                                  style: Data.styleButton,
+                                )
+                              ])),
+                              onPressed: () =>
+                                  launch("https://www.thredup.com/"),
+                            ),
+                            TextButton(
+                              child: Text.rich(TextSpan(children: [
+                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(
+                                  text: "Poshmark",
+                                  style: Data.styleButton,
+                                )
+                              ])),
+                              onPressed: () => launch("https://poshmark.com/"),
+                            ),
+                            TextButton(
+                              child: Text.rich(TextSpan(children: [
+                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(
+                                  text: "Depop",
+                                  style: Data.styleButton,
+                                )
+                              ])),
+                              onPressed: () => launch("https://www.depop.com/"),
+                            ),
+                            TextButton(
+                              child: Text.rich(TextSpan(children: [
+                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(
+                                  text: "Swap",
+                                  style: Data.styleButton,
+                                )
+                              ])),
+                              onPressed: () => launch("https://www.swap.com/"),
+                            ),
+                            TextButton(
+                              child: Text.rich(TextSpan(children: [
+                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(
+                                  text: "eBay",
+                                  style: Data.styleButton,
+                                )
+                              ])),
+                              onPressed: () => launch("https://www.ebay.com/"),
+                            ),
+                            TextButton(
+                              child: Text.rich(TextSpan(children: [
+                                TextSpan(text: "•  ", style: Data.style3),
+                                TextSpan(
+                                  text: "GoodFair",
+                                  style: Data.styleButton,
+                                )
+                              ])),
+                              onPressed: () => launch("https://goodfair.com/"),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Image.asset("assets/images/Floral_Design_New.PNG"),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 40.0, bottom: 40.0, left: 65, right: 65),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SelectableText(
-                      "Creating a Club",
-                      style: Data.style5,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
-                      child: Container(
-                          // width: MediaQuery.of(context).size.width / 4,
-                          child: SelectableText("${Data.clubInfo}",
-                              style: Data.style3)),
-                    ),
-                  ],
+              Image.asset("assets/images/Floral_Design_New.PNG"),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 40.0, bottom: 0.0, left: 65, right: 65),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SelectableText(
+                        "Hand Me Downs",
+                        style: Data.style5,
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
+                        child: Container(
+                            // width: MediaQuery.of(context).size.width / 4,
+                            child: SelectableText("${Data.handInfo}",
+                                style: Data.style3)),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Data.footer(context)
-          ],
+              Image.asset("assets/images/Floral_Design_New.PNG"),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 40.0, bottom: 40.0, left: 65, right: 65),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SelectableText(
+                        "Creating a Club",
+                        style: Data.style5,
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
+                        child: Container(
+                            // width: MediaQuery.of(context).size.width / 4,
+                            child: SelectableText("${Data.clubInfo}",
+                                style: Data.style3)),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Data.footer(context)
+            ],
+          ),
         ),
       ),
       //  ),

@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
                 foregroundColor: MaterialStateProperty.resolveWith(
                     (state) => Colors.black))),
       ),
-      home: HomeScreen(),
+      home: HomeScreen(
+          ScrollController(keepScrollOffset: false, initialScrollOffset: 0.0)),
       routes: {
         "AtHome": (context) => AtHomeScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),

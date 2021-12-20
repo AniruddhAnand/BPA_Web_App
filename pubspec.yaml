@@ -77,7 +77,7 @@ flutter:
   fonts:
     - family: Abril
       fonts:
-        - asset: assets/fonts/AbrilFatFace-Regular.ttf
+        - asset: assets/fonts/AbrilFatface-Regular.ttf
     - family: CrimsonText
       fonts:
         - asset: assets/fonts/CrimsonText-Regular.ttf
