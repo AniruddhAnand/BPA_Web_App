@@ -71,6 +71,7 @@ class _WorksCitedState extends State<WorksCited> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              getMenuBar(context, widget.homeController),
               SelectableText("Works Cited", style: style),
               Padding(
                 padding: const EdgeInsets.all(10.0),

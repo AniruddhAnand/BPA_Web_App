@@ -5,6 +5,7 @@ import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/screens/in_community_screen.dart';
 import 'package:web_app/screens/sustainable_screen.dart';
 import 'package:web_app/screens/works_cited.dart';
+import 'package:web_app/values/data.dart';
 
 void main() {
   runApp(const MyApp());

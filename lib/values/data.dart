@@ -5,7 +5,6 @@ import 'dart:html';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:web_app/screens/at_home_screen.dart';
 
 BuildContext? buildContext;
@@ -85,7 +84,7 @@ Widget getMenuBar(BuildContext context, ScrollController homeController) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             MouseRegion(
-              // onExit: (event) => Navigator.of(context).pop(),
+              onExit: (event) => {if(event.distance>10){Navigator.of(context).pop();}},
               child: Container(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -257,92 +256,100 @@ Widget footer(BuildContext context) {
       //   width: MediaQuery.of(context).size.width / 4,
       //   //height: 200,
       // ),
-      Padding(
-    padding: const EdgeInsets.only(bottom: 0.0),
-    child: Container(
-      width: MediaQuery.of(context).size.width / 2,
-      decoration: BoxDecoration(
-        border: Border.symmetric(
-          horizontal: BorderSide(
-            color: Colors.white,
-            width: 10 * aspectRatio,
-          ),
-          vertical: BorderSide(
-            color: Colors.white,
-            width: 10 * aspectRatio,
-          ),
-        ),
-        //borderRadius: BorderRadius.circular(0.0),
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 40, top: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      Stack(
+          alignment: Alignment.center,
+          clipBehavior: Clip.hardEdge,
+          fit: StackFit.loose,
           children: [
-            Text("Contact Info", style: style3),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Image.asset(
-                      "assets/images/Logo_2.png",
-                      scale: 3 / aspectRatio,
-                    ),
-                  ],
+        Image.asset("assets/images/Floral_Footer_2.png"),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 0.0),
+          child: Container(
+            width: MediaQuery.of(context).size.width / 2,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 222, 199, 181),
+              border: Border.symmetric(
+                horizontal: BorderSide(
+                  color: Colors.white,
+                  width: 10 * aspectRatio,
                 ),
-                SizedBox(
-                  width: 20 * aspectRatio,
+                vertical: BorderSide(
+                  color: Colors.white,
+                  width: 10 * aspectRatio,
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SelectableText(
-                      "Number: 214-404-6575",
-                      style: style3,
-                    ),
-                    SelectableText(
-                      "Email: stitches4sustainability@gmail.com",
-                      style: style3,
-                    ),
-                    TextButton(
-                        onPressed: () {
-                          launch("bpawebapp.netlify.app/#Cited");
-                        },
-                        child: getMenuText("Citations"))
-                  ],
-                )
-              ],
+              ),
+              //borderRadius: BorderRadius.circular(0.0),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: 15.0 * aspectRatio,
-                  right: 15 * aspectRatio,
-                  top: 15,
-                  bottom: 15),
-              child: SelectableText(
-                "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand Theme: Reducing Carbon Footprint Indpendence High School, Frisco, Tx, 2021",
-                style: style7,
-                textAlign: TextAlign.center,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 40, top: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("Contact Info", style: style3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Image.asset(
+                            "assets/images/Logo_2.png",
+                            scale: 3 / aspectRatio,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 20 * aspectRatio,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SelectableText(
+                            "Number: 214-404-6575",
+                            style: style3,
+                          ),
+                          SelectableText(
+                            "Email: stitches4sustainability@gmail.com",
+                            style: style3,
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed("Cited");
+                              },
+                              child: getMenuText("Citations"))
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 15.0 * aspectRatio,
+                        right: 15 * aspectRatio,
+                        top: 15,
+                        bottom: 15),
+                    child: SelectableText(
+                      "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand Theme: Reducing Carbon Footprint Indpendence High School, Frisco, Tx, 2021",
+                      style: style7,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
+          //  ),
+          // Image.asset(
+          //   "assets/images/Floral_Footer.png",
+          //   // width: MediaQuery.of(context).size.width / 4,
+          //   //height: 200,
+          // ),
+          //],
         ),
-      ),
-    ),
-    //  ),
-    // Image.asset(
-    //   "assets/images/Floral_Footer.png",
-    //   // width: MediaQuery.of(context).size.width / 4,
-    //   //height: 200,
-    // ),
-    //],
-  );
+      ]);
 }
 
 String citations =
@@ -381,7 +388,7 @@ SelectableText comMission = SelectableText(
   textAlign: TextAlign.center,
 );
 SelectableText mission3 = SelectableText(
-  "As consumers it is our responsibility to research the companies and industries we are supporting with our economic purchases and keep them accountable. ",
+  "As consumers, it is our responsibility to research the companies and industries we are supporting with our economic purchases and keep them accountable. ",
   style: style4,
   textAlign: TextAlign.center,
 );
