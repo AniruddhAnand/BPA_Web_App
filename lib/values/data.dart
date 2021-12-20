@@ -64,7 +64,6 @@ Widget getTitleImage(BuildContext context) {
       "assets/images/Title_Different.jpeg",
       width: getTitleWidth(context),
     ),
-    onTap: () => Navigator.of(context).popAndPushNamed("/"),
   );
 }
 
@@ -84,22 +83,38 @@ Widget getMenuBar(BuildContext context, ScrollController homeController) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             MouseRegion(
-              onExit: (event) {
-                if (event.distance > 10) {
-                  Navigator.of(context).pop();
-                }
-              },
               child: Container(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       TextButton(
-                          onPressed: () => Navigator.of(context).pushNamed("/"),
+                          onPressed: () =>
+                              Navigator.of(context).pushNamed("Home"),
                           child: getMenuText("Home"))
                     ]),
               ),
             ),
             MouseRegion(
+              // onEnter: (event) {
+              //   showMenus(
+              //       context,
+              //       2 *
+              //               (MediaQuery.of(context).size.width -
+              //                   (style3.fontSize! * numCharsHome)) /
+              //               5 +
+              //           8.5 * style3.fontSize!,
+              //       2 *
+              //               (MediaQuery.of(context).size.width -
+              //                   (style3.fontSize! * numCharsHome)) /
+              //               5 +
+              //           8.5 * style3.fontSize!,
+              //       getTitleHeight(context) - homeController.offset + 47,
+              //       0,
+              //       1);
+              // },
+              // onExit: (event) {
+              //   Navigator.of(context).pop();
+              // },
               onHover: (event) {
                 showMenus(
                     context,
@@ -107,12 +122,12 @@ Widget getMenuBar(BuildContext context, ScrollController homeController) {
                             (MediaQuery.of(context).size.width -
                                 (style3.fontSize! * numCharsHome)) /
                             5 +
-                        8.5 * style3.fontSize!,
+                        9.5 * style3.fontSize!,
                     2 *
                             (MediaQuery.of(context).size.width -
                                 (style3.fontSize! * numCharsHome)) /
                             5 +
-                        8.5 * style3.fontSize!,
+                        9.5 * style3.fontSize!,
                     getTitleHeight(context) - homeController.offset + 47,
                     0,
                     1);
@@ -336,7 +351,7 @@ Widget footer(BuildContext context) {
                         top: 15,
                         bottom: 15),
                     child: SelectableText(
-                      "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand Theme: Reducing Carbon Footprint Indpendence High School, Frisco, Tx, 2021",
+                      "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand\nTheme: Reducing Carbon Footprint Independence High School, Frisco, Tx, 2021",
                       style: style7,
                       textAlign: TextAlign.center,
                     ),

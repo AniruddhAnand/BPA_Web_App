@@ -8,6 +8,7 @@ import 'package:web_app/screens/image_screen.dart';
 import 'package:web_app/values/data.dart';
 import 'package:web_app/values/values.dart';
 import 'package:web_app/widgets/drop_down_button.dart';
+import 'package:web_app/widgets/image.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen(this.homeController);
@@ -75,135 +76,149 @@ class _HomeScreenState extends State<HomeScreen> {
               getMenuBar(context, widget.homeController),
               missionWidget(context, "Mission", textMission),
               SelectableText(mission, style: style),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 50.0 * aspectRatio,
-                    right: 50.0 * aspectRatio,
-                    bottom: 75.0,
-                    top: 40.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(0.0),
-                          child: Column(
+              Stack(
+                  fit: StackFit.loose,
+                  alignment: Alignment.topCenter,
+                  children: [
+                    // FootPrints(),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 50.0 * aspectRatio,
+                          right: 50.0 * aspectRatio,
+                          bottom: 75.0,
+                          top: 40.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Column(
                             children: <Widget>[
-                              GestureDetector(
-                                onTap: () => launch(
-                                    "https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car"),
-                                child: Image.asset(
-                                  "assets/images/Pant.PNG",
-                                  scale: 2.5 / aspectRatio,
+                              Padding(
+                                padding: const EdgeInsets.all(0.0),
+                                child: Column(
+                                  children: <Widget>[
+                                    GestureDetector(
+                                      onTap: () => launch(
+                                          "https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car"),
+                                      child: Image.asset(
+                                        "assets/images/Pant.PNG",
+                                        scale: 2.5 / aspectRatio,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Container(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                        child: pantInfo),
+                                  ],
                                 ),
                               ),
                               SizedBox(
-                                height: 10,
+                                height: 30,
                               ),
-                              Container(
-                                  width: MediaQuery.of(context).size.width / 6,
-                                  child: pantInfo),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0,
-                              bottom: 10,
-                              right: 10 * aspectRatio,
-                              left: 10 * aspectRatio),
-                          child: Column(
-                            children: <Widget>[
-                              GestureDetector(
-                                onTap: () => launch(
-                                    "https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/"),
-                                child: Image.asset(
-                                  "assets/images/Mushroom_2_Less.png",
-                                  scale: 2.5 / aspectRatio,
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 10,
+                                    right: 10 * aspectRatio,
+                                    left: 10 * aspectRatio),
+                                child: Column(
+                                  children: <Widget>[
+                                    GestureDetector(
+                                      onTap: () => launch(
+                                          "https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/"),
+                                      child: Image.asset(
+                                        "assets/images/Mushroom_2_Less.png",
+                                        scale: 2.5 / aspectRatio,
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Container(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                        child: mushInfo),
+                                  ],
                                 ),
                               ),
-                              SizedBox(height: 10),
-                              Container(
-                                  width: MediaQuery.of(context).size.width / 6,
-                                  child: mushInfo),
                             ],
                           ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 10,
-                        ),
-                        borderRadius: BorderRadius.circular(0.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            left: 25.0 * aspectRatio,
-                            right: 25.0 * aspectRatio,
-                            top: 25.0,
-                            bottom: 25.0),
-                        child: info1,
-                      ),
-                      width: MediaQuery.of(context).size.width / 2.5,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(0.0),
-                          child: Column(
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 10,
+                              ),
+                              borderRadius: BorderRadius.circular(0.0),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0 * aspectRatio,
+                                  right: 25.0 * aspectRatio,
+                                  top: 25.0,
+                                  bottom: 25.0),
+                              child: info1,
+                            ),
+                            width: MediaQuery.of(context).size.width / 2.5,
+                          ),
+                          Column(
                             children: <Widget>[
-                              GestureDetector(
-                                onTap: () => launch(
-                                    "https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development"),
-                                child: Image.asset(
-                                  "assets/images/Shirt.PNG",
-                                  scale: 2.5 / aspectRatio,
+                              Padding(
+                                padding: const EdgeInsets.all(0.0),
+                                child: Column(
+                                  children: <Widget>[
+                                    GestureDetector(
+                                      onTap: () => launch(
+                                          "https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development"),
+                                      child: Image.asset(
+                                        "assets/images/Shirt.PNG",
+                                        scale: 2.5 / aspectRatio,
+                                      ),
+                                    ),
+                                    Container(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                        child: shirtInfo),
+                                  ],
                                 ),
                               ),
-                              Container(
-                                  width: MediaQuery.of(context).size.width / 6,
-                                  child: shirtInfo),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 25,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: 10.0,
-                              bottom: 10,
-                              right: 10 * aspectRatio,
-                              left: 10 * aspectRatio),
-                          child: Column(
-                            children: <Widget>[
-                              Image.asset(
-                                "assets/images/Dress_Titled.png",
-                                scale: 2.5 / aspectRatio,
+                              SizedBox(
+                                height: 25,
                               ),
-                              SizedBox(height: 10),
-                              Container(
-                                  width: MediaQuery.of(context).size.width / 6,
-                                  child: Text(
-                                    dressInfo,
-                                    style: style3,
-                                  )),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 10,
+                                    right: 10 * aspectRatio,
+                                    left: 10 * aspectRatio),
+                                child: Column(
+                                  children: <Widget>[
+                                    Image.asset(
+                                      "assets/images/Dress_Titled.png",
+                                      scale: 2.5 / aspectRatio,
+                                    ),
+                                    SizedBox(height: 10),
+                                    Container(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                        child: Text(
+                                          dressInfo,
+                                          style: style3,
+                                        )),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ],
-                ),
-              ),
+                  ]),
               footer(context),
             ],
           ),

@@ -31,6 +31,8 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(
           ScrollController(keepScrollOffset: false, initialScrollOffset: 0.0)),
       routes: {
+        "Home": (context) => HomeScreen(ScrollController(
+            keepScrollOffset: false, initialScrollOffset: 0.0)),
         "AtHome": (context) => AtHomeScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
         "Style": (context) => AtHomeScreen(ScrollController(
