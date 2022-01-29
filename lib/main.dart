@@ -17,6 +17,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    double constant = 695 - WidgetsBinding.instance!.window.physicalSize.height;
+    double constant2 =
+        695 / WidgetsBinding.instance!.window.physicalSize.height;
+    print(constant);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -36,45 +40,63 @@ class MyApp extends StatelessWidget {
         "AtHome": (context) => AtHomeScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
         "Style": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 600.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 600.0 / constant2 + constant)),
         "Emb": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 750.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 750.0 / constant2 + constant)),
         "Alt": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 1200.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 1200.0 / constant2 + constant)),
         "Des": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 1450.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 1450.0 / constant2 + constant)),
         "DoYourSelf": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2550.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 2430.0 / constant2 + constant)),
         "Croch": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2600.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 2600.0 / constant2 + constant)),
         "MK": (context) => AtHomeScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 3325.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 3280.0 / constant2 + constant)),
         "Community": (context) => InCommunityScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
         "Borrow": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 600.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 600.0 / constant2 + constant)),
         "Thrifting": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 1000.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 1000.0 / constant2 + constant)),
         "Hand": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2000.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 2000.0 / constant2 + constant)),
         "Club": (context) => InCommunityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2480.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 2480.0 / constant2 + constant)),
         "Shopping": (context) => SustainabilityScreen(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
         "Identify": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 600.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 600.0 / constant2 + constant)),
         "Src": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 750.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 750.0 / constant2 + constant)),
         "Mat": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 900.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 900.0 / constant2 + constant)),
         "Green": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 1220.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 1220.0 / constant2 + constant)),
         "CSR": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 1480.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 1480.0 / constant2 + constant)),
         "Webs": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 1640.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 1640.0 / constant2 + constant)),
         "Brands": (context) => SustainabilityScreen(ScrollController(
-            keepScrollOffset: false, initialScrollOffset: 2105.0)),
+            keepScrollOffset: false,
+            initialScrollOffset: 2105.0 / constant2 + constant)),
         "Cited": (context) => WorksCited(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
       },

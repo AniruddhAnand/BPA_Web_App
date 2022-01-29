@@ -59,6 +59,7 @@ double getTitleHeight(BuildContext context) {
 }
 
 Widget getTitleImage(BuildContext context) {
+  // print(getTitleHeight(context));
   return GestureDetector(
     child: Image.asset(
       "assets/images/Title_Different.jpeg",
@@ -539,12 +540,6 @@ showMenus(BuildContext context, double right, double left, double top,
               Navigator.of(context).pushNamed("Hand");
             },
             child: getMenuText2("Hand Me Downs"))),
-    PopupMenuItem(
-        child: TextButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed("Style");
-            },
-            child: getMenuText2("Styling"))),
     PopupMenuItem(
         child: TextButton(
             onPressed: () {
