@@ -68,17 +68,21 @@ class _WorksCitedState extends State<WorksCited> {
         onKey: _handleKeyEvent,
         child: SingleChildScrollView(
           controller: widget.homeController,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              getTitleImage(context),
-              getMenuBar(context, widget.homeController),
-              SelectableText("Works Cited", style: style),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: SelectableText(citations, style: style3),
-              ),
-            ],
+          child: InteractiveViewer(
+            scaleEnabled: MediaQuery.of(context).size.shortestSide < 600,
+            maxScale: 4,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                getTitleImage(context),
+                getMenuBar(context, widget.homeController),
+                SelectableText("Works Cited", style: style),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: SelectableText(citations, style: style3),
+                ),
+              ],
+            ),
           ),
         ),
       ),

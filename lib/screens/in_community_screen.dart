@@ -65,207 +65,216 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
         onKey: _handleKeyEvent,
         child: SingleChildScrollView(
           controller: widget.homeController,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              getTitleImage(context),
-              getMenuBar(context, widget.homeController),
-              missionWidget(context, "In Your Community", comMission),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: 20.0,
-                    bottom: 0.0,
-                    left: 65 * aspectRatio,
-                    right: 65 * aspectRatio),
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SelectableText(
-                        borrow,
-                        style: style5,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 0.0, right: 40 * aspectRatio, bottom: 0.0),
-                        child: Container(
-                            child:
-                                SelectableText("${borrowInfo}", style: style3)),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Image.asset("assets/images/Floral_Design_New.PNG"),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: 40.0,
-                    bottom: 0.0,
-                    left: 65 * aspectRatio,
-                    right: 65 * aspectRatio),
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SelectableText(
-                        "Thrifting",
-                        style: style5,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 0.0, right: 40 * aspectRatio, bottom: 0.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                                // width: MediaQuery.of(context).size.width / 4,
-                                child: SelectableText("${thriftingInfo}",
-                                    style: style3)),
-                            Text(
-                              "• Goodwill",
-                              style: style3,
-                            ),
-                            Text(
-                              "• Plato's Closet",
-                              style: style3,
-                            ),
-                            Text(
-                              "• Salvation Army",
-                              style: style3,
-                            ),
-                            Text(
-                              "• Savers",
-                              style: style3,
-                            ),
-                            Text("\n Online Platforms:", style: style3),
-                            TextButton(
-                              child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: style3),
-                                TextSpan(
-                                  text: "thredUp",
-                                  style: styleButton,
-                                )
-                              ])),
-                              onPressed: () =>
-                                  launch("https://www.thredup.com/"),
-                            ),
-                            TextButton(
-                              child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: style3),
-                                TextSpan(
-                                  text: "Poshmark",
-                                  style: styleButton,
-                                )
-                              ])),
-                              onPressed: () => launch("https://poshmark.com/"),
-                            ),
-                            TextButton(
-                              child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: style3),
-                                TextSpan(
-                                  text: "Depop",
-                                  style: styleButton,
-                                )
-                              ])),
-                              onPressed: () => launch("https://www.depop.com/"),
-                            ),
-                            TextButton(
-                              child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: style3),
-                                TextSpan(
-                                  text: "Swap",
-                                  style: styleButton,
-                                )
-                              ])),
-                              onPressed: () => launch("https://www.swap.com/"),
-                            ),
-                            TextButton(
-                              child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: style3),
-                                TextSpan(
-                                  text: "eBay",
-                                  style: styleButton,
-                                )
-                              ])),
-                              onPressed: () => launch("https://www.ebay.com/"),
-                            ),
-                            TextButton(
-                              child: Text.rich(TextSpan(children: [
-                                TextSpan(text: "•  ", style: style3),
-                                TextSpan(
-                                  text: "GoodFair",
-                                  style: styleButton,
-                                )
-                              ])),
-                              onPressed: () => launch("https://goodfair.com/"),
-                            ),
-                          ],
+          child: InteractiveViewer(
+            scaleEnabled: MediaQuery.of(context).size.shortestSide < 600,
+            maxScale: 4,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                getTitleImage(context),
+                getMenuBar(context, widget.homeController),
+                missionWidget(context, "In Your Community", comMission),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0,
+                      bottom: 0.0,
+                      left: 65 * aspectRatio,
+                      right: 65 * aspectRatio),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SelectableText(
+                          borrow,
+                          style: style5,
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 0.0, right: 40 * aspectRatio, bottom: 0.0),
+                          child: Container(
+                              child: SelectableText("${borrowInfo}",
+                                  style: style3)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Image.asset("assets/images/Floral_Design_New.PNG"),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: 40.0,
-                    bottom: 0.0,
-                    left: 65 * aspectRatio,
-                    right: 65 * aspectRatio),
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SelectableText(
-                        "Hand Me Downs",
-                        style: style5,
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsets.only(left: 0.0, right: 40, bottom: 0.0),
-                        child: Container(
-                            // width: MediaQuery.of(context).size.width / 4,
-                            child:
-                                SelectableText("${handInfo}", style: style3)),
-                      ),
-                    ],
+                Image.asset("assets/images/Floral_Design_New.PNG"),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: 40.0,
+                      bottom: 0.0,
+                      left: 65 * aspectRatio,
+                      right: 65 * aspectRatio),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SelectableText(
+                          "Thrifting",
+                          style: style5,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 0.0, right: 40 * aspectRatio, bottom: 0.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                  // width: MediaQuery.of(context).size.width / 4,
+                                  child: SelectableText("${thriftingInfo}",
+                                      style: style3)),
+                              Text(
+                                "• Goodwill",
+                                style: style3,
+                              ),
+                              Text(
+                                "• Plato's Closet",
+                                style: style3,
+                              ),
+                              Text(
+                                "• Salvation Army",
+                                style: style3,
+                              ),
+                              Text(
+                                "• Savers",
+                                style: style3,
+                              ),
+                              Text("\n Online Platforms:", style: style3),
+                              TextButton(
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: style3),
+                                  TextSpan(
+                                    text: "thredUp",
+                                    style: styleButton,
+                                  )
+                                ])),
+                                onPressed: () =>
+                                    launch("https://www.thredup.com/"),
+                              ),
+                              TextButton(
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: style3),
+                                  TextSpan(
+                                    text: "Poshmark",
+                                    style: styleButton,
+                                  )
+                                ])),
+                                onPressed: () =>
+                                    launch("https://poshmark.com/"),
+                              ),
+                              TextButton(
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: style3),
+                                  TextSpan(
+                                    text: "Depop",
+                                    style: styleButton,
+                                  )
+                                ])),
+                                onPressed: () =>
+                                    launch("https://www.depop.com/"),
+                              ),
+                              TextButton(
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: style3),
+                                  TextSpan(
+                                    text: "Swap",
+                                    style: styleButton,
+                                  )
+                                ])),
+                                onPressed: () =>
+                                    launch("https://www.swap.com/"),
+                              ),
+                              TextButton(
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: style3),
+                                  TextSpan(
+                                    text: "eBay",
+                                    style: styleButton,
+                                  )
+                                ])),
+                                onPressed: () =>
+                                    launch("https://www.ebay.com/"),
+                              ),
+                              TextButton(
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "•  ", style: style3),
+                                  TextSpan(
+                                    text: "GoodFair",
+                                    style: styleButton,
+                                  )
+                                ])),
+                                onPressed: () =>
+                                    launch("https://goodfair.com/"),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Image.asset("assets/images/Floral_Design_New.PNG"),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: 40.0,
-                    bottom: 40.0,
-                    left: 65 * aspectRatio,
-                    right: 65 * aspectRatio),
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SelectableText(
-                        "Creating a Club",
-                        style: style5,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 0.0, right: 40 * aspectRatio, bottom: 0.0),
-                        child: Container(
-                            // width: MediaQuery.of(context).size.width / 4,
-                            child:
-                                SelectableText("${clubInfo}", style: style3)),
-                      ),
-                    ],
+                Image.asset("assets/images/Floral_Design_New.PNG"),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: 40.0,
+                      bottom: 0.0,
+                      left: 65 * aspectRatio,
+                      right: 65 * aspectRatio),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SelectableText(
+                          "Hand Me Downs",
+                          style: style5,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 0.0, right: 40, bottom: 0.0),
+                          child: Container(
+                              // width: MediaQuery.of(context).size.width / 4,
+                              child:
+                                  SelectableText("${handInfo}", style: style3)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              footer(context)
-            ],
+                Image.asset("assets/images/Floral_Design_New.PNG"),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: 40.0,
+                      bottom: 40.0,
+                      left: 65 * aspectRatio,
+                      right: 65 * aspectRatio),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SelectableText(
+                          "Creating a Club",
+                          style: style5,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 0.0, right: 40 * aspectRatio, bottom: 0.0),
+                          child: Container(
+                              // width: MediaQuery.of(context).size.width / 4,
+                              child:
+                                  SelectableText("${clubInfo}", style: style3)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                footer(context)
+              ],
+            ),
           ),
         ),
       ),

@@ -17,9 +17,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    double constant = 695 - WidgetsBinding.instance!.window.physicalSize.height;
+    double
+        constant = /*695 - WidgetsBinding.instance!.window.physicalSize.height*/ 0;
     double constant2 =
-        695 / WidgetsBinding.instance!.window.physicalSize.height;
+        /*695 / WidgetsBinding.instance!.window.physicalSize.height*/ 1;
     print(constant);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
