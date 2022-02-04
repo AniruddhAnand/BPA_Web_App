@@ -12,11 +12,15 @@ BuildContext? buildContext;
 double aspectRatio = MediaQuery.of(buildContext!).size.width / 1366;
 
 TextStyle style = TextStyle(
-    fontFamily: "Abril", fontSize: 60 * aspectRatio, color: Colors.black);
+    fontFamily: /*Abril*/ "CrimsonText",
+    fontSize: 60 * aspectRatio,
+    color: Colors.black);
 TextStyle style2 = TextStyle(
     fontFamily: "CrimsonText", fontSize: 35 * aspectRatio, color: Colors.black);
 TextStyle style5 = TextStyle(
-    fontFamily: "Abril", fontSize: 45 * aspectRatio, color: Colors.black);
+    fontFamily: /*Abril*/ "CrimsonText",
+    fontSize: 45 * aspectRatio,
+    color: Colors.black);
 TextStyle style3 = TextStyle(
     fontFamily: "CrimsonText", fontSize: 23 * aspectRatio, color: Colors.black);
 TextStyle style4 = TextStyle(
@@ -60,7 +64,11 @@ double getTitleHeight(BuildContext context) {
 
 Widget getTitleImage(BuildContext context) {
   // print(getTitleHeight(context));
-  return GestureDetector(
+  return InkWell(
+    enableFeedback: true,
+    hoverColor: Colors.white24,
+    highlightColor: Colors.white,
+    onTap: () => Navigator.pushNamed(context, "/"),
     child: Image.asset(
       "assets/images/Title_Different.jpeg",
       width: getTitleWidth(context),
@@ -479,47 +487,47 @@ showMenus(BuildContext context, double right, double left, double top,
       },
       child: getMenuText2("Styling"),
     )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Emb");
-      },
-      child: getMenuText3("Embroidery"),
-    )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Alt");
-      },
-      child: getMenuText3("Alterations"),
-    )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Des");
-      },
-      child: getMenuText3("Design"),
-    )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Emb");
+    //   },
+    //   child: getMenuText3("Embroidery"),
+    // )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Alt");
+    //   },
+    //   child: getMenuText3("Alterations"),
+    // )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Des");
+    //   },
+    //   child: getMenuText3("Design"),
+    // )),
     PopupMenuItem(
         child: TextButton(
             onPressed: () {
               Navigator.of(context).pushNamed("DoYourSelf");
             },
             child: getMenuText2("Do it Yourself"))),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Croch");
-      },
-      child: getMenuText3("Crocheting/Knitting"),
-    )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("MK");
-      },
-      child: getMenuText3("Making Clothes/Sewing"),
-    )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Croch");
+    //   },
+    //   child: getMenuText3("Crocheting/Knitting"),
+    // )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("MK");
+    //   },
+    //   child: getMenuText3("Making Clothes/Sewing"),
+    // )),
   ];
   List<PopupMenuItem> com = [
     PopupMenuItem(
@@ -554,41 +562,41 @@ showMenus(BuildContext context, double right, double left, double top,
               Navigator.of(context).pushNamed("Identify");
             },
             child: getMenuText2("Sustainable Companies"))),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Src");
-      },
-      child: getMenuText3("Location of Sourcing"),
-    )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Mat");
-      },
-      child: getMenuText3("Materials"),
-    )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Green");
-      },
-      child: getMenuText3("Green Certifications"),
-    )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("CSR");
-      },
-      child: getMenuText3("CSR"),
-    )),
-    PopupMenuItem(
-        child: TextButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed("Webs");
-      },
-      child: getMenuText3("Other Websites"),
-    )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Src");
+    //   },
+    //   child: getMenuText3("Location of Sourcing"),
+    // )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Mat");
+    //   },
+    //   child: getMenuText3("Materials"),
+    // )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Green");
+    //   },
+    //   child: getMenuText3("Green Certifications"),
+    // )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("CSR");
+    //   },
+    //   child: getMenuText3("CSR"),
+    // )),
+    // PopupMenuItem(
+    //     child: TextButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed("Webs");
+    //   },
+    //   child: getMenuText3("Other Websites"),
+    // )),
     PopupMenuItem(
         child: TextButton(
             onPressed: () {

@@ -100,7 +100,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   padding: const EdgeInsets.all(0.0),
                                   child: Column(
                                     children: <Widget>[
-                                      GestureDetector(
+                                      InkWell(
+                                        enableFeedback: true,
+                                        hoverColor: Colors.white24,
                                         onTap: () => launch(
                                             "https://www.bbc.com/future/article/20200310-sustainable-fashion-how-to-buy-clothes-good-for-the-climate#:~:text=Jeans%20manufacturer%20Levi%20Strauss%20estimates,in%20the%20average%20US%20car"),
                                         child: Image.asset(
@@ -131,7 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       left: 10 * aspectRatio),
                                   child: Column(
                                     children: <Widget>[
-                                      GestureDetector(
+                                      InkWell(
+                                        enableFeedback: true,
+                                        hoverColor: Colors.white24,
                                         onTap: () => launch(
                                             "https://www.consciouslifeandstyle.com/what-is-sustainable-fashion/"),
                                         child: Image.asset(
@@ -175,7 +179,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   padding: const EdgeInsets.all(0.0),
                                   child: Column(
                                     children: <Widget>[
-                                      GestureDetector(
+                                      InkWell(
+                                        enableFeedback: true,
+                                        hoverColor: Colors.white24,
                                         onTap: () => launch(
                                             "https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development"),
                                         child: Image.asset(

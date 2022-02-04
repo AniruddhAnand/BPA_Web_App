@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         constant = /*695 - WidgetsBinding.instance!.window.physicalSize.height*/ 0;
     double constant2 =
         /*695 / WidgetsBinding.instance!.window.physicalSize.height*/ 1;
-    print(constant);
+    //print(constant);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
             initialScrollOffset: 1640.0 / constant2 + constant)),
         "Brands": (context) => SustainabilityScreen(ScrollController(
             keepScrollOffset: false,
-            initialScrollOffset: 2105.0 / constant2 + constant)),
+            initialScrollOffset: 2270.0 / constant2 + constant)),
         "Cited": (context) => WorksCited(ScrollController(
             keepScrollOffset: false, initialScrollOffset: 0.0)),
       },
