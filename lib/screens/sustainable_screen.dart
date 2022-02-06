@@ -54,6 +54,16 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
   Widget build(BuildContext context) {
     buildContext = context;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => widget.homeController.jumpTo(0.0),
+        backgroundColor: Color.fromARGB(255, 222, 199, 181), //Colors.white24,
+        child: Icon(
+          Icons.arrow_circle_up,
+          color: Colors.black,
+        ),
+        splashColor: Colors.white24,
+        elevation: 10,
+      ),
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: //Container(
           //constraints: const BoxConstraints.expand(),
@@ -69,7 +79,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
           controller: widget.homeController,
           child: InteractiveViewer(
             scaleEnabled: MediaQuery.of(context).size.shortestSide < 600,
-            maxScale: 4,
+            maxScale: 10,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -187,7 +197,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                         CrossAxisAlignment.start,
                                     //  width: MediaQuery.of(context).size.width / 4,
                                     children: [
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(
                                             text: "• ",
@@ -198,10 +208,10 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                                   "Environmental Working Group",
                                               style: styleButton)
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://www.ewg.org/"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(
                                             text: "• ",
@@ -212,10 +222,10 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                                   "Fashion Transparency Index",
                                               style: styleButton)
                                         ])),
-                                        onPressed: () => launch(
+                                        onTap: () => launch(
                                             "https://www.fashionrevolution.org/about/transparency/ "),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(
                                             text: "• ",
@@ -225,10 +235,10 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                               text: "Good On You",
                                               style: styleButton)
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://goodonyou.eco/"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(
                                             text: "• ",
@@ -238,10 +248,10 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                               text: "Rank A Brand",
                                               style: styleButton)
                                         ])),
-                                        onPressed: () => launch(
+                                        onTap: () => launch(
                                             "https://directory.goodonyou.eco/?_ga=2.245103557.1977874556.1639541414-1113788776.1637860368&_gl=1*mxll0f*_ga*MTExMzc4ODc3Ni4xNjM3ODYwMzY4*_ga_TTB1J3Q9MN*MTYzOTU0MTQxMy40LjEuMTYzOTU0MjkwMy42MA"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(
                                             text: "• ",
@@ -252,7 +262,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                                   "Sustainable Apparel Coalition",
                                               style: styleButton)
                                         ])),
-                                        onPressed: () => launch(
+                                        onTap: () => launch(
                                             "https://apparelcoalition.org/ "),
                                       ),
                                     ],
@@ -294,7 +304,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -302,8 +312,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
-                                    launch("https://boodywear.com/"),
+                                onTap: () => launch("https://boodywear.com/"),
                               ),
                               Padding(
                                 padding:
@@ -312,7 +321,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Boody creates soft, comfortable, everyday essentials using organic bamboo as their main material. Additionally their products are Oeko-Tex Standard certified and minimize textile waste using low-waste cutting techniques.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -320,7 +329,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () => launch("https://chnge.com/"),
+                                onTap: () => launch("https://chnge.com/"),
                               ),
                               Padding(
                                 padding:
@@ -329,7 +338,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "CHNGE is a bold new brand determined to take a stand for change, socially and environmentally. They ensure that their clothing is carbon neutral, meaning that all carbon emissions are offset through their protection of trees. All of their material is also Global Textile Standard certified cotton while their packaging is 100% recyclable.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -337,7 +346,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
+                                onTap: () =>
                                     launch("https://www.honest-basics.com/"),
                               ),
                               Padding(
@@ -347,7 +356,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Honest Basics is a European based company that uses only sustainably sourced materials like Global Textile standard certified cotton. Additionally they only use climate neutral shipping of their products which is factored into the price of their clothing.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -355,7 +364,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
+                                onTap: () =>
                                     launch("https://mightygoodbasics.com/"),
                               ),
                               Padding(
@@ -365,7 +374,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Mighty Good Basics is a clothing company that focuses on producing the most ethically sourced basics for both women and men. This store uses Global Textile Standard certified cotton and textile dyes to create low impact clothing and reduce pollution and water waste.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -373,7 +382,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
+                                onTap: () =>
                                     launch("https://swedishstockings.com/"),
                               ),
                               Padding(
@@ -383,7 +392,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Swedish Stockings produces tights, socks, and other forms of pantyhoses for women around the world. This company uses eco-friendly and recycled materials as well as their offcut fabrics. They deploy renewable energy sources for production to reduce their climate impact and have zero-waste factories.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -391,7 +400,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
+                                onTap: () =>
                                     launch("https://www.houseofsunny.co.uk/"),
                               ),
                               Padding(
@@ -401,7 +410,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "As a trendy online brand, House of Sunny is actively working against fast fashion by reusing water consumption, using recycled materials, and selling extra products on Depop. Additionally they only produce two seasonal collections per year to avoid mass production and use forms of shipping that are less impactful on the environment.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -409,7 +418,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
+                                onTap: () =>
                                     launch("https://ninetypercent.com/"),
                               ),
                               Padding(
@@ -419,7 +428,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Ninety Percent designs everyday essentials that are sustainably sourced and versatile enough to be staples in anyone’s closet. They use Global Textile Standard certified cotton, Tencel, EcoVero, and other sustainable synthetic fibers to make their products.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -427,8 +436,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
-                                    launch("https://www.boyish.com/"),
+                                onTap: () => launch("https://www.boyish.com/"),
                               ),
                               Padding(
                                 padding:
@@ -437,7 +445,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Boyish is a sustainable denim company as well as a consignment shop to encourage the reusing of unwanted clothes. All of their products are vegan, made of organic cotton, recycled fabrics, and Tencel, dyed with natural dyes, and use recycled water to wash the products.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -445,7 +453,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () => launch("https://gaala.com/"),
+                                onTap: () => launch("https://gaala.com/"),
                               ),
                               Padding(
                                 padding:
@@ -454,7 +462,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Gaâla uses sustainable fabrics such as linen, crepe silks, wool, silk, cotton, and Tencel. Along with these they also repurpose deadstock clothing in small-scale workshops by individual tailors to avoid excess production. They focus on timeless high fashion designs, handcrafted by each tailor.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -462,7 +470,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () => launch("https://navygrey.co/"),
+                                onTap: () => launch("https://navygrey.co/"),
                               ),
                               Padding(
                                 padding:
@@ -471,7 +479,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     "Navygrey primarily focuses on knitwear and classic clothing pieces for women. They use traceable raw materials certified by the Responsible Wool Standard, organic textile dyes, and purify water used for dyeing so that it can be reused. Additionally they produce in limited quantities to avoid overproduction and excess waste.\n",
                                     style: style3),
                               ),
-                              TextButton(
+                              GestureDetector(
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "•  ", style: style2),
                                   TextSpan(
@@ -479,7 +487,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                                     style: styleButton2,
                                   )
                                 ])),
-                                onPressed: () =>
+                                onTap: () =>
                                     launch("https://theodderside.com/"),
                               ),
                               Padding(

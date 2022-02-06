@@ -52,6 +52,16 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
   Widget build(BuildContext context) {
     buildContext = context;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => widget.homeController.jumpTo(0.0),
+        backgroundColor: Color.fromARGB(255, 222, 199, 181), //Colors.white24,
+        child: Icon(
+          Icons.arrow_circle_up,
+          color: Colors.black,
+        ),
+        splashColor: Colors.white24,
+        elevation: 10,
+      ),
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: //Container(
           //constraints: const BoxConstraints.expand(),
@@ -67,7 +77,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
           controller: widget.homeController,
           child: InteractiveViewer(
             scaleEnabled: MediaQuery.of(context).size.shortestSide < 600,
-            maxScale: 4,
+            maxScale: 10,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -156,9 +166,12 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                       ),
                                     ],
                                   ),
+                                  SizedBox(
+                                    width: 50 * aspectRatio,
+                                  ),
                                   Image.asset(
                                     "assets/images/Thrifting_Cat.png",
-                                    scale: 1.5 / aspectRatio,
+                                    scale: 2 / aspectRatio,
                                   ),
                                   // Image.asset(
                                   //   "assets/images/Thrifting_Cat.png",
@@ -175,7 +188,7 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                     children: [
                                       Text("\n Online Platforms:",
                                           style: style3),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(text: "•  ", style: style3),
                                           TextSpan(
@@ -183,10 +196,10 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                             style: styleButton,
                                           )
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://www.thredup.com/"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(text: "•  ", style: style3),
                                           TextSpan(
@@ -194,10 +207,10 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                             style: styleButton,
                                           )
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://poshmark.com/"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(text: "•  ", style: style3),
                                           TextSpan(
@@ -205,10 +218,10 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                             style: styleButton,
                                           )
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://www.depop.com/"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(text: "•  ", style: style3),
                                           TextSpan(
@@ -216,10 +229,10 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                             style: styleButton,
                                           )
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://www.swap.com/"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(text: "•  ", style: style3),
                                           TextSpan(
@@ -227,10 +240,10 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                             style: styleButton,
                                           )
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://www.ebay.com/"),
                                       ),
-                                      TextButton(
+                                      GestureDetector(
                                         child: Text.rich(TextSpan(children: [
                                           TextSpan(text: "•  ", style: style3),
                                           TextSpan(
@@ -238,14 +251,17 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                             style: styleButton,
                                           )
                                         ])),
-                                        onPressed: () =>
+                                        onTap: () =>
                                             launch("https://goodfair.com/"),
                                       ),
                                     ],
                                   ),
+                                  SizedBox(
+                                    width: 70 * aspectRatio,
+                                  ),
                                   Image.asset(
                                     "assets/images/Online_Cat.png",
-                                    scale: 1.5 / aspectRatio,
+                                    scale: 2 / aspectRatio,
                                   ),
                                   // Image.asset(
                                   //   "assets/images/Thrifting_Cat.png",

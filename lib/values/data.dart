@@ -87,7 +87,10 @@ Widget getMenuBar(BuildContext context, ScrollController homeController) {
       color: Colors.white,
       child: Padding(
         padding: EdgeInsets.only(
-            right: 8.0 * aspectRatio, left: 8 * aspectRatio, top: 8, bottom: 8),
+            right: 8.0 * aspectRatio,
+            left: 8 * aspectRatio,
+            top: 8 * aspectRatio,
+            bottom: 8 * aspectRatio),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

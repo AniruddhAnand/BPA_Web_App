@@ -53,6 +53,16 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
   Widget build(BuildContext context) {
     buildContext = context;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => widget.homeController.jumpTo(0.0),
+        backgroundColor: Color.fromARGB(255, 222, 199, 181), //Colors.white24,
+        child: Icon(
+          Icons.arrow_circle_up,
+          color: Colors.black,
+        ),
+        splashColor: Colors.white24,
+        elevation: 10,
+      ),
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: //Container(
           //constraints: const BoxConstraints.expand(),
@@ -68,7 +78,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
           controller: widget.homeController,
           child: InteractiveViewer(
             scaleEnabled: MediaQuery.of(context).size.shortestSide < 600,
-            maxScale: 4,
+            maxScale: 10,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -123,7 +133,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                               fontFamily: "CrimsonText",
                                               fontSize: 28 * aspectRatio),
                                         ),
-                                        TextButton(
+                                        GestureDetector(
                                           child: Text.rich(TextSpan(children: [
                                             TextSpan(
                                                 text: "•  ", style: style3),
@@ -132,10 +142,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                               style: styleButton,
                                             )
                                           ])),
-                                          onPressed: () => launch(
+                                          onTap: () => launch(
                                               "https://www.youtube.com/channel/UCq4Hs_x6X-rgYtMjBh2ghpg"),
                                         ),
-                                        TextButton(
+                                        GestureDetector(
                                           child: Text.rich(TextSpan(children: [
                                             TextSpan(
                                                 text: "•  ", style: style3),
@@ -144,10 +154,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                               style: styleButton,
                                             )
                                           ])),
-                                          onPressed: () => launch(
+                                          onTap: () => launch(
                                               "https://www.youtube.com/channel/UCWYZdV3Mn3KGkhJ0puzAt8A"),
                                         ),
-                                        TextButton(
+                                        GestureDetector(
                                           child: Text.rich(TextSpan(children: [
                                             TextSpan(
                                                 text: "•  ", style: style3),
@@ -156,10 +166,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                               style: styleButton,
                                             )
                                           ])),
-                                          onPressed: () => launch(
+                                          onTap: () => launch(
                                               "https://www.youtube.com/channel/UCGjZJ0TN1PlJIEwJXKNlm6w"),
                                         ),
-                                        TextButton(
+                                        GestureDetector(
                                           child: Text.rich(TextSpan(children: [
                                             TextSpan(
                                                 text: "•  ", style: style3),
@@ -168,10 +178,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                               style: styleButton,
                                             )
                                           ])),
-                                          onPressed: () => launch(
+                                          onTap: () => launch(
                                               "https://www.needlenthread.com/"),
                                         ),
-                                        TextButton(
+                                        GestureDetector(
                                           child: Text.rich(TextSpan(children: [
                                             TextSpan(
                                                 text: "•  ", style: style3),
@@ -180,10 +190,13 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                               style: styleButton,
                                             )
                                           ])),
-                                          onPressed: () =>
+                                          onTap: () =>
                                               launch("https://pintangle.com/"),
                                         ),
                                       ],
+                                    ),
+                                    SizedBox(
+                                      width: 50 * aspectRatio,
                                     ),
                                     Image.asset(
                                       "assets/images/Glasses_Cat.png",
@@ -270,12 +283,12 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   "• Interacting with",
                                   style: style3,
                                 ),
-                                TextButton(
+                                GestureDetector(
                                   child: Text(
                                     "Pinterest",
                                     style: styleButton,
                                   ),
-                                  onPressed: () =>
+                                  onTap: () =>
                                       launch("https://www.pinterest.com/"),
                                 ),
                                 Text(
@@ -296,7 +309,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               "• Find style inspiration in sustainable fashion influencers",
                               style: style3,
                             ),
-                            TextButton(
+                            GestureDetector(
                               child: Text.rich(TextSpan(children: [
                                 TextSpan(text: "•  ", style: style3),
                                 TextSpan(
@@ -304,10 +317,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   style: styleButton,
                                 )
                               ])),
-                              onPressed: () => launch(
+                              onTap: () => launch(
                                   "https://www.bestdressedstore.com/shopmycloset"),
                             ),
-                            TextButton(
+                            GestureDetector(
                               child: Text.rich(TextSpan(children: [
                                 TextSpan(text: "•  ", style: style3),
                                 TextSpan(
@@ -315,10 +328,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   style: styleButton,
                                 )
                               ])),
-                              onPressed: () => launch(
+                              onTap: () => launch(
                                   "https://www.youtube.com/c/LainiOzark/playlists"),
                             ),
-                            TextButton(
+                            GestureDetector(
                               child: Text.rich(TextSpan(children: [
                                 TextSpan(text: "•  ", style: style3),
                                 TextSpan(
@@ -326,10 +339,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   style: styleButton,
                                 )
                               ])),
-                              onPressed: () => launch(
+                              onTap: () => launch(
                                   "https://www.youtube.com/channel/UCl5ZUlVYLmmnyiEcFRTFJtg"),
                             ),
-                            TextButton(
+                            GestureDetector(
                               child: Text.rich(TextSpan(children: [
                                 TextSpan(text: "•  ", style: style3),
                                 TextSpan(
@@ -337,10 +350,10 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   style: styleButton,
                                 )
                               ])),
-                              onPressed: () =>
+                              onTap: () =>
                                   launch("https://www.adimay.com/about/"),
                             ),
-                            TextButton(
+                            GestureDetector(
                               child: Text.rich(TextSpan(children: [
                                 TextSpan(text: "•  ", style: style3),
                                 TextSpan(
@@ -348,10 +361,9 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   style: styleButton,
                                 )
                               ])),
-                              onPressed: () =>
-                                  launch("https://ethicallykate.com/"),
+                              onTap: () => launch("https://ethicallykate.com/"),
                             ),
-                            TextButton(
+                            GestureDetector(
                               child: Text.rich(TextSpan(children: [
                                 TextSpan(text: "•  ", style: style3),
                                 TextSpan(
@@ -359,7 +371,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                   style: styleButton,
                                 )
                               ])),
-                              onPressed: () =>
+                              onTap: () =>
                                   launch("https://www.sustainably-chic.com/"),
                             ),
                           ],
@@ -423,8 +435,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                             style: TextStyle(
                                                 fontFamily: "CrimsonText",
                                                 fontSize: 28 * aspectRatio)),
-                                        TextButton(
-                                            onPressed: () => launch(
+                                        GestureDetector(
+                                            onTap: () => launch(
                                                 "https://youtu.be/a7eqIn4Umdc"),
                                             child:
                                                 Text.rich(TextSpan(children: [
@@ -435,8 +447,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                                 style: styleButton,
                                               )
                                             ]))),
-                                        TextButton(
-                                            onPressed: () => launch(
+                                        GestureDetector(
+                                            onTap: () => launch(
                                                 "https://sarahmaker.com/free-crochet-scarf-patterns/"),
                                             child:
                                                 Text.rich(TextSpan(children: [
@@ -447,8 +459,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                                 style: styleButton,
                                               )
                                             ]))),
-                                        TextButton(
-                                            onPressed: () => launch(
+                                        GestureDetector(
+                                            onTap: () => launch(
                                                 "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
                                             child:
                                                 Text.rich(TextSpan(children: [
@@ -459,8 +471,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                                 style: styleButton,
                                               )
                                             ]))),
-                                        TextButton(
-                                            onPressed: () => launch(
+                                        GestureDetector(
+                                            onTap: () => launch(
                                                 "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
                                             child:
                                                 Text.rich(TextSpan(children: [
@@ -471,8 +483,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                                 style: styleButton,
                                               )
                                             ]))),
-                                        TextButton(
-                                            onPressed: () => launch(
+                                        GestureDetector(
+                                            onTap: () => launch(
                                                 "https://www.youtube.com/watch?v=1WluE599ccI"),
                                             child:
                                                 Text.rich(TextSpan(children: [
@@ -483,8 +495,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                                 style: styleButton,
                                               )
                                             ]))),
-                                        TextButton(
-                                            onPressed: () => launch(
+                                        GestureDetector(
+                                            onTap: () => launch(
                                                 "https://www.diytomake.com/30-easy-crochet-tote-bag-patterns/"),
                                             child:
                                                 Text.rich(TextSpan(children: [
@@ -496,6 +508,9 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                               )
                                             ]))),
                                       ],
+                                    ),
+                                    SizedBox(
+                                      width: 50 * aspectRatio,
                                     ),
                                     Image.asset(
                                       "assets/images/Shirt_Cat.png",
@@ -519,8 +534,11 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                                 style: style3)),
                                       ],
                                     ),
+                                    SizedBox(
+                                      width: 50 * aspectRatio,
+                                    ),
                                     Image.asset(
-                                      "assets/images/Yarn_Cat.png",
+                                      "assets/images/Yarn_Cat_2.png",
                                       scale: 1.5 / aspectRatio,
                                     )
                                   ],
@@ -558,6 +576,9 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                                 fontSize: 28 * aspectRatio)),
                                         SelectableText(mkInfo2, style: style3),
                                       ],
+                                    ),
+                                    SizedBox(
+                                      width: 50 * aspectRatio,
                                     ),
                                     Image.asset(
                                       "assets/images/Fabric_Cat.png",

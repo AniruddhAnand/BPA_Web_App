@@ -56,6 +56,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     buildContext = context;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => widget.homeController.jumpTo(0.0),
+        backgroundColor: Color.fromARGB(255, 222, 199, 181), //Colors.white24,
+        child: Icon(
+          Icons.arrow_circle_up,
+          color: Colors.black,
+        ),
+        splashColor: Colors.white24,
+        elevation: 10,
+      ),
       backgroundColor: Color.fromARGB(255, 222, 199, 181),
       body: //Container(
           //constraints: const BoxConstraints.expand(),
@@ -71,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
           controller: widget.homeController,
           child: InteractiveViewer(
             scaleEnabled: MediaQuery.of(context).size.shortestSide < 600,
-            maxScale: 4,
+            maxScale: 10,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
