@@ -111,66 +111,85 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                 Container(
                                     child:
                                         SelectableText(embInfo, style: style3)),
-                                SelectableText(
-                                  "\nTutorials and Guides:",
-                                  style: TextStyle(
-                                      fontFamily: "CrimsonText",
-                                      fontSize: 28 * aspectRatio),
-                                ),
-                                TextButton(
-                                  child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: style3),
-                                    TextSpan(
-                                      text: "DIY Stitching",
-                                      style: styleButton,
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SelectableText(
+                                          "\nTutorials and Guides:",
+                                          style: TextStyle(
+                                              fontFamily: "CrimsonText",
+                                              fontSize: 28 * aspectRatio),
+                                        ),
+                                        TextButton(
+                                          child: Text.rich(TextSpan(children: [
+                                            TextSpan(
+                                                text: "•  ", style: style3),
+                                            TextSpan(
+                                              text: "DIY Stitching",
+                                              style: styleButton,
+                                            )
+                                          ])),
+                                          onPressed: () => launch(
+                                              "https://www.youtube.com/channel/UCq4Hs_x6X-rgYtMjBh2ghpg"),
+                                        ),
+                                        TextButton(
+                                          child: Text.rich(TextSpan(children: [
+                                            TextSpan(
+                                                text: "•  ", style: style3),
+                                            TextSpan(
+                                              text: "Crewel Ghoul Embroidery",
+                                              style: styleButton,
+                                            )
+                                          ])),
+                                          onPressed: () => launch(
+                                              "https://www.youtube.com/channel/UCWYZdV3Mn3KGkhJ0puzAt8A"),
+                                        ),
+                                        TextButton(
+                                          child: Text.rich(TextSpan(children: [
+                                            TextSpan(
+                                                text: "•  ", style: style3),
+                                            TextSpan(
+                                              text: "HandiWorks",
+                                              style: styleButton,
+                                            )
+                                          ])),
+                                          onPressed: () => launch(
+                                              "https://www.youtube.com/channel/UCGjZJ0TN1PlJIEwJXKNlm6w"),
+                                        ),
+                                        TextButton(
+                                          child: Text.rich(TextSpan(children: [
+                                            TextSpan(
+                                                text: "•  ", style: style3),
+                                            TextSpan(
+                                              text: "Needle'n Thread",
+                                              style: styleButton,
+                                            )
+                                          ])),
+                                          onPressed: () => launch(
+                                              "https://www.needlenthread.com/"),
+                                        ),
+                                        TextButton(
+                                          child: Text.rich(TextSpan(children: [
+                                            TextSpan(
+                                                text: "•  ", style: style3),
+                                            TextSpan(
+                                              text: "Pintangle",
+                                              style: styleButton,
+                                            )
+                                          ])),
+                                          onPressed: () =>
+                                              launch("https://pintangle.com/"),
+                                        ),
+                                      ],
+                                    ),
+                                    Image.asset(
+                                      "assets/images/Glasses_Cat.png",
+                                      scale: 2 / aspectRatio,
                                     )
-                                  ])),
-                                  onPressed: () => launch(
-                                      "https://www.youtube.com/channel/UCq4Hs_x6X-rgYtMjBh2ghpg"),
-                                ),
-                                TextButton(
-                                  child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: style3),
-                                    TextSpan(
-                                      text: "Crewel Ghoul Embroidery",
-                                      style: styleButton,
-                                    )
-                                  ])),
-                                  onPressed: () => launch(
-                                      "https://www.youtube.com/channel/UCWYZdV3Mn3KGkhJ0puzAt8A"),
-                                ),
-                                TextButton(
-                                  child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: style3),
-                                    TextSpan(
-                                      text: "HandiWorks",
-                                      style: styleButton,
-                                    )
-                                  ])),
-                                  onPressed: () => launch(
-                                      "https://www.youtube.com/channel/UCGjZJ0TN1PlJIEwJXKNlm6w"),
-                                ),
-                                TextButton(
-                                  child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: style3),
-                                    TextSpan(
-                                      text: "Needle'n Thread",
-                                      style: styleButton,
-                                    )
-                                  ])),
-                                  onPressed: () =>
-                                      launch("https://www.needlenthread.com/"),
-                                ),
-                                TextButton(
-                                  child: Text.rich(TextSpan(children: [
-                                    TextSpan(text: "•  ", style: style3),
-                                    TextSpan(
-                                      text: "Pintangle",
-                                      style: styleButton,
-                                    )
-                                  ])),
-                                  onPressed: () =>
-                                      launch("https://pintangle.com/"),
+                                  ],
                                 ),
                               ],
                             )),
@@ -392,81 +411,120 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                     child:
                                         SelectableText.rich(TextSpan(children: [
                                   TextSpan(text: crochInfo, style: style3),
-                                  TextSpan(
-                                      text:
-                                          "\nCrocheted/Knitted Clothing Pieces:",
-                                      style: TextStyle(
-                                          fontFamily: "CrimsonText",
-                                          fontSize: 28 * aspectRatio)),
                                 ]))),
-                                TextButton(
-                                    onPressed: () =>
-                                        launch("https://youtu.be/a7eqIn4Umdc"),
-                                    child: Text.rich(TextSpan(children: [
-                                      TextSpan(text: "•  ", style: style3),
-                                      TextSpan(
-                                        text: "Hats",
-                                        style: styleButton,
-                                      )
-                                    ]))),
-                                TextButton(
-                                    onPressed: () => launch(
-                                        "https://sarahmaker.com/free-crochet-scarf-patterns/"),
-                                    child: Text.rich(TextSpan(children: [
-                                      TextSpan(text: "•  ", style: style3),
-                                      TextSpan(
-                                        text: "Scarves",
-                                        style: styleButton,
-                                      )
-                                    ]))),
-                                TextButton(
-                                    onPressed: () => launch(
-                                        "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
-                                    child: Text.rich(TextSpan(children: [
-                                      TextSpan(text: "•  ", style: style3),
-                                      TextSpan(
-                                        text: "Sweaters",
-                                        style: styleButton,
-                                      )
-                                    ]))),
-                                TextButton(
-                                    onPressed: () => launch(
-                                        "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
-                                    child: Text.rich(TextSpan(children: [
-                                      TextSpan(text: "•  ", style: style3),
-                                      TextSpan(
-                                        text: "Cardigans",
-                                        style: styleButton,
-                                      )
-                                    ]))),
-                                TextButton(
-                                    onPressed: () => launch(
-                                        "https://www.youtube.com/watch?v=1WluE599ccI"),
-                                    child: Text.rich(TextSpan(children: [
-                                      TextSpan(text: "•  ", style: style3),
-                                      TextSpan(
-                                        text: "Tank Tops",
-                                        style: styleButton,
-                                      )
-                                    ]))),
-                                TextButton(
-                                    onPressed: () => launch(
-                                        "https://www.diytomake.com/30-easy-crochet-tote-bag-patterns/"),
-                                    child: Text.rich(TextSpan(children: [
-                                      TextSpan(text: "•  ", style: style3),
-                                      TextSpan(
-                                        text: "Tote Bag",
-                                        style: styleButton,
-                                      )
-                                    ]))),
-                                SelectableText("\nSustainable Yarns",
-                                    style: TextStyle(
-                                        fontFamily: "CrimsonText",
-                                        fontSize: 28)),
-                                Container(
-                                    //  width: MediaQuery.of(context).size.width / 4,
-                                    child: SelectableText(crochInfo3,
-                                        style: style3)),
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SelectableText(
+                                            "Crocheted/Knitted Clothing Pieces:",
+                                            style: TextStyle(
+                                                fontFamily: "CrimsonText",
+                                                fontSize: 28 * aspectRatio)),
+                                        TextButton(
+                                            onPressed: () => launch(
+                                                "https://youtu.be/a7eqIn4Umdc"),
+                                            child:
+                                                Text.rich(TextSpan(children: [
+                                              TextSpan(
+                                                  text: "•  ", style: style3),
+                                              TextSpan(
+                                                text: "Hats",
+                                                style: styleButton,
+                                              )
+                                            ]))),
+                                        TextButton(
+                                            onPressed: () => launch(
+                                                "https://sarahmaker.com/free-crochet-scarf-patterns/"),
+                                            child:
+                                                Text.rich(TextSpan(children: [
+                                              TextSpan(
+                                                  text: "•  ", style: style3),
+                                              TextSpan(
+                                                text: "Scarves",
+                                                style: styleButton,
+                                              )
+                                            ]))),
+                                        TextButton(
+                                            onPressed: () => launch(
+                                                "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
+                                            child:
+                                                Text.rich(TextSpan(children: [
+                                              TextSpan(
+                                                  text: "•  ", style: style3),
+                                              TextSpan(
+                                                text: "Sweaters",
+                                                style: styleButton,
+                                              )
+                                            ]))),
+                                        TextButton(
+                                            onPressed: () => launch(
+                                                "https://www.yarnspirations.com/patterns?prefn1=patternSkillTypeString&prefv1=Knit&prefn2=patternProjectType&prefv2=Sweaters%20%26%20Cardigans"),
+                                            child:
+                                                Text.rich(TextSpan(children: [
+                                              TextSpan(
+                                                  text: "•  ", style: style3),
+                                              TextSpan(
+                                                text: "Cardigans",
+                                                style: styleButton,
+                                              )
+                                            ]))),
+                                        TextButton(
+                                            onPressed: () => launch(
+                                                "https://www.youtube.com/watch?v=1WluE599ccI"),
+                                            child:
+                                                Text.rich(TextSpan(children: [
+                                              TextSpan(
+                                                  text: "•  ", style: style3),
+                                              TextSpan(
+                                                text: "Tank Tops",
+                                                style: styleButton,
+                                              )
+                                            ]))),
+                                        TextButton(
+                                            onPressed: () => launch(
+                                                "https://www.diytomake.com/30-easy-crochet-tote-bag-patterns/"),
+                                            child:
+                                                Text.rich(TextSpan(children: [
+                                              TextSpan(
+                                                  text: "•  ", style: style3),
+                                              TextSpan(
+                                                text: "Tote Bag",
+                                                style: styleButton,
+                                              )
+                                            ]))),
+                                      ],
+                                    ),
+                                    Image.asset(
+                                      "assets/images/Shirt_Cat.png",
+                                      scale: 2 / aspectRatio,
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SelectableText("\nSustainable Yarns",
+                                            style: TextStyle(
+                                                fontFamily: "CrimsonText",
+                                                fontSize: 28 * aspectRatio)),
+                                        Container(
+                                            //  width: MediaQuery.of(context).size.width / 4,
+                                            child: SelectableText(crochInfo3,
+                                                style: style3)),
+                                      ],
+                                    ),
+                                    Image.asset(
+                                      "assets/images/Yarn_Cat.png",
+                                      scale: 1.5 / aspectRatio,
+                                    )
+                                  ],
+                                )
                               ],
                             )),
                         Padding(
@@ -487,13 +545,26 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                     child:
                                         SelectableText.rich(TextSpan(children: [
                                   TextSpan(text: mkInfo, style: style3),
-                                  TextSpan(
-                                      text: "\n\nSustainable Fabrics\n",
-                                      style: TextStyle(
-                                          fontFamily: "CrimsonText",
-                                          fontSize: 28 * aspectRatio)),
-                                  TextSpan(text: mkInfo2, style: style3),
                                 ]))),
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SelectableText("Sustainable Fabrics",
+                                            style: TextStyle(
+                                                fontFamily: "CrimsonText",
+                                                fontSize: 28 * aspectRatio)),
+                                        SelectableText(mkInfo2, style: style3),
+                                      ],
+                                    ),
+                                    Image.asset(
+                                      "assets/images/Fabric_Cat.png",
+                                      scale: 1.5 / aspectRatio,
+                                    )
+                                  ],
+                                ),
                               ],
                             )),
                       ],

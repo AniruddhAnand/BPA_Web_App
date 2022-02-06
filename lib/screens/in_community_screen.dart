@@ -126,88 +126,132 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                   // width: MediaQuery.of(context).size.width / 4,
                                   child: SelectableText("${thriftingInfo}",
                                       style: style3)),
-                              Text(
-                                "• Goodwill",
-                                style: style3,
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      //Thrift Store Chains:
+                                      Text(
+                                        "Thrift Store Chains:",
+                                        style: style3,
+                                      ),
+                                      Text(
+                                        "• Goodwill",
+                                        style: style3,
+                                      ),
+                                      Text(
+                                        "• Plato's Closet",
+                                        style: style3,
+                                      ),
+                                      Text(
+                                        "• Salvation Army",
+                                        style: style3,
+                                      ),
+                                      Text(
+                                        "• Savers",
+                                        style: style3,
+                                      ),
+                                    ],
+                                  ),
+                                  Image.asset(
+                                    "assets/images/Thrifting_Cat.png",
+                                    scale: 1.5 / aspectRatio,
+                                  ),
+                                  // Image.asset(
+                                  //   "assets/images/Thrifting_Cat.png",
+                                  //   scale: 2.5 / aspectRatio,
+                                  // )
+                                ],
                               ),
-                              Text(
-                                "• Plato's Closet",
-                                style: style3,
-                              ),
-                              Text(
-                                "• Salvation Army",
-                                style: style3,
-                              ),
-                              Text(
-                                "• Savers",
-                                style: style3,
-                              ),
-                              Text("\n Online Platforms:", style: style3),
-                              TextButton(
-                                child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: style3),
-                                  TextSpan(
-                                    text: "thredUp",
-                                    style: styleButton,
-                                  )
-                                ])),
-                                onPressed: () =>
-                                    launch("https://www.thredup.com/"),
-                              ),
-                              TextButton(
-                                child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: style3),
-                                  TextSpan(
-                                    text: "Poshmark",
-                                    style: styleButton,
-                                  )
-                                ])),
-                                onPressed: () =>
-                                    launch("https://poshmark.com/"),
-                              ),
-                              TextButton(
-                                child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: style3),
-                                  TextSpan(
-                                    text: "Depop",
-                                    style: styleButton,
-                                  )
-                                ])),
-                                onPressed: () =>
-                                    launch("https://www.depop.com/"),
-                              ),
-                              TextButton(
-                                child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: style3),
-                                  TextSpan(
-                                    text: "Swap",
-                                    style: styleButton,
-                                  )
-                                ])),
-                                onPressed: () =>
-                                    launch("https://www.swap.com/"),
-                              ),
-                              TextButton(
-                                child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: style3),
-                                  TextSpan(
-                                    text: "eBay",
-                                    style: styleButton,
-                                  )
-                                ])),
-                                onPressed: () =>
-                                    launch("https://www.ebay.com/"),
-                              ),
-                              TextButton(
-                                child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "•  ", style: style3),
-                                  TextSpan(
-                                    text: "GoodFair",
-                                    style: styleButton,
-                                  )
-                                ])),
-                                onPressed: () =>
-                                    launch("https://goodfair.com/"),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("\n Online Platforms:",
+                                          style: style3),
+                                      TextButton(
+                                        child: Text.rich(TextSpan(children: [
+                                          TextSpan(text: "•  ", style: style3),
+                                          TextSpan(
+                                            text: "thredUp",
+                                            style: styleButton,
+                                          )
+                                        ])),
+                                        onPressed: () =>
+                                            launch("https://www.thredup.com/"),
+                                      ),
+                                      TextButton(
+                                        child: Text.rich(TextSpan(children: [
+                                          TextSpan(text: "•  ", style: style3),
+                                          TextSpan(
+                                            text: "Poshmark",
+                                            style: styleButton,
+                                          )
+                                        ])),
+                                        onPressed: () =>
+                                            launch("https://poshmark.com/"),
+                                      ),
+                                      TextButton(
+                                        child: Text.rich(TextSpan(children: [
+                                          TextSpan(text: "•  ", style: style3),
+                                          TextSpan(
+                                            text: "Depop",
+                                            style: styleButton,
+                                          )
+                                        ])),
+                                        onPressed: () =>
+                                            launch("https://www.depop.com/"),
+                                      ),
+                                      TextButton(
+                                        child: Text.rich(TextSpan(children: [
+                                          TextSpan(text: "•  ", style: style3),
+                                          TextSpan(
+                                            text: "Swap",
+                                            style: styleButton,
+                                          )
+                                        ])),
+                                        onPressed: () =>
+                                            launch("https://www.swap.com/"),
+                                      ),
+                                      TextButton(
+                                        child: Text.rich(TextSpan(children: [
+                                          TextSpan(text: "•  ", style: style3),
+                                          TextSpan(
+                                            text: "eBay",
+                                            style: styleButton,
+                                          )
+                                        ])),
+                                        onPressed: () =>
+                                            launch("https://www.ebay.com/"),
+                                      ),
+                                      TextButton(
+                                        child: Text.rich(TextSpan(children: [
+                                          TextSpan(text: "•  ", style: style3),
+                                          TextSpan(
+                                            text: "GoodFair",
+                                            style: styleButton,
+                                          )
+                                        ])),
+                                        onPressed: () =>
+                                            launch("https://goodfair.com/"),
+                                      ),
+                                    ],
+                                  ),
+                                  Image.asset(
+                                    "assets/images/Online_Cat.png",
+                                    scale: 1.5 / aspectRatio,
+                                  ),
+                                  // Image.asset(
+                                  //   "assets/images/Thrifting_Cat.png",
+                                  //   scale: 2.5 / aspectRatio,
+                                  // )
+                                ],
                               ),
                             ],
                           ),
