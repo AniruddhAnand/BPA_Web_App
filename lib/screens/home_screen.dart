@@ -98,8 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: EdgeInsets.only(
                             left: 50.0 * aspectRatio,
                             right: 50.0 * aspectRatio,
-                            bottom: 75.0,
-                            top: 40.0),
+                            bottom: 75.0 * heightRatio,
+                            top: 40.0 * heightRatio),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: 10,
+                                        height: 10 * heightRatio,
                                       ),
                                       Container(
                                           width: MediaQuery.of(context)
@@ -133,12 +133,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 30,
+                                  height: 30 * heightRatio,
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: 10.0,
-                                      bottom: 10,
+                                      top: 10.0 * heightRatio,
+                                      bottom: 10 * heightRatio,
                                       right: 10 * aspectRatio,
                                       left: 10 * aspectRatio),
                                   child: Column(
@@ -153,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           scale: 2.5 / aspectRatio,
                                         ),
                                       ),
-                                      SizedBox(height: 10),
+                                      SizedBox(height: 10 * heightRatio),
                                       Container(
                                           width: MediaQuery.of(context)
                                                   .size
@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: Colors.white,
-                                  width: 10,
+                                  width: 10 * aspectRatio,
                                 ),
                                 borderRadius: BorderRadius.circular(0.0),
                               ),
@@ -177,8 +177,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 padding: EdgeInsets.only(
                                     left: 25.0 * aspectRatio,
                                     right: 25.0 * aspectRatio,
-                                    top: 25.0,
-                                    bottom: 25.0),
+                                    top: 25.0 * heightRatio,
+                                    bottom: 25.0 * heightRatio),
                                 child: info1,
                               ),
                               width: MediaQuery.of(context).size.width / 2.5,
@@ -209,21 +209,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 25,
+                                  height: 25 * heightRatio,
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: 10.0,
-                                      bottom: 10,
+                                      top: 10.0 * heightRatio,
+                                      bottom: 10 * heightRatio,
                                       right: 10 * aspectRatio,
                                       left: 10 * aspectRatio),
                                   child: Column(
                                     children: <Widget>[
-                                      Image.asset(
-                                        "assets/images/Dress_Titled.png",
-                                        scale: 2.5 / aspectRatio,
+                                      InkWell(
+                                        enableFeedback: true,
+                                        hoverColor: Colors.white24,
+                                        onTap: () => launch(
+                                            "https://unfccc.int/news/fashion-industry-un-pursue-climate-action-for-sustainable-development"),
+                                        child: Image.asset(
+                                          "assets/images/Dress_Titled.png",
+                                          scale: 2.5 / aspectRatio,
+                                        ),
                                       ),
-                                      SizedBox(height: 10),
+                                      SizedBox(height: 10 * heightRatio),
                                       Container(
                                           width: MediaQuery.of(context)
                                                   .size

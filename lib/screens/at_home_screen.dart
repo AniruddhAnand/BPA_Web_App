@@ -51,6 +51,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print("width: ${MediaQuery.of(context).size.width}");
+    print("height: ${MediaQuery.of(context).size.height}");
     buildContext = context;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -87,8 +89,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                 missionWidget(context, "At Home", mission2),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 10.0,
-                      bottom: 40.0,
+                      top: 10.0 * heightRatio,
+                      bottom: 40.0 * heightRatio,
                       left: 65 * aspectRatio,
                       right: 65 * aspectRatio),
                   child: Container(
@@ -116,7 +118,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               children: <Widget>[
                                 SelectableText("${embroidery}", style: style2),
                                 SizedBox(
-                                  height: 5,
+                                  height: 5 * heightRatio,
                                 ),
                                 Container(
                                     child:
@@ -198,9 +200,16 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                     SizedBox(
                                       width: 50 * aspectRatio,
                                     ),
-                                    Image.asset(
-                                      "assets/images/Glasses_Cat.png",
-                                      scale: 2 / aspectRatio,
+                                    Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 50 * heightRatio,
+                                        ),
+                                        Image.asset(
+                                          "assets/images/Glasses_Cat.png",
+                                          scale: 2 / aspectRatio,
+                                        ),
+                                      ],
                                     )
                                   ],
                                 ),
@@ -210,14 +219,14 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 SelectableText("${alt}", style: style2),
                                 SizedBox(
-                                  height: 5,
+                                  height: 5 * heightRatio,
                                 ),
                                 Container(
                                     child:
@@ -228,20 +237,20 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 SelectableText("Design", style: style2),
                                 SizedBox(
-                                  height: 5,
+                                  height: 5 * heightRatio,
                                 ),
                                 Container(
                                     child:
                                         SelectableText(styInfo, style: style3)),
                                 SizedBox(
-                                  height: 20,
+                                  height: 20 * heightRatio,
                                 ),
                               ],
                             )),
@@ -251,14 +260,17 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: 0, right: 60 * aspectRatio, top: 40, bottom: 20.0),
+                      left: 0,
+                      right: 60 * aspectRatio,
+                      top: 40 * heightRatio,
+                      bottom: 20.0 * heightRatio),
                   child: Container(
                     width: MediaQuery.of(context).size.width / 1.6,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.white,
-                        width: 10,
+                        width: 10 * aspectRatio,
                       ),
                       borderRadius: BorderRadius.circular(0.0),
                     ),
@@ -268,8 +280,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                         padding: EdgeInsets.only(
                             left: 25.0 * aspectRatio,
                             right: 25.0 * aspectRatio,
-                            top: 10.0,
-                            bottom: 20.0),
+                            top: 10.0 * heightRatio,
+                            bottom: 20.0 * heightRatio),
                         child: Column(
                           children: [
                             SelectableText(
@@ -381,12 +393,12 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 5 * heightRatio,
                 ),
                 Image.asset("assets/images/Floral_Design_New.PNG"),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 40.0,
+                      top: 40.0 * heightRatio,
                       bottom: 0.0,
                       left: 65 * aspectRatio,
                       right: 65 * aspectRatio),
@@ -396,7 +408,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 5.0),
+                          padding: EdgeInsets.only(top: 5.0 * heightRatio),
                           child: SelectableText(
                             "Do it Yourself",
                             style: style5,
@@ -409,14 +421,14 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 SelectableText("${croch}", style: style2),
-                                const SizedBox(
-                                  height: 5,
+                                SizedBox(
+                                  height: 5 * heightRatio,
                                 ),
                                 Container(
                                     //  width: MediaQuery.of(context).size.width / 4,
@@ -549,14 +561,14 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 0.0,
                                 right: 40.0 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 SelectableText("${mkCloth}", style: style2),
                                 SizedBox(
-                                  height: 5,
+                                  height: 5 * heightRatio,
                                 ),
                                 Container(
                                     //  width: MediaQuery.of(context).size.width / 4,
@@ -591,6 +603,9 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                       ],
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 50 * heightRatio,
                 ),
                 footer(context)
               ],

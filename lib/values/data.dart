@@ -11,6 +11,8 @@ BuildContext? buildContext;
 
 double aspectRatio = MediaQuery.of(buildContext!).size.width / 1366;
 
+double heightRatio = MediaQuery.of(buildContext!).size.height / 695;
+
 TextStyle style = TextStyle(
     fontFamily: /*Abril*/ "CrimsonText",
     fontSize: 60 * aspectRatio,
@@ -89,8 +91,8 @@ Widget getMenuBar(BuildContext context, ScrollController homeController) {
         padding: EdgeInsets.only(
             right: 8.0 * aspectRatio,
             left: 8 * aspectRatio,
-            top: 8 * aspectRatio,
-            bottom: 8 * aspectRatio),
+            top: 8 * heightRatio,
+            bottom: 8 * heightRatio),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -226,8 +228,8 @@ Widget missionWidget(BuildContext context, String one, Widget two) {
     padding: EdgeInsets.only(
         left: MediaQuery.of(context).size.width * 1.7 / 13.5,
         right: MediaQuery.of(context).size.width * 1.7 / 13.5,
-        top: 40.0,
-        bottom: 40.0),
+        top: 40.0 * heightRatio,
+        bottom: 40.0 * heightRatio),
     child: Container(
       width: MediaQuery.of(context).size.width / 1.3,
       decoration: BoxDecoration(
@@ -241,8 +243,8 @@ Widget missionWidget(BuildContext context, String one, Widget two) {
         padding: EdgeInsets.only(
             left: 25.0 * aspectRatio,
             right: 25.0 * aspectRatio,
-            bottom: 20.0,
-            top: 10.0),
+            bottom: 20.0 * heightRatio,
+            top: 10.0 * heightRatio),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -312,7 +314,8 @@ Widget footer(BuildContext context) {
               //borderRadius: BorderRadius.circular(0.0),
             ),
             child: Padding(
-              padding: EdgeInsets.only(bottom: 40, top: 20),
+              padding: EdgeInsets.only(
+                  bottom: 40 * heightRatio, top: 20 * heightRatio),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -354,14 +357,14 @@ Widget footer(BuildContext context) {
                     ],
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 20 * heightRatio,
                   ),
                   Padding(
                     padding: EdgeInsets.only(
                         left: 15.0 * aspectRatio,
                         right: 15 * aspectRatio,
-                        top: 15,
-                        bottom: 15),
+                        top: 15 * heightRatio,
+                        bottom: 15 * heightRatio),
                     child: SelectableText(
                       "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand\nTheme: Reducing Carbon Footprint Independence High School, Frisco, Tx, 2021",
                       style: style7,

@@ -88,7 +88,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                 missionWidget(context, "Shopping Sustainably", mission3),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 20.0,
+                      top: 20.0 * heightRatio,
                       bottom: 0.0,
                       left: 65 * aspectRatio,
                       right: 65 * aspectRatio),
@@ -108,7 +108,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +127,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +146,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,7 +165,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -184,7 +184,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40,
+                                top: 40 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -277,7 +277,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                 Image.asset("assets/images/Floral_Design_New.PNG"),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 40.0,
+                      top: 40.0 * heightRatio,
                       bottom: 0.0,
                       left: 65 * aspectRatio,
                       right: 65 * aspectRatio),
@@ -298,7 +298,7 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                           padding: EdgeInsets.only(
                               left: 0,
                               right: 40 * aspectRatio,
-                              top: 40,
+                              top: 40 * heightRatio,
                               bottom: 0.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -503,6 +503,9 @@ class _SustainabilityScreenState extends State<SustainabilityScreen> {
                       ],
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 40 * heightRatio,
                 ),
                 footer(context)
               ],
