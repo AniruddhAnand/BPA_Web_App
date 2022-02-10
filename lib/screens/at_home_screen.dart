@@ -51,8 +51,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print("width: ${MediaQuery.of(context).size.width}");
-    print("height: ${MediaQuery.of(context).size.height}");
+    // print("width: ${MediaQuery.of(context).size.width}");
+    //print("height: ${MediaQuery.of(context).size.height}");
     buildContext = context;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -198,15 +198,15 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       ],
                                     ),
                                     SizedBox(
-                                      width: 50 * aspectRatio,
+                                      width: 150 * aspectRatio,
                                     ),
                                     Column(
                                       children: [
                                         SizedBox(
-                                          height: 50 * heightRatio,
+                                          height: 30 * heightRatio,
                                         ),
                                         Image.asset(
-                                          "assets/images/Glasses_Cat.png",
+                                          "assets/images/Glasses_Cat_2.png",
                                           scale: 2 / aspectRatio,
                                         ),
                                       ],
@@ -219,7 +219,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 0,
                                 right: 40 * aspectRatio,
-                                top: 40 * heightRatio,
+                                top: 20 * heightRatio,
                                 bottom: 0.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,7 +292,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "• Interacting with",
+                                  "• Interacting with ",
                                   style: style3,
                                 ),
                                 GestureDetector(
@@ -304,7 +304,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       launch("https://www.pinterest.com/"),
                                 ),
                                 Text(
-                                  "and creating a fashion board",
+                                  " and creating a fashion board",
                                   style: style3,
                                 )
                               ],
@@ -522,7 +522,7 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       ],
                                     ),
                                     SizedBox(
-                                      width: 50 * aspectRatio,
+                                      width: 290 * aspectRatio,
                                     ),
                                     Image.asset(
                                       "assets/images/Shirt_Cat.png",
@@ -547,11 +547,18 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       ],
                                     ),
                                     SizedBox(
-                                      width: 50 * aspectRatio,
+                                      width: 90 * aspectRatio,
                                     ),
-                                    Image.asset(
-                                      "assets/images/Yarn_Cat_2.png",
-                                      scale: 1.5 / aspectRatio,
+                                    Column(
+                                      children: [
+                                        Image.asset(
+                                          "assets/images/Sleepy_Thinky_Cat.png",
+                                          scale: 1.9 / aspectRatio,
+                                        ),
+                                        SizedBox(
+                                          height: 20 * heightRatio,
+                                        )
+                                      ],
                                     )
                                   ],
                                 )
@@ -593,8 +600,8 @@ class _AtHomeScreenState extends State<AtHomeScreen> {
                                       width: 50 * aspectRatio,
                                     ),
                                     Image.asset(
-                                      "assets/images/Fabric_Cat.png",
-                                      scale: 1.5 / aspectRatio,
+                                      "assets/images/Fluffly_Cat_New.png",
+                                      scale: 1.9 / aspectRatio,
                                     )
                                   ],
                                 ),

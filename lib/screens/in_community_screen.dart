@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -136,139 +138,273 @@ class _InCommunityScreenState extends State<InCommunityScreen> {
                                   // width: MediaQuery.of(context).size.width / 4,
                                   child: SelectableText("${thriftingInfo}",
                                       style: style3)),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      //Thrift Store Chains:
-                                      Text(
-                                        "Thrift Store Chains:",
-                                        style: style3,
-                                      ),
-                                      Text(
-                                        "• Goodwill",
-                                        style: style3,
-                                      ),
-                                      Text(
-                                        "• Plato's Closet",
-                                        style: style3,
-                                      ),
-                                      Text(
-                                        "• Salvation Army",
-                                        style: style3,
-                                      ),
-                                      Text(
-                                        "• Savers",
-                                        style: style3,
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    width: 50 * aspectRatio,
-                                  ),
-                                  Image.asset(
-                                    "assets/images/Thrifting_Cat.png",
-                                    scale: 2 / aspectRatio,
-                                  ),
-                                  // Image.asset(
-                                  //   "assets/images/Thrifting_Cat.png",
-                                  //   scale: 2.5 / aspectRatio,
-                                  // )
-                                ],
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    //top: 40.0 * heightRatio,
+                                    // bottom: 40 * heightRatio,
+                                    left: 40 * aspectRatio,
+                                    right: 40 * aspectRatio),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Online Platforms:",
+                                                style: style3),
+                                            GestureDetector(
+                                              child:
+                                                  Text.rich(TextSpan(children: [
+                                                TextSpan(
+                                                    text: "•  ", style: style3),
+                                                TextSpan(
+                                                  text: "thredUp",
+                                                  style: styleButton,
+                                                )
+                                              ])),
+                                              onTap: () => launch(
+                                                  "https://www.thredup.com/"),
+                                            ),
+                                            GestureDetector(
+                                              child:
+                                                  Text.rich(TextSpan(children: [
+                                                TextSpan(
+                                                    text: "•  ", style: style3),
+                                                TextSpan(
+                                                  text: "Poshmark",
+                                                  style: styleButton,
+                                                )
+                                              ])),
+                                              onTap: () => launch(
+                                                  "https://poshmark.com/"),
+                                            ),
+                                            GestureDetector(
+                                              child:
+                                                  Text.rich(TextSpan(children: [
+                                                TextSpan(
+                                                    text: "•  ", style: style3),
+                                                TextSpan(
+                                                  text: "Depop",
+                                                  style: styleButton,
+                                                )
+                                              ])),
+                                              onTap: () => launch(
+                                                  "https://www.depop.com/"),
+                                            ),
+                                            GestureDetector(
+                                              child:
+                                                  Text.rich(TextSpan(children: [
+                                                TextSpan(
+                                                    text: "•  ", style: style3),
+                                                TextSpan(
+                                                  text: "Swap",
+                                                  style: styleButton,
+                                                )
+                                              ])),
+                                              onTap: () => launch(
+                                                  "https://www.swap.com/"),
+                                            ),
+                                            GestureDetector(
+                                              child:
+                                                  Text.rich(TextSpan(children: [
+                                                TextSpan(
+                                                    text: "•  ", style: style3),
+                                                TextSpan(
+                                                  text: "eBay",
+                                                  style: styleButton,
+                                                )
+                                              ])),
+                                              onTap: () => launch(
+                                                  "https://www.ebay.com/"),
+                                            ),
+                                            GestureDetector(
+                                              child:
+                                                  Text.rich(TextSpan(children: [
+                                                TextSpan(
+                                                    text: "•  ", style: style3),
+                                                TextSpan(
+                                                  text: "GoodFair",
+                                                  style: styleButton,
+                                                )
+                                              ])),
+                                              onTap: () => launch(
+                                                  "https://goodfair.com/"),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: 100 * aspectRatio,
+                                        ),
+                                        // Column(
+                                        //   mainAxisAlignment: MainAxisAlignment.start,
+                                        //   children: [
+                                        Image.asset(
+                                          "assets/images/Online_Cat.png",
+                                          scale: 1.9 / aspectRatio,
+                                        ),
+                                        //     SizedBox(
+                                        //       height: 40 * heightRatio,
+                                        //     )
+                                        //   ],
+                                        // ),
+                                      ],
+                                    ),
+                                    // Row(
+                                    //   mainAxisAlignment:
+                                    //       MainAxisAlignment.spaceBetween,
+                                    //   crossAxisAlignment:
+                                    //       CrossAxisAlignment.center,
+                                    //   children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        //Thrift Store Chains:
+                                        Text(
+                                          "Thrift Store Chains:",
+                                          style: style3,
+                                        ),
+                                        Text(
+                                          "• Goodwill",
+                                          style: style3,
+                                        ),
+                                        Text(
+                                          "• Plato's Closet",
+                                          style: style3,
+                                        ),
+                                        Text(
+                                          "• Salvation Army",
+                                          style: style3,
+                                        ),
+                                        Text(
+                                          "• Savers",
+                                          style: style3,
+                                        ),
+                                      ],
+                                    ),
+                                    // SizedBox(
+                                    //   width: 210 * aspectRatio,
+                                    // ),
+                                    Image.asset(
+                                      "assets/images/Thrifting_Cat_2.png",
+                                      scale: 1.9 / aspectRatio,
+                                    ),
+                                    // Image.asset(
+                                    //   "assets/images/Thrifting_Cat.png",
+                                    //   scale: 2.5 / aspectRatio,
+                                    // )
+                                    //   ],
+                                    // ),
+                                  ],
+                                ),
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text("\n Online Platforms:",
-                                          style: style3),
-                                      GestureDetector(
-                                        child: Text.rich(TextSpan(children: [
-                                          TextSpan(text: "•  ", style: style3),
-                                          TextSpan(
-                                            text: "thredUp",
-                                            style: styleButton,
-                                          )
-                                        ])),
-                                        onTap: () =>
-                                            launch("https://www.thredup.com/"),
-                                      ),
-                                      GestureDetector(
-                                        child: Text.rich(TextSpan(children: [
-                                          TextSpan(text: "•  ", style: style3),
-                                          TextSpan(
-                                            text: "Poshmark",
-                                            style: styleButton,
-                                          )
-                                        ])),
-                                        onTap: () =>
-                                            launch("https://poshmark.com/"),
-                                      ),
-                                      GestureDetector(
-                                        child: Text.rich(TextSpan(children: [
-                                          TextSpan(text: "•  ", style: style3),
-                                          TextSpan(
-                                            text: "Depop",
-                                            style: styleButton,
-                                          )
-                                        ])),
-                                        onTap: () =>
-                                            launch("https://www.depop.com/"),
-                                      ),
-                                      GestureDetector(
-                                        child: Text.rich(TextSpan(children: [
-                                          TextSpan(text: "•  ", style: style3),
-                                          TextSpan(
-                                            text: "Swap",
-                                            style: styleButton,
-                                          )
-                                        ])),
-                                        onTap: () =>
-                                            launch("https://www.swap.com/"),
-                                      ),
-                                      GestureDetector(
-                                        child: Text.rich(TextSpan(children: [
-                                          TextSpan(text: "•  ", style: style3),
-                                          TextSpan(
-                                            text: "eBay",
-                                            style: styleButton,
-                                          )
-                                        ])),
-                                        onTap: () =>
-                                            launch("https://www.ebay.com/"),
-                                      ),
-                                      GestureDetector(
-                                        child: Text.rich(TextSpan(children: [
-                                          TextSpan(text: "•  ", style: style3),
-                                          TextSpan(
-                                            text: "GoodFair",
-                                            style: styleButton,
-                                          )
-                                        ])),
-                                        onTap: () =>
-                                            launch("https://goodfair.com/"),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    width: 70 * aspectRatio,
-                                  ),
-                                  Image.asset(
-                                    "assets/images/Online_Cat.png",
-                                    scale: 2 / aspectRatio,
-                                  ),
-                                  // Image.asset(
-                                  //   "assets/images/Thrifting_Cat.png",
-                                  //   scale: 2.5 / aspectRatio,
-                                  // )
-                                ],
-                              ),
+                              // Row(
+                              //   mainAxisAlignment: MainAxisAlignment.start,
+                              //   children: [
+                              //     Column(
+                              //       crossAxisAlignment:
+                              //           CrossAxisAlignment.start,
+                              //       children: [
+                              //         Text("\n Online Platforms:",
+                              //             style: style3),
+                              //         GestureDetector(
+                              //           child: Text.rich(TextSpan(children: [
+                              //             TextSpan(text: "•  ", style: style3),
+                              //             TextSpan(
+                              //               text: "thredUp",
+                              //               style: styleButton,
+                              //             )
+                              //           ])),
+                              //           onTap: () =>
+                              //               launch("https://www.thredup.com/"),
+                              //         ),
+                              //         GestureDetector(
+                              //           child: Text.rich(TextSpan(children: [
+                              //             TextSpan(text: "•  ", style: style3),
+                              //             TextSpan(
+                              //               text: "Poshmark",
+                              //               style: styleButton,
+                              //             )
+                              //           ])),
+                              //           onTap: () =>
+                              //               launch("https://poshmark.com/"),
+                              //         ),
+                              //         GestureDetector(
+                              //           child: Text.rich(TextSpan(children: [
+                              //             TextSpan(text: "•  ", style: style3),
+                              //             TextSpan(
+                              //               text: "Depop",
+                              //               style: styleButton,
+                              //             )
+                              //           ])),
+                              //           onTap: () =>
+                              //               launch("https://www.depop.com/"),
+                              //         ),
+                              //         GestureDetector(
+                              //           child: Text.rich(TextSpan(children: [
+                              //             TextSpan(text: "•  ", style: style3),
+                              //             TextSpan(
+                              //               text: "Swap",
+                              //               style: styleButton,
+                              //             )
+                              //           ])),
+                              //           onTap: () =>
+                              //               launch("https://www.swap.com/"),
+                              //         ),
+                              //         GestureDetector(
+                              //           child: Text.rich(TextSpan(children: [
+                              //             TextSpan(text: "•  ", style: style3),
+                              //             TextSpan(
+                              //               text: "eBay",
+                              //               style: styleButton,
+                              //             )
+                              //           ])),
+                              //           onTap: () =>
+                              //               launch("https://www.ebay.com/"),
+                              //         ),
+                              //         GestureDetector(
+                              //           child: Text.rich(TextSpan(children: [
+                              //             TextSpan(text: "•  ", style: style3),
+                              //             TextSpan(
+                              //               text: "GoodFair",
+                              //               style: styleButton,
+                              //             )
+                              //           ])),
+                              //           onTap: () =>
+                              //               launch("https://goodfair.com/"),
+                              //         ),
+                              //       ],
+                              //     ),
+                              //     SizedBox(
+                              //       width: 330 * aspectRatio,
+                              //     ),
+                              //     Column(
+                              //       mainAxisAlignment: MainAxisAlignment.start,
+                              //       children: [
+                              //         Image.asset(
+                              //           "assets/images/Phone_Cat.png",
+                              //           scale: 1.7 / aspectRatio,
+                              //         ),
+                              //         SizedBox(
+                              //           height: 40 * heightRatio,
+                              //         )
+                              //       ],
+                              //     ),
+                              //     // Image.asset(
+                              //     //   "assets/images/Thrifting_Cat.png",
+                              //     //   scale: 2.5 / aspectRatio,
+                              //     // )
+                              //   ],
+                              // ),
                             ],
                           ),
                         ),

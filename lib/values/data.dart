@@ -315,61 +315,66 @@ Widget footer(BuildContext context) {
             ),
             child: Padding(
               padding: EdgeInsets.only(
-                  bottom: 40 * heightRatio, top: 20 * heightRatio),
+                  bottom: 20 * heightRatio, top: 20 * heightRatio),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Contact Info", style: style3),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                      Text("Contact Info", style: style3),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            "assets/images/Logo_2.png",
-                            scale: 3 / aspectRatio,
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Image.asset(
+                                "assets/images/Logo_2.png",
+                                scale: 3 / aspectRatio,
+                              ),
+                            ],
                           ),
+                          SizedBox(
+                            width: 20 * aspectRatio,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SelectableText(
+                                "Number: 214-404-6575",
+                                style: style3,
+                              ),
+                              SelectableText(
+                                "Email: stitches4sustainability@gmail.com",
+                                style: style3,
+                              ),
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushNamed("Cited");
+                                  },
+                                  child: getMenuText("Citations"))
+                            ],
+                          )
                         ],
                       ),
                       SizedBox(
-                        width: 20 * aspectRatio,
+                        height: 20 * heightRatio,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SelectableText(
-                            "Number: 214-404-6575",
-                            style: style3,
-                          ),
-                          SelectableText(
-                            "Email: stitches4sustainability@gmail.com",
-                            style: style3,
-                          ),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pushNamed("Cited");
-                              },
-                              child: getMenuText("Citations"))
-                        ],
-                      )
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 15.0 * aspectRatio,
+                            right: 15 * aspectRatio,
+                            top: 15 * heightRatio,
+                            bottom: 15 * heightRatio),
+                        child: SelectableText(
+                          "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand\nTheme: Reducing Carbon Footprint Independence High School, Frisco, Tx, 2021",
+                          style: style7,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                     ],
-                  ),
-                  SizedBox(
-                    height: 20 * heightRatio,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: 15.0 * aspectRatio,
-                        right: 15 * aspectRatio,
-                        top: 15 * heightRatio,
-                        bottom: 15 * heightRatio),
-                    child: SelectableText(
-                      "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand\nTheme: Reducing Carbon Footprint Independence High School, Frisco, Tx, 2021",
-                      style: style7,
-                      textAlign: TextAlign.center,
-                    ),
                   ),
                 ],
               ),
