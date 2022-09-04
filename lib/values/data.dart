@@ -369,7 +369,7 @@ Widget footer(BuildContext context) {
                             top: 15 * heightRatio,
                             bottom: 15 * heightRatio),
                         child: SelectableText(
-                          "Chapter 4: 02-1592, Angelina Leng, Amy Zhou, Aniruddh Anand\nTheme: Reducing Carbon Footprint Independence High School, Frisco, Tx, 2021",
+                          "Angelina Leng, Amy Zhou, Aniruddh Anand",
                           style: style7,
                           textAlign: TextAlign.center,
                         ),
